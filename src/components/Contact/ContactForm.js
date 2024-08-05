@@ -25,14 +25,15 @@ const ContactForm = () => {
 
 <div className="google-form-container">
       <iframe
-        src="https://docs.google.com/forms/d/e/your-google-form-id/viewform?embedded=true"
-        width="100%"
-        height="500"
-        frameBorder="0"
-        marginHeight="0"
-        marginWidth="0"
-      >
-        Loading…
+          title="Contact Form" // Add a descriptive title here
+          src="https://docs.google.com/forms/d/1LWS_mINDFQIT9486GPuUBRD50D6nbSlMk_qpWmLc0cI/edit?usp=drivesdk&chromeless=1"
+          width="100%"
+          height="500"
+          frameBorder="0"
+          marginHeight="0"
+          marginWidth="0"
+        >
+          Loading…
       </iframe>
     </div>
     </>
