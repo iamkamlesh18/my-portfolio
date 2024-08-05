@@ -2,6 +2,7 @@ import React from 'react';
 
 const ContactForm = () => {
   return (
+    <>
     <div className="contact-form">
       <h2>Contact Form</h2>
       <form>
@@ -20,6 +21,21 @@ const ContactForm = () => {
         <button type="submit">Submit</button>
       </form>
     </div>
+
+
+<div className="google-form-container">
+      <iframe
+        src="https://docs.google.com/forms/d/e/your-google-form-id/viewform?embedded=true"
+        width="100%"
+        height="500"
+        frameBorder="0"
+        marginHeight="0"
+        marginWidth="0"
+      >
+        Loading…
+      </iframe>
+    </div>
+    </>
   );
 };
 

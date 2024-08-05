@@ -1,11 +1,18 @@
 // components/Contact/Contact.js
 import React from 'react';
+import ContactForm from './ContactForm';
+
 
 const Contact = () => {
   return (
     <div className="contact-container">
-      <h1>Contact Me</h1>
-      <p>Get in touch with me for any inquiries or collaborations.</p>
+      
+      <header>
+        <h1>Contact Us</h1>
+        <ContactForm />
+      </header>
+
+
     </div>
   );
 };
