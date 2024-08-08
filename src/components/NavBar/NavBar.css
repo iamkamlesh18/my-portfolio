@@ -1,0 +1,65 @@
+/* General styling for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f4e7, #8ba099); /* Water-like gradient */
+    padding: 10px 10px; /* Padding inside the navbar */
+    box-sizing: border-box; /* Ensures padding is included in the width calculation */
+    width: 100%; /*Navbar spans the full width*/
+    
+}
+
+/* Styling for the logo */
+.navbar-logo {
+    margin-left: 50px; /* Add margin to the left of the logo */
+}
+
+.navbar-logo .logo-link {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Styling for the navigation links */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin-right: 50px;
+    padding: 20px;
+}
+
+.navbar-links li {
+    margin-left: 20px; /* Margin on the left of each link */
+}
+
+.navbar-links li a {
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Simple hover effect for links */
+.navbar-links li a:hover {
+    color: #ddd; /* Lighter color on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px; /* Adjusted padding for smaller screens */
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-links li {
+        margin: 5px 0;
+    }
+}

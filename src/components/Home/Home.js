@@ -1,13 +1,12 @@
-// components/Home/Home.js
 import React from 'react';
+import './Home.css';
 
 const Home = () => {
-  return (
-    <div className="home-container">
-      <h1>Welcome to Kamlesh's Portfolio</h1>
-      <p>Your one-stop solution for Digital Marketing, Web Development, and more!</p>
-    </div>
-  );
+    return (
+        <div className="home">
+            <h1>Home Page</h1>
+        </div>
+    );
 };
 
 export default Home;
