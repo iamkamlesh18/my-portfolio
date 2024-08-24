@@ -1,65 +1,41 @@
-/* General styling for the navbar */
-.navbar {
+.navbar-custom {
+    background-color: white !important;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.navbar-custom .navbar-brand {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, #f5f4e7, #8ba099); /* Water-like gradient */
-    padding: 10px 10px; /* Padding inside the navbar */
-    box-sizing: border-box; /* Ensures padding is included in the width calculation */
-    width: 100%; /*Navbar spans the full width*/
-    
+    align-items: center; /* Align logo and text horizontally */
+    color: #333 !important;
+    font-weight: bold; /* Apply bold directly */
 }
 
-/* Styling for the logo */
-.navbar-logo {
-    margin-left: 50px; /* Add margin to the left of the logo */
+.navbar-custom .navbar-logo {
+    height: 30px; /* Adjust the height of the logo */
+    margin-right: 10px; /* Space between the logo and the Portfolio text */
 }
 
-.navbar-logo .logo-link {
-    color: #000000;
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-/* Styling for the navigation links */
-.navbar-links {
-    list-style: none;
+.navbar-custom .navbar-brand-text {
     display: flex;
-    margin-right: 50px;
-    padding: 20px;
+    flex-direction: column; /* Stack Portfolio and Kamlesh Patil vertically */
 }
 
-.navbar-links li {
-    margin-left: 20px; /* Margin on the left of each link */
+.navbar-custom .navbar-subtext {
+    font-size: 0.8rem;
+    color: #FFD700; /* Lemon color */
+    font-weight: bold; /* Ensure bold text */
+    margin-top: -5px; /* Adjust spacing if needed */
 }
 
-.navbar-links li a {
-    color: #000000;
-    font-weight: 700;
-    text-decoration: none;
+.navbar-custom .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Simple hover effect for links */
-.navbar-links li a:hover {
-    color: #ddd; /* Lighter color on hover */
+.navbar-custom .nav-link {
+    color: #333 !important;
+    font-weight: bold; /* Apply bold directly */
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 15px; /* Adjusted padding for smaller screens */
-    }
-
-    .navbar-links {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .navbar-links li {
-        margin: 5px 0;
-    }
+.navbar-custom .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }

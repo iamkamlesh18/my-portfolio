@@ -1,21 +1,37 @@
 import React from 'react';
-import './NavBar.css';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import './NavBar.css';
+import web3Image from '../img/web3.svg'; // Import the image
 
 const NavBar = () => {
     return (
-        <nav className="navbar">
-            <div className="navbar-logo">
-                <Link to="/" className="logo-link">Portfolio</Link>
-            </div>
-            <ul className="navbar-links">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/blog">Blog</Link></li>
-                <li><Link to="/projects">Projects</Link></li>
-                <li><Link to="/resume">Resume</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-            </ul>
-        </nav>
+        <Navbar bg="dark" variant="dark" expand="lg" fixed="top" className="navbar-custom">
+            <Container>
+                <Navbar.Brand as={Link} to="/">
+                    <img
+                        src={web3Image}
+                        alt="Web3 Logo"
+                        className="navbar-logo"
+                    />
+                    <div className="navbar-brand-text">
+                        Portfolio
+                        <div className="navbar-subtext">Kamlesh Patil</div>
+                    </div>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ms-auto">
+                        <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
+                        <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
+                        <Nav.Link as={Link} to="/resume">Resume</Nav.Link>
+                        <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     );
 };
 
