@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from '../Home/Home';
 import Blog from '../Blog/Blog';
 import Projects from '../Projects/Projects';
-import Resume from '../Resume/Resume';
 import NavBar from '../NavBar/NavBar';
+
 import Contact from '../Contact/Contact';
 import Privacy from '../Privacy-Policy/privacy-policy';
 import TermsofService from '../Terms-of-Service/terms-of-service';
+import Services from '../Resume/Services';
 
 const Routing = () => {
     return (
@@ -20,7 +21,7 @@ const Routing = () => {
                 <Route path="/home" element={<Home />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/projects" element={<Projects />} />
-                <Route path="/resume" element={<Resume />} />
+                <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact/>} />
             </Routes>
            

@@ -1,12 +1,39 @@
 .home {
-    margin-top: 80px; /* Adjust this value based on the height of your Navbar */
+    margin-top: 80px; /* Space below the navbar */
     padding: 20px; /* Add padding if needed */
+    position: relative; /* Establish a containing block for absolutely positioned elements */
+    text-align: center;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    
 }
 
 .home-image {
-    width: 30%; /* Set the image width to 20% of its container */
+    width: 30%; /* Set the image width to 30% of its container */
     height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove extra space below the image */
-    margin-left: 0; /* Align image to the left */
-    margin-right: auto; /* Ensure no extra margin on the right */
+    margin-left: 5%; /* Align image to the left */
+    z-index: 3; /* Ensure this image is above the others */
+}
+
+.text-content {
+    width: 60%;
+    padding-left: 20px;
+}
+
+.home-heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.home-intro {
+    font-size: 1.25rem;
+    color: #555;
+    line-height: 1.6;
 }
