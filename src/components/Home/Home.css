@@ -1,39 +1,100 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Home component styles */
 .home {
     margin-top: 80px; /* Space below the navbar */
-    padding: 20px; /* Add padding if needed */
-    position: relative; /* Establish a containing block for absolutely positioned elements */
+    padding: 20px;
+    position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .home-content {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 40px;
-    
+    width: 100%;
+    max-width: 1200px;
 }
 
 .home-image {
-    width: 30%; /* Set the image width to 30% of its container */
-    height: auto; /* Maintain aspect ratio */
-    margin-left: 5%; /* Align image to the left */
-    z-index: 3; /* Ensure this image is above the others */
+    width: 100%;
+    max-width: 30%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    z-index: 3;
+    
 }
 
 .text-content {
-    width: 60%;
+    width: 100%;
+    max-width: 60%;
+    padding-top: ;
     padding-left: 20px;
+    padding-right: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .home-heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: bold;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.home-heading:hover {
+    color: #007BFF;
+    transform: scale(1.05);
 }
 
 .home-intro {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: #555;
     line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+    }
+
+    .home-image {
+        width: 50%;
+        max-width: 70%;
+    }
+
+    .text-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .home-heading {
+        font-size: 1.75rem;
+    }
+
+    .home-intro {
+        font-size: 1rem;
+    }
 }

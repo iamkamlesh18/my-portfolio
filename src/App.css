@@ -1,3 +1,85 @@
+/* App.css (Global Styles) */
+
+/* Global Box Sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Font and Color Settings */
 body {
     font-family: 'Quicksand', sans-serif;
+    background-color: #fcfdff; /* Light gray background */
+    color: #333; /* Default text color */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Link Styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    
+}
+
+/* Global Container Padding */
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
+/* Global Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsive Image */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Utilities */
+.hidden-mobile {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hidden-mobile {
+        display: block;
+    }
+}
+
+/* Mobile-First Breakpoints */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
 }

@@ -1,13 +1,13 @@
 .footer {
-    background-color: white; /* White background */
-    border-top: 1px solid #e7e7e7; /* Light border at the top */
-    padding: 10px 20px; /* Compact padding */
-    text-align: center; /* Center content */
-    font-size: 0.9rem; /* Slightly smaller text */
+    background-color: white;
+    border-top: 1px solid #e7e7e7;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9rem;
     position: fixed;
     width: 100%;
     bottom: 0;
-    z-index: 1000; /* Ensure the footer stays above other content */
+    z-index: 1000;
 }
 
 .footer-content {
@@ -17,15 +17,15 @@
 }
 
 .footer-links {
-    margin-top: 5px; /* Small space between the text and links */
+    margin-top: 5px;
 }
 
 .footer-links a {
-    color: #333; /* Dark text color for links */
-    text-decoration: none; /* Remove underline */
-    margin: 0 8px; /* Spacing between links */
+    color: #333;
+    text-decoration: none;
+    margin: 0 8px;
 }
 
 .footer-links a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
