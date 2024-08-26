@@ -1,21 +1,31 @@
 .footer {
-    background-color: white; /* Same as navbar background */
-    border-top: 2px solid #e7e7e7; /* Same border as navbar */
-    color: #333; /* Text color same as navbar */
-    font-weight: bold; /* Same font weight as navbar */
+    background-color: white; /* White background */
+    border-top: 1px solid #e7e7e7; /* Light border at the top */
+    padding: 10px 20px; /* Compact padding */
+    text-align: center; /* Center content */
+    font-size: 0.9rem; /* Slightly smaller text */
     position: fixed;
-    bottom: 0;
     width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 1000; /* Ensure footer is above other content */
+    bottom: 0;
+    z-index: 1000; /* Ensure the footer stays above other content */
 }
 
-.footer a {
-    color: #333;
-    text-decoration: none; /* Remove underline from links */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.footer a:hover {
-    text-decoration: underline; /* Add underline on hover */
+.footer-links {
+    margin-top: 5px; /* Small space between the text and links */
+}
+
+.footer-links a {
+    color: #333; /* Dark text color for links */
+    text-decoration: none; /* Remove underline */
+    margin: 0 8px; /* Spacing between links */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
