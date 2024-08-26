@@ -8,6 +8,7 @@
     align-items: center; /* Align logo and text horizontally */
     color: #333 !important;
     font-weight: bold; /* Apply bold directly */
+    transition: color 0.3s ease-in-out;
 }
 
 .navbar-custom .navbar-logo {
@@ -25,6 +26,7 @@
     color: #FFD700; /* Lemon color */
     font-weight: bold; /* Ensure bold text */
     margin-top: -5px; /* Adjust spacing if needed */
+    transition: color 0.3s ease-in-out;
 }
 
 .navbar-custom .navbar-toggler {
@@ -34,6 +36,19 @@
 .navbar-custom .nav-link {
     color: #333 !important;
     font-weight: bold; /* Apply bold directly */
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #007BFF !important; /* Change color on hover */
+}
+
+.navbar-custom .navbar-brand:hover {
+    color: #007BFF !important; /* Change Portfolio text color on hover */
+}
+
+.navbar-custom .navbar-subtext:hover {
+    color: #007BFF !important; /* Change Kamlesh Patil text color on hover */
 }
 
 .navbar-custom .navbar-toggler-icon {
