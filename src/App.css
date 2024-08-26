@@ -12,11 +12,13 @@
 /* Global Font and Color Settings */
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: #fcfdff; /* Light gray background */
     color: #333; /* Default text color */
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    min-height: 100vh; /* Ensure body takes up full height */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Global Link Styles */
@@ -27,7 +29,6 @@ a {
 
 a:hover {
     color: #0056b3;
-    
 }
 
 /* Global Container Padding */
@@ -82,4 +83,15 @@ img {
     h3 {
         font-size: 1.5rem;
     }
+}
+
+/* Footer Adjustment */
+footer {
+    width: 100%;
+    background-color: white; /* Ensure background color matches the footer */
+    border-top: 1px solid #e7e7e7;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: auto; /* Pushes footer to the bottom if content is short */
 }

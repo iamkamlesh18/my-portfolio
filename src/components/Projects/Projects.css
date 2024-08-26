@@ -1,0 +1,6 @@
+/* Projects component styles */
+.projects {
+    padding: 20px;
+    margin-top: 50px; /* Ensure space below the navbar */
+    text-align: center;
+}

@@ -1,4 +1,3 @@
-import React from 'react';
 import './Home.css';
 import web2Image from '../img/web2.png'; // Import the image correctly
 
@@ -23,10 +22,7 @@ const Home = () => {
                         UI/UX design, or digital strategy consulting.
                     </p>
                 </div>
-
             </div>
-
-           
         </div>
     );
 };

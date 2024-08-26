@@ -1,13 +1,17 @@
+/* Footer.css */
+
+/* Ensure the footer is fixed at the bottom of the viewport */
 .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: white;
     border-top: 1px solid #e7e7e7;
-    padding: 10px 20px;
+    padding: 15px 20px; /* Increased padding for better spacing */
     text-align: center;
-    font-size: 0.9rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    z-index: 1000;
+    font-size: 1rem; /* Adjusted font size for better readability */
+    z-index: 1000; /* Ensures footer is above other content */
 }
 
 .footer-content {
@@ -17,15 +21,32 @@
 }
 
 .footer-links {
-    margin-top: 5px;
+    margin-top: 10px; /* Adjusted margin for better spacing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer-links a {
     color: #333;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 15px; /* Increased margin for better spacing */
+    font-weight: bold; /* Made the links bold for emphasis */
 }
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links a {
+        margin: 4px 0; /* Adjusted margin for vertical spacing */
+        font-size: 0.9rem; /* Slightly smaller font size for smaller screens */
+    }
 }

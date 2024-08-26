@@ -1,3 +1,5 @@
+/* Home.css */
+
 /* Global styles */
 * {
     box-sizing: border-box;
@@ -14,75 +16,60 @@ body {
 
 /* Home component styles */
 .home {
-    margin-top: 100px; /* Space below the navbar */
     padding: 20px;
-    position: relative;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh; /* Ensure the home section takes full height */
+    justify-content: center; /* Center content vertically */
 }
 
 .home-content {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap in case of small screens */
     width: 100%;
     max-width: 1200px;
+    margin-top: 40px; /* Space between content and image */
+    margin-bottom: 40px;
 }
 
 .home-image {
     width: 100%;
-    max-width: 30%;
+    max-width: 25%; /* Smaller image size on larger screens */
     height: auto;
-    margin: 0 auto 20px auto;
+    margin-right: 40px; /* Increased space between image and text content */
     z-index: 3;
-    
 }
 
 .text-content {
     width: 100%;
     max-width: 60%;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #fff;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.home-heading {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 15px;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.home-heading:hover {
-    color: #007BFF;
-    transform: scale(1.05);
-}
-
-.home-intro {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    text-align: center; /* Center text content */
+    margin-top: 20px; /* Margin above text content */
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
+
+    .home{
+        margin-top: 40px;
+    }
+
     .home-content {
         flex-direction: column;
+        text-align: center;
     }
 
     .home-image {
-        width: 50%;
-        max-width: 70%;
+        width: 60%; /* Larger image size on smaller screens */
+        margin-right: 0; /* Remove margin on smaller screens */
+        margin-bottom: 20px; /* Space below the image */
+        max-width: 50%;
     }
 
     .text-content {
@@ -96,5 +83,6 @@ body {
 
     .home-intro {
         font-size: 1rem;
+        margin-bottom: 8rem;
     }
 }

@@ -12,8 +12,6 @@ import Footer from '../Footer/Footer';
 
 const Routing = () => {
     return (
-        <>
-        
         <Router>
             <NavBar />
             <Routes>
@@ -22,18 +20,12 @@ const Routing = () => {
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/services" element={<Services />} />
-                <Route path="/contact" element={<Contact/>} />
-            </Routes>
-           <Footer/>
-            <Routes>
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy-policy" element={<Privacy />} />
                 <Route path="/terms-of-service" element={<TermsofService />} />
             </Routes>
-
-            
+            <Footer />
         </Router>
-
-        </>
     );
 };
 
