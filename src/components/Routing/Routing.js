@@ -4,11 +4,11 @@ import Home from '../Home/Home';
 import Blog from '../Blog/Blog';
 import Projects from '../Projects/Projects';
 import NavBar from '../NavBar/NavBar';
-import Contact from '../Contact/Contact';
 import Privacy from '../Privacy-Policy/privacy-policy';
 import TermsofService from '../Terms-of-Service/terms-of-service';
 import Services from '../Resume/Services';
 import Footer from '../Footer/Footer';
+import About from '../About/About';
 
 const Routing = () => {
     return (
@@ -21,7 +21,7 @@ const Routing = () => {
                 <Route path="/my-portfolio/blog" element={<Blog />} />
                 <Route path="/my-portfolio/projects" element={<Projects />} />
                 <Route path="/my-portfolio/services" element={<Services />} />
-                <Route path="/my-portfolio/contact" element={<Contact />} />
+                <Route path="/my-portfolio/about" element={<About />} />
                 <Route path="/my-portfolio/privacy-policy" element={<Privacy />} />
                 <Route path="/my-portfolio/terms-of-service" element={<TermsofService />} />
             </Routes>

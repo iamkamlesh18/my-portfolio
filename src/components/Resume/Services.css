@@ -1,56 +1,75 @@
-/* Services component styles */
+/* Services.css */
+
+/* General styles for the services section */
 .services {
-    padding: 20px;
-    margin-top: 50px; /* Ensure space below the navbar */
+    padding: 40px 20px;
+    background-color: #f8f9fa; /* Light background color */
+    min-height: 100vh; /* Full height for the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .services-heading {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: center;
-    font-weight: bold;
 }
 
 .service-list {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items on small screens */
-}
-
-@media (min-width: 768px) {
-    .service-list {
-        flex-direction: row; /* Align items in a row on larger screens */
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .service-item {
-    width: 100%;
-    max-width: 300px; /* Set a max-width for better card sizing */
     background-color: #fff;
-    border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for better card effect */
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .service-item h3 {
     font-size: 1.5rem;
-    color: #333;
+    color: #007BFF; /* Primary color for headings */
     margin-bottom: 10px;
 }
 
 .service-item p {
     font-size: 1rem;
-    color: #666;
-    line-height: 1.4;
+    color: #555;
+    line-height: 1.6;
 }
 
+/* Hover effect for service items */
 .service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .services {
+       margin-top: 80px;
+       margin-bottom: 170px;
+    }
+
+    .service-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Reduce gap on small screens */
+    }
+
+    .service-item {
+        width: 90%; /* Ensure items fit within screen width */
+        max-width: none; /* Remove max-width for full width on small screens */
+        margin-bottom: 10px; /* Increase space below items */
+    }
+
 }

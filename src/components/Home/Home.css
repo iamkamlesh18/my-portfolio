@@ -16,11 +16,12 @@ body {
 
 /* Home component styles */
 .home {
-    padding: 20px;
+    padding: 40px 20px;
+    background-color: #ffffff; /* white background color */
+    min-height: 100vh; /* Full height for the section */
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh; /* Ensure the home section takes full height */
     justify-content: center; /* Center content vertically */
 }
 
@@ -37,15 +38,15 @@ body {
 
 .home-image {
     width: 100%;
-    max-width: 25%; /* Smaller image size on larger screens */
+    max-width: 300px; /* Consistent image size */
     height: auto;
-    margin-right: 40px; /* Increased space between image and text content */
+    margin-right: 20px; /* Space between image and text content */
     z-index: 3;
 }
 
 .text-content {
     width: 100%;
-    max-width: 60%;
+    max-width: 600px; /* Consistent width for text content */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -53,11 +54,33 @@ body {
     margin-top: 20px; /* Margin above text content */
 }
 
+/* Heading styles */
+.home-heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.home-heading:hover {
+    color: #007BFF;
+    transform: scale(1.05);
+}
+
+/* Intro text styles */
+.home-intro {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
-
-    .home{
-        margin-top: 40px;
+    .home {
+        margin-top: 60px; /* Adjusted margin for mobile */
+        margin-bottom: 80px; /* Adjusted margin for mobile */
     }
 
     .home-content {
@@ -69,11 +92,10 @@ body {
         width: 60%; /* Larger image size on smaller screens */
         margin-right: 0; /* Remove margin on smaller screens */
         margin-bottom: 20px; /* Space below the image */
-        max-width: 50%;
     }
 
     .text-content {
-        width: 100%;
+        width: 90%; /* Full width on smaller screens */
         padding: 15px;
     }
 
@@ -83,6 +105,6 @@ body {
 
     .home-intro {
         font-size: 1rem;
-        margin-bottom: 8rem;
+        
     }
 }

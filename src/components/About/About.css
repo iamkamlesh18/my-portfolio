@@ -1,5 +1,7 @@
-/* General styles for the projects section */
-.projects {
+/* About.css */
+
+/* General styles for the about section */
+.about {
     padding: 40px 20px;
     background-color: #f8f9fa; /* Light background color */
     min-height: 100vh; /* Full height for the section */
@@ -10,24 +12,23 @@
 }
 
 /* Heading styles */
-.projects-heading {
+.about-heading {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 30px;
     text-align: center;
 }
 
-/* Flex container for project items */
-.project-list {
+/* Flex container for about items */
+.about-info {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    padding: 0; /* Ensure no extra padding affects layout */
 }
 
-/* Individual project item styles */
-.project-item {
+/* Individual about item styles */
+.about-item {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -39,39 +40,39 @@
     margin-bottom: 20px; /* Ensure space between items */
 }
 
-/* Heading within project items */
-.project-item h3 {
+/* Heading within about items */
+.about-item h3 {
     font-size: 1.5rem;
     color: #007BFF; /* Primary color for headings */
     margin-bottom: 10px;
 }
 
-/* Paragraph within project items */
-.project-item p {
+/* Paragraph within about items */
+.about-item p {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
 }
 
-/* Hover effect for project items */
-.project-item:hover {
+/* Hover effect for about items */
+.about-item:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .projects {
+    .about {
         margin-top: 80px;
         margin-bottom: 170px;
     }
 
-    .project-list {
+    .about-info {
         flex-direction: column;
         align-items: center;
         gap: 10px; /* Reduce gap on small screens */
     }
 
-    .project-item {
+    .about-item {
         width: 90%; /* Ensure items fit within screen width */
         max-width: none; /* Remove max-width for full width on small screens */
         margin-bottom: 10px; /* Increase space below items */
