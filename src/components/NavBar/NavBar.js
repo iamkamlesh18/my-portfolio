@@ -3,18 +3,25 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './NavBar.css';
-import web3Image from '../img/web3.svg'; // Import the image
 
 const NavBar = () => {
     return (
         <Navbar bg="dark" variant="dark" expand="lg" fixed="top" className="navbar-custom">
             <Container>
                 <Navbar.Brand as={Link} to="/">
-                    <img
-                        src={web3Image}
-                        alt="Web3 Logo"
-                        className="navbar-logo"
-                    />
+                    <div className="navbar-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 200 100">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style={{ stopColor: '#007BFF', stopOpacity: 1 }} />
+                                    <stop offset="100%" style={{ stopColor: '#00FF7F', stopOpacity: 1 }} />
+                                </linearGradient>
+                            </defs>
+                            <text x="10" y="60" fontFamily="'Quicksand', sans-serif" fontSize="72" fill="url(#grad1)" fontWeight="900" style={{ letterSpacing: '2px' }}>
+                                &lt;/&gt;
+                            </text>
+                        </svg>
+                    </div>
                     <div className="navbar-brand-text">
                         Portfolio
                         <div className="navbar-subtext">Kamlesh Patil</div>

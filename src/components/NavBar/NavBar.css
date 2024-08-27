@@ -13,8 +13,10 @@
 }
 
 .navbar-custom .navbar-logo {
-    height: 30px; /* Adjust the height of the logo */
-    margin-right: 10px; /* Space between the logo and the Portfolio text */
+    height: 60px; /* Adjust the height of the logo */
+    width: 60px; /* Adjust the width of the logo */
+    margin-right: 15px; /* Space between the logo and the Portfolio text */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .navbar-custom .navbar-brand-text {
@@ -40,16 +42,20 @@
     transition: color 0.3s ease-in-out;
 }
 
+/* Gradient Hover Effect */
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-subtext:hover,
 .navbar-custom .nav-link:hover {
-    color: #007BFF !important; /* Change color on hover */
+    color: transparent !important;
+    background: linear-gradient(to right, #007BFF, #00FF7F);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
-.navbar-custom .navbar-brand:hover {
-    color: #007BFF !important; /* Change Portfolio text color on hover */
-}
-
-.navbar-custom .navbar-subtext:hover {
-    color: #007BFF !important; /* Change Kamlesh Patil text color on hover */
+/* Logo Hover Effect */
+.navbar-custom .navbar-logo:hover {
+    transform: scale(1.1); /* Slightly enlarge the logo on hover */
+    filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.5));
 }
 
 .navbar-custom .navbar-toggler-icon {
