@@ -8,7 +8,7 @@ const NavBar = () => {
     return (
         <Navbar bg="dark" variant="dark" expand="lg" fixed="top" className="navbar-custom">
             <Container>
-                <Navbar.Brand as={Link} to="/">
+                <Navbar.Brand as={Link} to="/my-portfolio">
                     <div className="navbar-logo">
                         <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 200 100">
                             <defs>
