@@ -16,6 +16,7 @@ const Routing = () => {
             <NavBar />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/my-portfolio" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/projects" element={<Projects />} />
