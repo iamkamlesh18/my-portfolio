@@ -17,13 +17,13 @@ const Routing = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/my-portfolio/" element={<Home />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/privacy-policy" element={<Privacy />} />
-                <Route path="/terms-of-service" element={<TermsofService />} />
+                <Route path="/my-portfolio/home" element={<Home />} />
+                <Route path="/my-portfolio/blog" element={<Blog />} />
+                <Route path="/my-portfolio/projects" element={<Projects />} />
+                <Route path="/my-portfolio/services" element={<Services />} />
+                <Route path="/my-portfolio/contact" element={<Contact />} />
+                <Route path="/my-portfolio/privacy-policy" element={<Privacy />} />
+                <Route path="/my-portfolio/terms-of-service" element={<TermsofService />} />
             </Routes>
             <Footer />
         </Router>
