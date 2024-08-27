@@ -30,7 +30,6 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap; /* Allow items to wrap in case of small screens */
-   
     max-width: 1200px;
     
 }
