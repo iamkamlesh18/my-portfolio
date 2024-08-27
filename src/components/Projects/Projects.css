@@ -1,7 +1,7 @@
 /* General styles for the projects section */
 .projects {
     padding: 40px 20px;
-    background-color: #f8f9fa; /* Light background color */
+    background-color: white;
     min-height: 100vh; /* Full height for the section */
     display: flex;
     justify-content: center;

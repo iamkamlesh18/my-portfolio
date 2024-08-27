@@ -30,10 +30,9 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap; /* Allow items to wrap in case of small screens */
-    width: 100%;
+   
     max-width: 1200px;
-    margin-top: 40px; /* Space between content and image */
-    margin-bottom: 40px;
+    
 }
 
 .home-image {
@@ -64,8 +63,10 @@ body {
 }
 
 .home-heading:hover {
-    color: #007BFF;
-    transform: scale(1.05);
+    color: transparent !important;
+    background: linear-gradient(to right, #007BFF, #00FF7F);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 /* Intro text styles */
