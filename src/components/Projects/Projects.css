@@ -9,6 +9,13 @@
     flex-direction: column; /* Ensures vertical alignment */
 }
 
+/* CSS */
+.no-underline {
+    text-decoration: none;
+    color: inherit; /* Optional: Keep the text color consistent */
+}
+
+
 /* Heading styles */
 .projects-heading {
     font-size: 2.5rem;

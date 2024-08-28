@@ -9,6 +9,7 @@ import TermsofService from '../Terms-of-Service/terms-of-service';
 import Services from '../Resume/Services';
 import Footer from '../Footer/Footer';
 import About from '../About/About';
+import CurrencyConverter from '../Projects/CurrencyConverter';
 
 const Routing = () => {
     return (
@@ -24,7 +25,9 @@ const Routing = () => {
                 <Route path="/my-portfolio/about" element={<About />} />
                 <Route path="/my-portfolio/privacy-policy" element={<Privacy />} />
                 <Route path="/my-portfolio/terms-of-service" element={<TermsofService />} />
+                <Route path="/my-portfolio/projects/currencyconverter" element={<CurrencyConverter/>} />
             </Routes>
+            
             <Footer />
         </Router>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Projects.css';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
     return (
@@ -7,10 +8,15 @@ const Projects = () => {
             <section>
                 <h2 className="projects-heading">Projects</h2>
                 <div className="project-list">
-                    <div className="project-item">
-                        <h3>Project One</h3>
-                        <p>A description of the first project, highlighting key features and technologies used.</p>
-                    </div>
+
+                    <Link to="/my-portfolio/projects/currencyconverter" className="no-underline">
+                        <div className="project-item">
+                            <h3>Currency Converter</h3>
+                            <p>Simple Project for Converting the Currency</p>
+                        </div>
+                    </Link>
+
+
                     <div className="project-item">
                         <h3>Project Two</h3>
                         <p>A description of the second project, including its purpose and any notable accomplishments.</p>
