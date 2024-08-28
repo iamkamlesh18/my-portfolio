@@ -61,10 +61,7 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .about {
-        margin-top: 80px;
-        margin-bottom: 170px;
-    }
+   
 
     .about-info {
         flex-direction: column;

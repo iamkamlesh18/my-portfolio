@@ -60,10 +60,7 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .projects {
-        margin-top: 80px;
-        margin-bottom: 170px;
-    }
+   
 
     .project-list {
         flex-direction: column;
@@ -71,9 +68,5 @@
         gap: 10px; /* Reduce gap on small screens */
     }
 
-    .project-item {
-        width: 90%; /* Ensure items fit within screen width */
-        max-width: none; /* Remove max-width for full width on small screens */
-        margin-bottom: 10px; /* Increase space below items */
-    }
+    
 }

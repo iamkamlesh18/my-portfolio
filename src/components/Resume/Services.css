@@ -55,10 +55,7 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .services {
-       margin-top: 80px;
-       margin-bottom: 170px;
-    }
+    
 
     .service-list {
         flex-direction: column;

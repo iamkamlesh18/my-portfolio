@@ -5,7 +5,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: white;
+    background: linear-gradient(to right, #ffffff, #dcfeed);
     border-top: 1px solid #e7e7e7;
     padding: 15px 20px; /* Increased padding for better spacing */
     text-align: center;

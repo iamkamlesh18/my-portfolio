@@ -1,34 +1,39 @@
-/* NavBar component styles */
+/*NavBar CSS */
+
+
 .navbar-custom {
-    background-color: white !important;
+    background: linear-gradient(to right, #ffffff, #dcfeed);
     border-bottom: 2px solid #e7e7e7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar-custom .navbar-brand {
     display: flex;
-    align-items: center; /* Align logo and text horizontally */
+    align-items: center;
     color: #333 !important;
-    font-weight: bold; /* Apply bold directly */
+    font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
 
 .navbar-custom .navbar-logo {
-    height: 60px; /* Adjust the height of the logo */
-    width: 60px; /* Adjust the width of the logo */
-    margin-right: 15px; /* Space between the logo and the Portfolio text */
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .navbar-custom .navbar-brand-text {
     display: flex;
-    flex-direction: column; /* Stack Portfolio and Kamlesh Patil vertically */
+    flex-direction: column;
 }
 
 .navbar-custom .navbar-subtext {
     font-size: 0.8rem;
-    color: #FFD700; /* Lemon color */
-    font-weight: bold; /* Ensure bold text */
-    margin-top: -5px; /* Adjust spacing if needed */
+    color: #FFD700;
+    font-weight: bold;
+    margin-top: -5px;
     transition: color 0.3s ease-in-out;
 }
 
@@ -38,7 +43,7 @@
 
 .navbar-custom .nav-link {
     color: #333 !important;
-    font-weight: bold; /* Apply bold directly */
+    font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
 
@@ -54,7 +59,7 @@
 
 /* Logo Hover Effect */
 .navbar-custom .navbar-logo:hover {
-    transform: scale(1.1); /* Slightly enlarge the logo on hover */
+    transform: scale(1.1);
     filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.5));
 }
 

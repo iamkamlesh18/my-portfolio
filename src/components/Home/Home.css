@@ -78,10 +78,7 @@ body {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .home {
-        margin-top: 60px; /* Adjusted margin for mobile */
-        margin-bottom: 80px; /* Adjusted margin for mobile */
-    }
+   
 
     .home-content {
         flex-direction: column;
