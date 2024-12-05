@@ -1,0 +1,147 @@
+/* Currency Converter Container */
+.currency-converter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;  /* Increased card width */
+    width: 100%;
+    padding: 60px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    animation: fadeIn 1s ease-out;
+    text-align: center;
+  }
+  
+  /* Title */
+  .currency-converter-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    animation: fadeInTitle 0.8s ease-out;
+  }
+  
+  /* Card styling for the content */
+  .currency-converter-card {
+    width: 100%;
+    padding: 30px; /* Increased padding */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Input Fields and Selectors */
+  .currency-converter-input,
+  .currency-converter-select {
+    font-size: 14px;
+    padding: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+  }
+  
+  .currency-converter-input:focus,
+  .currency-converter-select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Buttons Styling */
+  .currency-converter-convert-btn,
+  .currency-converter-update-btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .currency-converter-convert-btn:hover,
+  .currency-converter-update-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .currency-converter-update-btn {
+    background-color: #17a2b8;
+    margin-top: 10px;
+  }
+  
+  .currency-converter-update-btn:hover {
+    background-color: #138496;
+  }
+  
+  /* Result Text */
+  .currency-converter-result {
+    font-size: 14px;
+    color: #333;
+    margin-top: 20px;
+    font-weight: bold;
+    animation: fadeInResult 0.8s ease-out;
+  }
+  
+  /* Spacing for results */
+  .mt-4 {
+    margin-top: 30px;
+  }
+  
+  /* Custom Animation Effects */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes fadeInTitle {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInResult {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile Responsiveness */
+  @media screen and (max-width: 600px) {
+    .currency-converter-container {
+      padding: 20px;
+    }
+  
+    .currency-converter-input,
+    .currency-converter-select,
+    .currency-converter-convert-btn,
+    .currency-converter-update-btn {
+      font-size: 14px;
+    }
+  
+    .currency-converter-title {
+      font-size: 28px;
+    }
+  }
+  

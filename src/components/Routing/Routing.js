@@ -10,6 +10,7 @@ import Services from '../Resume/Services';
 import Footer from '../Footer/Footer';
 import About from '../About/About';
 import CurrencyConverter from '../Projects/CurrencyConverter';
+import BreathSync from '../Projects/BreathSync';
 
 const Routing = () => {
     return (
@@ -26,6 +27,7 @@ const Routing = () => {
                 <Route path="/my-portfolio/privacy-policy" element={<Privacy />} />
                 <Route path="/my-portfolio/terms-of-service" element={<TermsofService />} />
                 <Route path="/my-portfolio/projects/currencyconverter" element={<CurrencyConverter/>} />
+                <Route path="/my-portfolio/projects/BreathSync" element={<BreathSync/>} />
             </Routes>
             
             <Footer />

@@ -12,14 +12,20 @@ const Projects = () => {
                     <Link to="/my-portfolio/projects/currencyconverter" className="no-underline">
                         <div className="project-item">
                             <h3>Currency Converter</h3>
-                            <p>Simple Project for Converting the Currency</p>
+                            <p>Convert the Currency</p>
+                        </div>
+                    </Link>
+                    
+                    <Link to="/my-portfolio/projects/BreathSync" className="no-underline">
+                        <div className="project-item">
+                            <h3>BreathSync</h3>
+                            <p>BreathSync Meditation Counter</p>
                         </div>
                     </Link>
 
-
                     <div className="project-item">
                         <h3>Project Two</h3>
-                        <p>A description of the second project, including its purpose and any notable accomplishments.</p>
+                        <p>A description of the second projec</p>
                     </div>
                     <div className="project-item">
                         <h3>Project Three</h3>
