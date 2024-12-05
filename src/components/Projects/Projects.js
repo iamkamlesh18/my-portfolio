@@ -23,6 +23,13 @@ const Projects = () => {
                         </div>
                     </Link>
 
+                    <Link to="/my-portfolio/projects/Yogasana" className="no-underline">
+                        <div className="project-item">
+                            <h3>Yogasana</h3>
+                            <p>Simple Yogic Asanas</p>
+                        </div>
+                    </Link>
+
                     <div className="project-item">
                         <h3>Project Two</h3>
                         <p>A description of the second projec</p>

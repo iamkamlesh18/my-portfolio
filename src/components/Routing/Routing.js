@@ -11,6 +11,7 @@ import Footer from '../Footer/Footer';
 import About from '../About/About';
 import CurrencyConverter from '../Projects/CurrencyConverter';
 import BreathSync from '../Projects/BreathSync';
+import Yogasana from '../Projects/Yogasana';
 
 const Routing = () => {
     return (
@@ -28,6 +29,7 @@ const Routing = () => {
                 <Route path="/my-portfolio/terms-of-service" element={<TermsofService />} />
                 <Route path="/my-portfolio/projects/currencyconverter" element={<CurrencyConverter/>} />
                 <Route path="/my-portfolio/projects/BreathSync" element={<BreathSync/>} />
+                <Route path="/my-portfolio/projects/Yogasana" element={<Yogasana/>} />
             </Routes>
             
             <Footer />
