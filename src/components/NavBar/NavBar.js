@@ -37,6 +37,7 @@ const NavBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link as={Link} to="/my-portfolio/home" onClick={handleClick}>Home</Nav.Link>
+                            <Nav.Link as={Link} to="/my-portfolio/blog" onClick={handleClick}>Blog</Nav.Link>
                             <Nav.Link as={Link} to="/my-portfolio/projects" onClick={handleClick}>Projects</Nav.Link>
                             <Nav.Link as={Link} to="/my-portfolio/about" onClick={handleClick}>About</Nav.Link>
                             <Nav.Link as={Link} to="/my-portfolio/privacy-policy" onClick={handleClick}>Privacy</Nav.Link>

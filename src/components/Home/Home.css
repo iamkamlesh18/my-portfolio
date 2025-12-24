@@ -31,7 +31,7 @@ body {
     justify-content: center;
     flex-wrap: wrap; /* Allow items to wrap in case of small screens */
     max-width: 1200px;
-    
+    gap: 24px;
 }
 
 .home-image {
@@ -41,6 +41,34 @@ body {
     margin-right: 20px; /* Space between image and text content */
     z-index: 3;
 }
+
+.home-image-wrap {
+    flex: 0 0 320px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-flex { align-items: center; }
+
+.text-content { max-width: 700px; }
+
+.home-card {
+    margin-top: 12px;
+    padding: 16px;
+    border-radius: 10px;
+    background: linear-gradient(180deg,#fff,#f7fbff);
+    box-shadow: 0 8px 20px rgba(10,102,194,0.06);
+}
+
+.home-meta {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.home-meta li { font-weight: 600; color: #333; }
 
 .text-content {
     width: 100%;

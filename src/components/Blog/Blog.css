@@ -1,0 +1,53 @@
+.blog-page {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.blog-hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-head h2 {
+  color: #0a66c2; /* Salesforce-ish blue accent */
+  margin-bottom: 6px;
+}
+
+.blog-summary {
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.blog-content p {
+  color: #333;
+  line-height: 1.55;
+}
+
+.blog-content h4 {
+  margin-top: 12px;
+}
+
+.blog-content ul {
+  margin-left: 18px;
+}
+
+@media (max-width: 600px) {
+  .blog-page { padding: 20px 10px; }
+}
