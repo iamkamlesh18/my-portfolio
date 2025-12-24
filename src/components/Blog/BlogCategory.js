@@ -7,24 +7,40 @@ const BlogCategory = () => {
   const { category } = useParams();
   const cat = blogData[category];
 
-  if (!cat) return <div className="blog-page"><p>Category not found.</p></div>;
+  if (!cat) {
+    return <div className="blog-layout">Category not found.</div>;
+  }
 
   return (
-    <div className="blog-page">
-      <header className="blog-hero">
+    <div className="blog-layout">
+      {/* Sidebar */}
+      <aside className="blog-sidebar">
+        {/* Parent category name */}
+        <h2>{cat.title}</h2>
+
+        {/* Numbered topics */}
+        <ul>
+          {cat.posts.map((post, index) => (
+            <li key={post.slug}>
+              <Link to={`/my-portfolio/blog/${category}/${post.slug}`}>
+                {index + 1}. {post.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </aside>
+
+      {/* Main Content */}
+      <main className="blog-content">
+        <Link to="/my-portfolio/blog" className="back-btn">
+          <span className="back-arrow">←</span>
+          <span className="back-text"> Back</span>
+        </Link>
+
+
         <h1>{cat.title}</h1>
         <p>{cat.description}</p>
-      </header>
-
-      <section className="post-list">
-        {cat.posts.map((p) => (
-          <article key={p.slug} className="post-card">
-            <h3>{p.title}</h3>
-            <p className="post-summary">{p.summary}</p>
-            <Link to={`/my-portfolio/blog/${category}/${p.slug}`} className="read-more">Read topic →</Link>
-          </article>
-        ))}
-      </section>
+      </main>
     </div>
   );
 };

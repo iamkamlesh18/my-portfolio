@@ -1,5 +1,6 @@
-/* Home.css - Modern Dark Theme */
+/* Home.css – Modern Dark Theme */
 
+/* ========== Layout ========== */
 .home {
     padding: 60px 20px;
     background: linear-gradient(180deg, rgba(15, 15, 30, 0.8) 0%, rgba(26, 26, 46, 0.6) 100%);
@@ -22,6 +23,12 @@
     align-items: center;
 }
 
+.text-content {
+    max-width: 700px;
+    z-index: 2;
+}
+
+/* ========== Image ========== */
 .home-image-wrap {
     flex: 0 0 340px;
     display: flex;
@@ -37,33 +44,71 @@
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
+    0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
 }
 
-.text-content {
-    max-width: 700px;
-    z-index: 2;
+@media (prefers-reduced-motion: reduce) {
+    .home-image {
+        animation: none;
+    }
 }
 
+/* ========== Heading (NAME) ========== */
 .home-heading {
     font-size: 3.2rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #06b6d4,
+        #22d3ee,
+        #8b5cf6
+    );
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 16px;
-    line-height: 1.2;
+
+    animation: gradientShift 8s ease infinite;
 }
 
-.home-intro {
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.home-heading:hover {
+    text-shadow:
+        0 0 20px rgba(139, 92, 246, 0.35),
+        0 0 40px rgba(6, 182, 212, 0.25);
+}
+
+/* ========== Typing Text ========== */
+.typing-text {
     font-size: 1.3rem;
-    color: #a0aec0;
-    margin-bottom: 24px;
     font-weight: 500;
+    color: #a0aec0;
+    margin-bottom: 28px;
+    min-height: 1.6em;
 }
 
+.cursor {
+    display: inline-block;
+    margin-left: 4px;
+    color: #06b6d4;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* ========== Card ========== */
 .home-card {
     padding: 24px;
     border-radius: 16px;
@@ -85,21 +130,98 @@
     margin-bottom: 12px;
 }
 
-.home-meta {
-    list-style: none;
+/* ========== Contact ========== */
+.home-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #cbd5e1;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.contact-item:hover {
+    color: #63b3ed;
+}
+
+/* ========== Social ========== */
+.home-social {
     display: flex;
     gap: 16px;
-    margin-top: 12px;
-    padding: 0;
+    margin-top: 18px;
     flex-wrap: wrap;
 }
 
-.home-meta li {
+.home-social a {
+    font-size: 0.9rem;
     font-weight: 600;
-    color: #06b6d4;
-    font-size: 0.95rem;
+    color: #8b5cf6;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
+.home-social a:hover {
+    color: #06b6d4;
+}
+
+/* ========== CTA Button ========== */
+.home-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.home-btn {
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.home-btn.primary {
+    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    color: #0f172a;
+    box-shadow:
+        0 8px 24px rgba(139, 92, 246, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.home-btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 32px rgba(139, 92, 246, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    opacity: 0.95;
+}
+
+.home-btn.primary:active {
+    transform: translateY(-1px);
+}
+
+.home-btn.primary:focus-visible {
+    outline: 2px solid #06b6d4;
+    outline-offset: 3px;
+}
+
+/* ========== Responsive ========== */
 @media (max-width: 768px) {
     .home {
         padding: 40px 20px;
@@ -118,7 +240,7 @@
         font-size: 2.2rem;
     }
 
-    .home-intro {
+    .typing-text {
         font-size: 1.1rem;
     }
 }

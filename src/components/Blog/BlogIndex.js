@@ -4,24 +4,27 @@ import './Blog.css';
 import { blogData } from './data';
 
 const BlogIndex = () => {
-  const categories = Object.keys(blogData);
-
   return (
-    <div className="blog-index">
-      <header className="blog-hero">
-        <h1>Knowledge Hub — Salesforce</h1>
-        <p>Curated articles and interview questions grouped by topic.</p>
-      </header>
+    <div className="blog-layout">
+      {/* Sidebar: Categories */}
+      <aside className="blog-sidebar">
+        <h2>Categories</h2>
+        <ul>
+          {Object.keys(blogData).map((key) => (
+            <li key={key}>
+              <Link to={`/my-portfolio/blog/${key}`}>
+                {blogData[key].title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </aside>
 
-      <section className="category-grid">
-        {categories.map((key) => (
-          <Link key={key} to={`/my-portfolio/blog/${key}`} className="category-card">
-            <h3>{blogData[key].title}</h3>
-            <p>{blogData[key].description}</p>
-            <div className="card-meta">{blogData[key].posts.length} topics</div>
-          </Link>
-        ))}
-      </section>
+      {/* Main Content */}
+      <main className="blog-content">
+        <h1>Salesforce Learning</h1>
+        <p>Select a category to start learning.</p>
+      </main>
     </div>
   );
 };
