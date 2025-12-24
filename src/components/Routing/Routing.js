@@ -7,8 +7,6 @@ import Blog from '../Blog/Blog';
 import BlogCategory from '../Blog/BlogCategory';
 import BlogPost from '../Blog/BlogPost';
 import NavBar from '../NavBar/NavBar';
-import Privacy from '../Privacy-Policy/privacy-policy';
-import TermsofService from '../Terms-of-Service/terms-of-service';
 import Footer from '../Footer/Footer';
 import About from '../About/About';
 import CurrencyConverter from '../Projects/CurrencyConverter';
@@ -25,8 +23,6 @@ const Routing = () => {
                 <Route path="/my-portfolio/blog" element={<Blog />} />
                 <Route path="/my-portfolio/projects" element={<Projects />} />
                 <Route path="/my-portfolio/about" element={<About />} />
-                <Route path="/my-portfolio/privacy-policy" element={<Privacy />} />
-                <Route path="/my-portfolio/terms-of-service" element={<TermsofService />} />
                 <Route path="/my-portfolio/projects/currencyconverter" element={<CurrencyConverter/>} />
                 <Route path="/my-portfolio/projects/BreathSync" element={<BreathSync/>} />
                 <Route path="/my-portfolio/blog/:category" element={<BlogCategory/>} />
