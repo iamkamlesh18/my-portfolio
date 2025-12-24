@@ -7,7 +7,6 @@ import Blog from '../Blog/Blog';
 import BlogCategory from '../Blog/BlogCategory';
 import BlogPost from '../Blog/BlogPost';
 import NavBar from '../NavBar/NavBar';
-import Footer from '../Footer/Footer';
 import About from '../About/About';
 import CurrencyConverter from '../Projects/CurrencyConverter';
 import BreathSync from '../Projects/BreathSync';
@@ -29,7 +28,7 @@ const Routing = () => {
                 <Route path="/my-portfolio/blog/:category/:post" element={<BlogPost/>} />
             </Routes>
             
-            <Footer />
+            
         </Router>
     );
 };
