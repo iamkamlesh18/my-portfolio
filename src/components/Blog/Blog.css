@@ -1,53 +1,35 @@
-.blog-page {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+.blog-page { padding: 36px 20px; max-width: 1100px; margin: 0 auto; }
+
+.blog-hero { text-align: center; margin-bottom: 28px; color: #eaf4ff; }
+
+.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+
+.category-card {
+  display: block;
+  padding: 22px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(10,102,194,0.12), rgba(0,0,0,0.03));
+  color: #042a4a;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+  transition: transform .22s ease, box-shadow .22s ease;
 }
 
-.blog-hero {
-  text-align: center;
-  margin-bottom: 30px;
-}
+.category-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,6,23,0.09); }
 
-.blog-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
+.category-card h3 { margin-bottom: 8px; font-size: 1.25rem; color: #013a7a; }
+.category-card p { color: #184a75; margin-bottom: 12px; }
+.card-meta { font-weight: 700; color: #0a2745; }
 
-.blog-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
+.post-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.post-card { padding: 18px; border-radius: 12px; background: #fff; box-shadow: 0 8px 22px rgba(3,10,30,0.04); }
+.post-card h3 { color: #062e57; }
+.post-summary { color: #405d78; }
+.read-more { display:inline-block; margin-top: 12px; color: #0066cc; font-weight:700; }
 
-.blog-card-head h2 {
-  color: #0a66c2; /* Salesforce-ish blue accent */
-  margin-bottom: 6px;
-}
+.post-detail { background: #fff; padding: 26px; border-radius: 12px; box-shadow: 0 8px 30px rgba(3,10,30,0.06); }
+.post-nav { margin-bottom: 12px; color: #1b3f67; }
+.post-content { color: #223544; line-height: 1.7; }
 
-.blog-summary {
-  color: #555;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
+@media (max-width: 640px) { .category-grid, .post-list { grid-template-columns: 1fr; } .blog-page { padding: 20px 12px; } }
 
-.blog-content p {
-  color: #333;
-  line-height: 1.55;
-}
-
-.blog-content h4 {
-  margin-top: 12px;
-}
-
-.blog-content ul {
-  margin-left: 18px;
-}
-
-@media (max-width: 600px) {
-  .blog-page { padding: 20px 10px; }
-}

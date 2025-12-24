@@ -4,6 +4,8 @@ import Home from '../Home/Home';
 // removed unused pages (Blog, Services, Yogasana) to simplify site
 import Projects from '../Projects/Projects';
 import Blog from '../Blog/Blog';
+import BlogCategory from '../Blog/BlogCategory';
+import BlogPost from '../Blog/BlogPost';
 import NavBar from '../NavBar/NavBar';
 import Privacy from '../Privacy-Policy/privacy-policy';
 import TermsofService from '../Terms-of-Service/terms-of-service';
@@ -27,6 +29,8 @@ const Routing = () => {
                 <Route path="/my-portfolio/terms-of-service" element={<TermsofService />} />
                 <Route path="/my-portfolio/projects/currencyconverter" element={<CurrencyConverter/>} />
                 <Route path="/my-portfolio/projects/BreathSync" element={<BreathSync/>} />
+                <Route path="/my-portfolio/blog/:category" element={<BlogCategory/>} />
+                <Route path="/my-portfolio/blog/:category/:post" element={<BlogPost/>} />
             </Routes>
             
             <Footer />
