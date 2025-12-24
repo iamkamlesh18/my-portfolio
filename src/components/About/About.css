@@ -1,77 +1,72 @@
-/* About.css */
+/* About.css - Modern Dark Theme */
 
-/* General styles for the about section */
 .about {
-    padding: 40px 20px;
-    background-color: white;
-    min-height: 100vh; /* Full height for the section */
+    padding: 60px 20px;
+    background: linear-gradient(180deg, rgba(15, 15, 30, 0.8) 0%, rgba(26, 26, 46, 0.6) 100%);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Ensures vertical alignment */
 }
 
-/* Heading styles */
-.about-heading {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* Flex container for about items */
-.about-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Individual about item styles */
-.about-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+.about section {
+    max-width: 1100px;
     width: 100%;
-    max-width: 300px;
+}
+
+.about-heading {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 40px;
     text-align: center;
-    transition: box-shadow 0.3s ease-in-out;
-    margin-bottom: 20px; /* Ensure space between items */
 }
 
-/* Heading within about items */
-.about-item h3 {
-    font-size: 1.5rem;
-    color: #007BFF; /* Primary color for headings */
-    margin-bottom: 10px;
+.about-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
 }
 
-/* Paragraph within about items */
-.about-item p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
+.about-item {
+    padding: 28px;
+    border-radius: 16px;
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
-/* Hover effect for about items */
 .about-item:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: rgba(139, 92, 246, 0.12);
+    border-color: rgba(139, 92, 246, 0.4);
+    transform: translateY(-8px);
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-   
+.about-item h3 {
+    font-size: 1.4rem;
+    color: #06b6d4;
+    margin-bottom: 12px;
+}
 
-    .about-info {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px; /* Reduce gap on small screens */
+.about-item p {
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 40px 20px;
     }
 
-    .about-item {
-        width: 90%; /* Ensure items fit within screen width */
-        max-width: none; /* Remove max-width for full width on small screens */
-        margin-bottom: 10px; /* Increase space below items */
+    .about-heading {
+        font-size: 2rem;
+    }
+
+    .about-info {
+        grid-template-columns: 1fr;
     }
 }

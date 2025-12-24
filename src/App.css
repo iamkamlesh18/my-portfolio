@@ -1,6 +1,5 @@
-/* App.css (Global Styles) */
+/* App.css - Modern Dark Theme with Vibrant Accents */
 
-/* Global Box Sizing */
 *,
 *::before,
 *::after {
@@ -9,18 +8,18 @@
     padding: 0;
 }
 
-/* Global Font and Color Settings */
 body {
-    font-family: 'Quicksand', sans-serif;
-    color: #333; /* Default text color */
-    line-height: 1.6;
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+    color: #e0e0e0;
+    line-height: 1.65;
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Ensure body takes up full height */
+    min-height: 100vh;
     display: block;
-    
+    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+    background-attachment: fixed;
+}
 
-/* Ensure the root and app layout use flex so footer is pushed to bottom when content is short */
 html, #root {
     height: 100%;
 }
@@ -32,7 +31,23 @@ html, #root {
 }
 
 .main-content {
-    flex: 1 0 auto; /* Grow to fill available space so footer goes to bottom when content is short */
+    flex: 1 0 auto;
 }
-    
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8b5cf6 0%, #06b6d4 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #a78bfa 0%, #22d3ee 100%);
 }

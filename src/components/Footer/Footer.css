@@ -1,48 +1,59 @@
-/* Footer.css */
+/* Footer.css - Modern Dark Theme */
 
-/* Footer styles - will sit at bottom via app flex layout */
 .footer {
     width: 100%;
-    background: linear-gradient(to right, #ffffff, #dcfeed);
-    border-top: 1px solid #e7e7e7;
-    padding: 18px 20px; /* Slightly increased padding for better spacing */
+    background: linear-gradient(90deg, rgba(15, 15, 30, 0.95) 0%, rgba(26, 26, 46, 0.95) 100%);
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 32px 20px;
     text-align: center;
-    font-size: 1rem; /* Adjusted font size for better readability */
+    font-size: 0.95rem;
+    color: #a0aec0;
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 12px;
+    font-weight: 500;
 }
 
 .footer-links {
-    margin-top: 10px; /* Adjusted margin for better spacing */
+    margin-top: 12px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 16px;
 }
 
 .footer-links a {
-    color: #333;
+    color: #06b6d4;
     text-decoration: none;
-    margin: 0 15px; /* Increased margin for better spacing */
-    font-weight: bold; /* Made the links bold for emphasis */
+    font-weight: 700;
+    transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-    text-decoration: underline;
+    color: #8b5cf6;
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
 }
 
-/* Responsive design for small screens */
 @media (max-width: 768px) {
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
+    .footer {
+        padding: 24px 16px;
     }
 
-    .footer-links a {
-        margin: 4px 0; /* Adjusted margin for vertical spacing */
-        font-size: 0.9rem; /* Slightly smaller font size for smaller screens */
+    .footer-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
     }
 }
