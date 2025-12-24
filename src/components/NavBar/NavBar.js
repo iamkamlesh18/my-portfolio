@@ -12,7 +12,7 @@ const NavBar = () => {
 
     return (
         <div>
-            <Navbar bg="dark" variant="dark" expand="lg" fixed="top" className="navbar-custom" expanded={expanded}>
+            <Navbar bg="light" variant="light" expand="lg" className="navbar-custom" expanded={expanded}>
                 <Container>
                     <Navbar.Brand as={Link} to="/my-portfolio/">
                         <div className="navbar-logo">
@@ -37,10 +37,10 @@ const NavBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link as={Link} to="/my-portfolio/home" onClick={handleClick}>Home</Nav.Link>
-                            <Nav.Link as={Link} to="/my-portfolio/blog" onClick={handleClick}>Blog</Nav.Link>
                             <Nav.Link as={Link} to="/my-portfolio/projects" onClick={handleClick}>Projects</Nav.Link>
-                            <Nav.Link as={Link} to="/my-portfolio/services" onClick={handleClick}>Services</Nav.Link>
-                            <Nav.Link as={Link} to="/my-portfolio/about" onClick={handleClick}>About Us</Nav.Link>
+                            <Nav.Link as={Link} to="/my-portfolio/about" onClick={handleClick}>About</Nav.Link>
+                            <Nav.Link as={Link} to="/my-portfolio/privacy-policy" onClick={handleClick}>Privacy</Nav.Link>
+                            <Nav.Link as={Link} to="/my-portfolio/terms-of-service" onClick={handleClick}>Terms</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

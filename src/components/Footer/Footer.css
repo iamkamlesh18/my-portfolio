@@ -1,17 +1,13 @@
 /* Footer.css */
 
-/* Ensure the footer is fixed at the bottom of the viewport */
+/* Footer styles - will sit at bottom via app flex layout */
 .footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
     width: 100%;
     background: linear-gradient(to right, #ffffff, #dcfeed);
     border-top: 1px solid #e7e7e7;
-    padding: 15px 20px; /* Increased padding for better spacing */
+    padding: 18px 20px; /* Slightly increased padding for better spacing */
     text-align: center;
     font-size: 1rem; /* Adjusted font size for better readability */
-    z-index: 1000; /* Ensures footer is above other content */
 }
 
 .footer-content {

@@ -5,8 +5,10 @@ import './App.css';
 
 function App() {
     return (
-        <div>
-            <Routing />
+        <div className="app-root">
+            <main className="main-content">
+                <Routing />
+            </main>
         </div>
     );
 }

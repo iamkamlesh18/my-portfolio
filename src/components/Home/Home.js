@@ -1,25 +1,23 @@
 import './Home.css';
-import web2Image from '../img/web2.png'; // Import the image correctly
+// If you have an image for Salesforce theme, place it in src/components/img and import here
+// import salesforceImage from '../img/salesforce.png';
 
 const Home = () => {
     return (
         <div className="home">
             <div className="home-content">
-                <img
-                    src={web2Image}
-                    alt="3D Business Elements Digital Illustrator"
-                    className="home-image"
-                />
-
                 <div className="text-content">
-                    <h1 className="home-heading">Welcome to My Portfolio</h1>
+                    <h1 className="home-heading">Hi 👋 I am Kamlesh Patil</h1>
                     <p className="home-intro">
-                        I am Kamlesh Patil, a passionate developer with expertise in modern 
-                        web technologies like React, Angular, and Node.js. I specialize in creating 
-                        responsive, high-performance websites and applications that deliver an exceptional 
-                        user experience. Explore my projects, blog, and services to see how I can help
-                        bring your digital ideas to life, whether it's through full-stack development, 
-                        UI/UX design, or digital strategy consulting.
+                        Salesforce Developer | Salesforce Admin → DevOps | Apex | LWC | Flows | OmniStudio | CPQ
+                    </p>
+                    <p>
+                        Senior Software Engineer (Salesforce) at Capgemini. I build scalable, enterprise-grade
+                        CRM solutions using Apex, Lightning Web Components, Flows, and integrations. Currently
+                        focusing on OmniStudio & CPQ.
+                    </p>
+                    <p>
+                        Contact: patilkamlesh1811@gmail.com • +91-7770000347
                     </p>
                 </div>
             </div>

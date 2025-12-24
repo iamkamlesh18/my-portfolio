@@ -17,8 +17,22 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh; /* Ensure body takes up full height */
+    display: block;
+    
+
+/* Ensure the root and app layout use flex so footer is pushed to bottom when content is short */
+html, #root {
+    height: 100%;
+}
+
+.app-root {
     display: flex;
     flex-direction: column;
-    
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1 0 auto; /* Grow to fill available space so footer goes to bottom when content is short */
+}
     
 }
