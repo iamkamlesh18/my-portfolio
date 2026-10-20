@@ -1,5 +1,3 @@
-/* About.css - Modern Dark Theme */
-
 .about {
     padding: 60px 20px;
     background: linear-gradient(
@@ -7,16 +5,11 @@
         rgba(15, 15, 30, 0.8) 0%,
         rgba(26, 26, 46, 0.6) 100%
     );
-
-    /* 🔑 REMOVE min-height */
     display: flex;
     justify-content: center;
-    align-items: flex-start;
 }
 
-
-
-.about section {
+.about-section {
     max-width: 1100px;
     width: 100%;
 }
@@ -28,39 +21,130 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
     text-align: center;
 }
 
-.about-info {
+.about-intro {
+    max-width: 900px;
+    margin: 0 auto 44px;
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.about-intro p + p {
+    margin-top: 14px;
+}
+
+.about-block {
+    margin-top: 44px;
+}
+
+.about-block > h2,
+.about-item h2 {
+    color: #e0e7ff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .about-item {
-    padding: 28px;
+    padding: 26px;
     border-radius: 16px;
     background: rgba(139, 92, 246, 0.08);
     border: 1px solid rgba(139, 92, 246, 0.2);
     backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .about-item:hover {
     background: rgba(139, 92, 246, 0.12);
     border-color: rgba(139, 92, 246, 0.4);
-    transform: translateY(-8px);
+    transform: translateY(-4px);
 }
 
 .about-item h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #06b6d4;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
-.about-item p {
+.about-item p,
+.about-item li {
     color: #cbd5e1;
+    line-height: 1.7;
+}
+
+.experience-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+}
+
+.experience-heading span {
+    color: #a0aec0;
+}
+
+.experience-item ul {
+    padding-left: 20px;
+    margin: 14px 0 0;
+}
+
+.experience-item li + li {
+    margin-top: 8px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    padding: 9px 14px;
+    border-radius: 999px;
+    color: #cbd5e1;
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    line-height: 1.5;
+}
+
+.about-details {
+    margin-top: 44px;
+}
+
+.about-details .about-item h3:not(:first-of-type) {
+    margin-top: 22px;
+}
+
+.engineering-philosophy {
+    margin: 48px 0 0;
+    padding: 26px;
+    border-left: 3px solid #06b6d4;
+    background: rgba(6, 182, 212, 0.06);
+    color: #cbd5e1;
+}
+
+.engineering-philosophy p {
+    color: #e0e7ff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.engineering-philosophy cite {
+    font-style: normal;
     line-height: 1.7;
 }
 
@@ -73,7 +157,22 @@
         font-size: 2rem;
     }
 
-    .about-info {
+    .about-block > h2,
+    .about-item h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-item {
+        transition: none;
+    }
+
+    .about-item:hover {
+        transform: none;
     }
 }

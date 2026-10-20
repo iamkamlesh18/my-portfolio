@@ -3,8 +3,8 @@ import './Home.css';
 import web2Image from '../img/web2.png';
 
 const roles = [
-    'Salesforce Admin → Developer → DevOps → OmniStudio & CPQ',
-    'Building scalable, enterprise-grade Salesforce solutions'
+    'Senior Software Engineer | SDET | Automation Test Engineer',
+    'Java · Selenium · Serenity BDD · Cucumber · REST Assured'
 ];
 
 const Home = () => {
@@ -45,7 +45,7 @@ const Home = () => {
                 <div className="home-image-wrap">
                     <img
                         src={web2Image}
-                        alt="Salesforce Developer Illustration"
+                        alt="Illustration of an engineer working at a computer"
                         className="home-image"
                     />
                 </div>
@@ -55,7 +55,6 @@ const Home = () => {
                         Kamlesh Patil
                     </h1>
 
-                    {/* Rotating typing text */}
                     <p className="typing-text">
                         {text}
                         <span className="cursor">|</span>
@@ -63,24 +62,12 @@ const Home = () => {
 
                     <div className="home-card">
                         <p>
-                            Senior Software Engineer (Salesforce) at Capgemini with 3+ years of
-                            enterprise experience. I build scalable, enterprise-grade Salesforce
-                            solutions across Admin, Development, Automation, DevOps, OmniStudio,
-                            and CPQ.
+                            Senior Software Engineer and SDET at Capgemini with 4+ years of
+                            experience in automation testing and quality engineering. I build
+                            reliable UI and API automation for enterprise applications using
+                            Java, Selenium WebDriver, Serenity BDD, Cucumber and REST Assured.
                         </p>
 
-                        {/* Contact */}
-                        <div className="home-contact">
-                            <a href="mailto:patilkamlesh1811@gmail.com" className="contact-item">
-                                📧 <span>patilkamlesh1811@gmail.com</span>
-                            </a>
-
-                            <a href="tel:+917770000347" className="contact-item">
-                                📞 <span>+91&nbsp;7770000347</span>
-                            </a>
-                        </div>
-
-                        {/* Social */}
                         <div className="home-social">
                             <a href="https://www.linkedin.com/in/iamkamlesh18/" target="_blank" rel="noopener noreferrer">
                                 🔗 LinkedIn
@@ -88,15 +75,17 @@ const Home = () => {
                             <a href="https://github.com/iamkamlesh18" target="_blank" rel="noopener noreferrer">
                                 💻 GitHub
                             </a>
-                            <a href="https://www.instagram.com/thekalpesh9/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.youtube.com/channel/UCzSKULVwWDGQ5fOHIvoMJrw" target="_blank" rel="noopener noreferrer">
+                                ▶️ YouTube
+                            </a>
+                            <a href="https://www.instagram.com/thekalp_18n/" target="_blank" rel="noopener noreferrer">
                                 📸 Instagram
                             </a>
-                            <a href="https://www.facebook.com/itzzmekp" target="_blank" rel="noopener noreferrer">
-                                📘 Facebook
+                            <a href="https://www.salesforce.com/trailblazer/iamkamlesh18" target="_blank" rel="noopener noreferrer">
+                                🏅 Trailhead
                             </a>
                         </div>
 
-                        {/* CTA */}
                         <div className="home-actions">
                             <a
                                 href="https://iamkamlesh18.github.io/iamkamlesh18/"
@@ -104,7 +93,13 @@ const Home = () => {
                                 rel="noopener noreferrer"
                                 className="home-btn primary"
                             >
-                                View Full CV & Profile ↗
+                                View Developer Profile ↗
+                            </a>
+                            <a
+                                href="/my-portfolio/about"
+                                className="home-btn secondary"
+                            >
+                                Explore My Experience
                             </a>
                         </div>
                     </div>

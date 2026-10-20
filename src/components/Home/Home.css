@@ -226,6 +226,23 @@
     outline-offset: 3px;
 }
 
+.home-btn.secondary {
+    color: #cbd5e1;
+    border: 1px solid rgba(139, 92, 246, 0.45);
+    background: rgba(139, 92, 246, 0.08);
+}
+
+.home-btn.secondary:hover {
+    color: #fff;
+    border-color: #06b6d4;
+    transform: translateY(-3px);
+}
+
+.home-btn.secondary:focus-visible {
+    outline: 2px solid #06b6d4;
+    outline-offset: 3px;
+}
+
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
     .home {
