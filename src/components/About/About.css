@@ -1,178 +1,297 @@
-.about {
-    padding: 60px 20px;
-    background: linear-gradient(
-        180deg,
-        rgba(15, 15, 30, 0.8) 0%,
-        rgba(26, 26, 46, 0.6) 100%
-    );
-    display: flex;
-    justify-content: center;
+.about-page {
+    min-height: 100vh;
 }
 
-.about-section {
-    max-width: 1100px;
-    width: 100%;
+.about-hero {
+    padding: 92px max(7vw, calc((100vw - 1050px) / 2)) 76px;
+    color: var(--paper-light);
+    background: var(--forest-dark);
 }
 
-.about-heading {
-    font-size: 2.8rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 28px;
-    text-align: center;
+.about-hero .eyebrow {
+    color: #e2bb78;
 }
 
-.about-intro {
+.about-hero h1 {
     max-width: 900px;
-    margin: 0 auto 44px;
-    color: #cbd5e1;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(3.25rem, 7vw, 5.6rem);
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    line-height: 1;
+}
+
+.about-hero h1 em {
+    color: #e2bb78;
+    font-weight: 400;
+}
+
+.about-lede {
+    max-width: 670px;
+    margin: 25px 0 0;
+    color: rgba(251, 250, 246, 0.76);
+    font-size: 1.06rem;
     line-height: 1.8;
-    font-size: 1.05rem;
 }
 
-.about-intro p + p {
-    margin-top: 14px;
+.about-content {
+    width: min(1000px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 78px 0 110px;
 }
 
-.about-block {
-    margin-top: 44px;
+.about-story {
+    max-width: 720px;
+    margin: 0 auto;
 }
 
-.about-block > h2,
-.about-item h2 {
-    color: #e0e7ff;
-    font-size: 1.8rem;
+.about-content h2 {
     margin-bottom: 20px;
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+.about-story > p:not(.eyebrow),
+.about-capabilities > div:first-child > p:not(.eyebrow),
+.about-learning > div > p:not(.eyebrow),
+.about-book > p:not(.eyebrow) {
+    color: #56635b;
+    font-size: 1rem;
+    line-height: 1.9;
 }
 
-.about-item {
-    padding: 26px;
-    border-radius: 16px;
-    background: rgba(139, 92, 246, 0.08);
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    backdrop-filter: blur(10px);
-    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+.about-story > p:not(.eyebrow) {
+    margin: 0 0 18px;
 }
 
-.about-item:hover {
-    background: rgba(139, 92, 246, 0.12);
-    border-color: rgba(139, 92, 246, 0.4);
-    transform: translateY(-4px);
+.about-story .text-link {
+    margin-top: 5px;
 }
 
-.about-item h3 {
-    font-size: 1.2rem;
-    color: #06b6d4;
-    margin-bottom: 10px;
+.about-manifesto {
+    position: relative;
+    margin: 85px 0;
+    padding: 45px 55px;
+    border-left: 3px solid var(--clay);
+    background: #e9e5db;
 }
 
-.about-item p,
-.about-item li {
-    color: #cbd5e1;
-    line-height: 1.7;
+.manifesto-mark {
+    position: absolute;
+    top: 6px;
+    left: 20px;
+    color: rgba(189, 103, 72, 0.35);
+    font-family: var(--serif);
+    font-size: 5rem;
+    line-height: 1;
 }
 
-.experience-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 4px 16px;
+.about-manifesto > p:not(.eyebrow) {
+    position: relative;
+    max-width: 820px;
+    margin: 0 0 20px;
+    font-family: var(--serif);
+    font-size: clamp(1.65rem, 3.2vw, 2.5rem);
+    line-height: 1.28;
 }
 
-.experience-heading span {
-    color: #a0aec0;
-}
-
-.experience-item ul {
-    padding-left: 20px;
-    margin: 14px 0 0;
-}
-
-.experience-item li + li {
-    margin-top: 8px;
-}
-
-.skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
+.about-manifesto .eyebrow {
     margin: 0;
 }
 
-.skill-list li {
-    padding: 9px 14px;
-    border-radius: 999px;
-    color: #cbd5e1;
-    background: rgba(6, 182, 212, 0.08);
-    border: 1px solid rgba(6, 182, 212, 0.2);
-    line-height: 1.5;
+.about-practice {
+    padding-bottom: 85px;
 }
 
-.about-details {
-    margin-top: 44px;
+.practice-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+    margin-top: 30px;
 }
 
-.about-details .about-item h3:not(:first-of-type) {
-    margin-top: 22px;
+.practice-grid article {
+    min-height: 220px;
+    padding: 21px;
+    border: 1px solid var(--line);
+    background: rgba(251, 250, 246, 0.56);
 }
 
-.engineering-philosophy {
-    margin: 48px 0 0;
-    padding: 26px;
-    border-left: 3px solid #06b6d4;
-    background: rgba(6, 182, 212, 0.06);
-    color: #cbd5e1;
+.practice-grid article > span {
+    color: var(--clay);
+    font-size: 0.72rem;
+    font-weight: 800;
 }
 
-.engineering-philosophy p {
-    color: #e0e7ff;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 8px;
+.practice-grid h3 {
+    margin: 20px 0 8px;
+    font-family: var(--serif);
+    font-size: 1.27rem;
+    line-height: 1.2;
 }
 
-.engineering-philosophy cite {
-    font-style: normal;
+.practice-grid p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
     line-height: 1.7;
 }
 
-@media (max-width: 768px) {
-    .about {
-        padding: 40px 20px;
+.about-capabilities {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.25fr);
+    gap: 65px;
+    padding: 53px 0 70px;
+    border-top: 1px solid var(--line);
+}
+
+.about-capabilities h2,
+.about-learning h2 {
+    font-size: clamp(2.1rem, 4vw, 3rem);
+}
+
+.capability-list {
+    border-top: 1px solid var(--line);
+}
+
+.capability-list article {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 13px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.capability-list article > span {
+    color: var(--clay);
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.capability-list h3 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 1.2rem;
+}
+
+.capability-list p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.about-learning {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: 55px;
+    padding: 55px 0 65px;
+    border-top: 1px solid var(--line);
+}
+
+.about-learning h2 {
+    margin-bottom: 12px;
+}
+
+.certification-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.certification-list span {
+    padding: 7px 11px;
+    border: 1px solid rgba(33, 75, 63, 0.2);
+    color: var(--forest);
+    font-size: 0.77rem;
+    font-weight: 700;
+}
+
+.learning-note {
+    align-self: center;
+    margin: 0;
+    padding: 22px;
+    border-left: 2px solid var(--gold);
+    color: var(--muted);
+    background: #e9e5db;
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.about-book {
+    margin-top: 45px;
+    padding: 45px;
+    color: var(--paper-light);
+    background: var(--forest);
+}
+
+.about-book .eyebrow {
+    color: #e2bb78;
+}
+
+.about-book h2 {
+    max-width: 730px;
+}
+
+.about-book > p:not(.eyebrow) {
+    max-width: 730px;
+    color: rgba(251, 250, 246, 0.75);
+}
+
+.about-book .button {
+    margin-top: 8px;
+}
+
+@media (max-width: 850px) {
+    .practice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .about-heading {
-        font-size: 2rem;
-    }
-
-    .about-block > h2,
-    .about-item h2 {
-        font-size: 1.5rem;
-    }
-
-    .about-grid {
+    .about-capabilities {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .about-item {
-        transition: none;
+@media (max-width: 620px) {
+    .about-hero {
+        padding: 68px 24px 54px;
     }
 
-    .about-item:hover {
-        transform: none;
+    .about-content {
+        width: calc(100% - 36px);
+        padding-top: 56px;
+    }
+
+    .about-manifesto {
+        margin: 58px 0;
+        padding: 36px 24px 27px 33px;
+    }
+
+    .manifesto-mark {
+        left: 7px;
+    }
+
+    .about-practice {
+        padding-bottom: 56px;
+    }
+
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-grid article {
+        min-height: auto;
+    }
+
+    .about-learning {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .about-book {
+        margin-top: 22px;
+        padding: 28px 23px;
     }
 }

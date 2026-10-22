@@ -4,45 +4,46 @@ import './Blog.css';
 import { blogData } from './data';
 
 const BlogCategory = () => {
-  const { category } = useParams();
-  const cat = blogData[category];
+    const { category: categorySlug } = useParams();
+    const category = blogData.find((item) => item.slug === categorySlug);
 
-  if (!cat) {
-    return <div className="blog-layout">Category not found.</div>;
-  }
+    if (!category) {
+        return (
+            <main className="journal-empty">
+                <p className="eyebrow">PATH NOT FOUND</p>
+                <h1>This chapter took a different turn.</h1>
+                <Link className="text-link" to="/journal">Return to the reading room →</Link>
+            </main>
+        );
+    }
 
-  return (
-    <div className="blog-layout">
-      {/* Sidebar */}
-      <aside className="blog-sidebar">
-        {/* Parent category name */}
-        <h2>{cat.title}</h2>
-
-        {/* Numbered topics */}
-        <ul>
-          {cat.posts.map((post, index) => (
-            <li key={post.slug}>
-              <Link to={`/my-portfolio/blog/${category}/${post.slug}`}>
-                {index + 1}. {post.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </aside>
-
-      {/* Main Content */}
-      <main className="blog-content">
-        <Link to="/my-portfolio/blog" className="back-btn">
-          <span className="back-arrow">←</span>
-          <span className="back-text"> Back</span>
-        </Link>
-
-
-        <h1>{cat.title}</h1>
-        <p>{cat.description}</p>
-      </main>
-    </div>
-  );
+    return (
+        <main className="category-page">
+            <Link className="back-link" to="/journal">← All learning paths</Link>
+            <header className="category-hero">
+                <span className="path-number">{category.number}</span>
+                <p className="eyebrow">LEARNING PATH · {category.posts.length} CHAPTERS</p>
+                <h1>{category.title}</h1>
+                <p>{category.description}</p>
+            </header>
+            <div className="category-chapters">
+                {category.posts.map((item, index) => (
+                    <Link
+                        className="chapter-row"
+                        key={item.slug}
+                        to={`/journal/${category.slug}/${item.slug}`}
+                    >
+                        <span className="chapter-index">{String(index + 1).padStart(2, '0')}</span>
+                        <span className="chapter-copy">
+                            <strong>{item.title}</strong>
+                            <span>{item.summary}</span>
+                        </span>
+                        <span className="chapter-time">{item.minutes} min <span aria-hidden="true">↗</span></span>
+                    </Link>
+                ))}
+            </div>
+        </main>
+    );
 };
 
 export default BlogCategory;

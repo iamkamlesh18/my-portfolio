@@ -6,11 +6,9 @@ import './App.css';
 function App() {
     return (
         <div className="app-root">
-            <main className="main-content">
+            <div className="main-content">
                 <Routing />
-            </main>
-
-            {/* Footer must be here */}
+            </div>
             <Footer />
         </div>
     );
