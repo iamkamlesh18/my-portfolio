@@ -2,110 +2,54 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './About.css';
 
-const capabilities = [
-    ['Software testing', 'Manual, functional, exploratory, regression, and risk-based testing'],
-    ['Test automation', 'Java, Selenium, Serenity BDD, Cucumber, TestNG, and reusable test frameworks'],
-    ['API and mobile testing', 'REST Assured, Postman, mobile apps, and cross-browser testing'],
-    ['Team delivery', 'Agile Scrum, bug tracking, Git, CI/CD, and mainframe integration']
+const interviewAnswers = [
+    {
+        question: 'Tell me about yourself.',
+        answer: 'I’m Kamlesh Patil, and I have 5 years of experience in software testing. My work has grown from understanding requirements and testing features to automation. I use this book to prepare clear answers about testing concepts, tools, and the work I have done.'
+    },
+    {
+        question: 'Tell me about your Rainbow project.',
+        answer: 'Rainbow was a custom automation framework used by my project team. We ran its scripts locally and through Jenkins. I explain how I used it, what I personally contributed, and how the execution results supported the team.'
+    },
+    {
+        question: 'How do you explain a test automation framework at an architectural level?',
+        answer: 'I describe the responsibilities and how they connect: readable test scenarios, reusable test code, application-facing helpers, configuration and test data, execution, and reporting. I explain the reason for each boundary, how changes are kept maintainable, and which parts I personally designed or improved. I distinguish general framework principles from the exact components in Rainbow.'
+    },
+    {
+        question: 'How did local execution differ from Jenkins execution?',
+        answer: 'Local runs helped me develop, debug, and reproduce automation quickly. Jenkins gave the team a shared place to run scripts and review results. I explain the actual run configuration and pipeline behavior from my project rather than assuming every Jenkins setup works the same way.'
+    },
+    {
+        question: 'What topics does this interview book cover?',
+        answer: 'It moves from testing foundations and the testing lifecycle to manual test design, Agile and BDD, Java, Selenium, Serenity, automation frameworks, APIs, CI, and project interview answers.'
+    }
 ];
-
-const certifications = ['AZ-900', 'AI-900', 'AZ-204', 'Agentforce QA'];
 
 const About = () => (
     <main className="about-page">
         <header className="about-hero">
-            <p className="eyebrow">ABOUT ME</p>
-            <h1>My work<br /><em>in software testing.</em></h1>
+            <p className="eyebrow">MY INTERVIEW PREPARATION</p>
+            <h1>My testing journey,<br /><em>in question and answer.</em></h1>
             <p className="about-lede">
-                I’m Kamlesh Patil. I have 5 years of experience testing software.
-                This page helps me remember what I have worked on, what I have learned, and what
-                I can talk about in an interview.
+                A personal preparation book for my 5 years in software testing. I keep each answer
+                direct, simple, and grounded in what I know and have done.
             </p>
         </header>
 
         <div className="about-content">
-            <section className="about-story">
-                <p className="eyebrow">MY PROJECT EXPERIENCE</p>
-                <h2>What I have worked on</h2>
-                <p>
-                    I have tested banking and financial services, fleet management, web and mobile
-                    apps, and automated tests. In banking, I learned that a bug can affect a
-                    customer’s money, transactions, and trust.
-                </p>
-                <p>
-                    Fleet management was a new area for me. I learned how vehicles, drivers,
-                    tracking, and reports fit together. Before testing a product, I first learn
-                    who uses it and how their work gets done.
-                </p>
-                <p>
-                    On a cooperative banking project, I worked with shared Gherkin scenarios and
-                    reusable test steps. Fixing unreliable tests taught me that automation needs
-                    careful design and regular maintenance.
-                </p>
-                <Link className="text-link" to="/projects">See my project notes <span aria-hidden="true">↗</span></Link>
-            </section>
-
-            <aside className="about-manifesto">
-                <span className="manifesto-mark" aria-hidden="true">“</span>
-                <p>I test software to find problems early and help protect the people who use it.</p>
-                <span className="eyebrow">WHY I TEST</span>
-            </aside>
-
-            <section className="about-practice">
-                <p className="eyebrow">HOW I WORK</p>
-                <h2>Ask questions, check the details, and work as a team.</h2>
-                <div className="practice-grid">
-                    <article><span>01</span><h3>Learn the feature</h3><p>Find out who uses it, what they need, and what could go wrong.</p></article>
-                    <article><span>02</span><h3>Check more than the usual case</h3><p>Test limits, errors, changes, connections, and recovery.</p></article>
-                    <article><span>03</span><h3>Work with the team</h3><p>Share questions and test results early so problems are easier to fix.</p></article>
-                    <article><span>04</span><h3>Keep learning</h3><p>Try things, learn from mistakes, and share what helped.</p></article>
-                </div>
-            </section>
-
-            <section className="about-capabilities">
-                <div>
-                    <p className="eyebrow">SKILLS AND TOOLS</p>
-                    <h2>What I have used</h2>
-                    <p>These are the main types of testing and tools I have used in my work.</p>
-                </div>
-                <div className="capability-list">
-                    {capabilities.map(([title, description], index) => (
-                        <article key={title}>
-                            <span>{String(index + 1).padStart(2, '0')}</span>
-                            <div><h3>{title}</h3><p>{description}</p></div>
-                        </article>
-                    ))}
-                </div>
-            </section>
-
-            <section className="about-learning">
-                <div>
-                    <p className="eyebrow">WHAT I AM LEARNING</p>
-                    <h2>I keep building my skills.</h2>
-                    <p>
-                        I have studied Azure, AI, Azure development, and Agentforce QA. These
-                        certifications show what I have learned, alongside the experience I have
-                        gained from real projects.
-                    </p>
-                    <div className="certification-list">
-                        {certifications.map((certification) => <span key={certification}>{certification}</span>)}
-                    </div>
-                </div>
-                <p className="learning-note">
-                    I am also learning about cloud tools, AI for QA, mobile automation, and
-                    current testing practices. I want to understand how they help in real work.
-                </p>
-            </section>
-
-            <section className="about-book">
-                <p className="eyebrow">WHY I MADE THIS SITE</p>
-                <h2>                A place to tell my story and practise explaining my work.</h2>
-                <p>
-                    I built this site to introduce myself, explain my projects in simple language,
-                    and practise talking about what I learned. My project stories come first; the
-                    testing notes give more detail when I want to explore a topic.
-                </p>
-                <Link className="button button-primary" to="/journal">Read my notes <span aria-hidden="true">↗</span></Link>
+            <section className="about-story" aria-label="Interview questions and answers">
+                {interviewAnswers.map(({ question, answer }, index) => (
+                    <article className="reader-section" key={question}>
+                        <span className="reader-section-number">{String(index + 1).padStart(2, '0')}</span>
+                        <div>
+                            <p className="eyebrow">QUESTION {String(index + 1).padStart(2, '0')}</p>
+                            <h2>{question}</h2>
+                            <p className="answer-label">SIMPLE ANSWER</p>
+                            <p>{answer}</p>
+                        </div>
+                    </article>
+                ))}
+                <Link className="button button-primary" to="/journal">Open my interview book <span aria-hidden="true">↗</span></Link>
             </section>
         </div>
     </main>

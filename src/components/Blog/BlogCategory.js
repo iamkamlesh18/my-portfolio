@@ -12,7 +12,7 @@ const BlogCategory = () => {
             <main className="journal-empty">
                 <p className="eyebrow">TOPIC NOT FOUND</p>
                 <h1>I couldn’t find that topic.</h1>
-                <Link className="text-link" to="/journal">Back to my notes →</Link>
+                <Link className="text-link" to="/journal">Back to my interview book →</Link>
             </main>
         );
     }
@@ -22,7 +22,7 @@ const BlogCategory = () => {
             <Link className="back-link" to="/journal">← All topics</Link>
             <header className="category-hero">
                 <span className="path-number">{category.number}</span>
-                <p className="eyebrow">TOPIC · {category.posts.length} NOTES</p>
+                <p className="eyebrow">CHAPTER · {category.posts.length} INTERVIEW QUESTIONS</p>
                 <h1>{category.title}</h1>
                 <p>{category.description}</p>
             </header>
@@ -36,9 +36,9 @@ const BlogCategory = () => {
                         <span className="chapter-index">{String(index + 1).padStart(2, '0')}</span>
                         <span className="chapter-copy">
                             <strong>{item.title}</strong>
-                            <span>{item.summary}</span>
+                            <span>{item.question}</span>
                         </span>
-                        <span className="chapter-time">{item.minutes} min <span aria-hidden="true">↗</span></span>
+                        <span className="chapter-time">Q&amp;A <span aria-hidden="true">↗</span></span>
                     </Link>
                 ))}
             </div>

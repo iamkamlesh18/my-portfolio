@@ -24,9 +24,9 @@ const BlogPost = () => {
     if (!article) {
         return (
             <main className="journal-empty">
-                <p className="eyebrow">NOTE NOT FOUND</p>
-                <h1>I couldn’t find that note.</h1>
-                <Link className="text-link" to="/journal">Back to my notes →</Link>
+                <p className="eyebrow">CHAPTER NOT FOUND</p>
+                <h1>I couldn’t find that interview chapter.</h1>
+                <Link className="text-link" to="/journal">Back to my interview book →</Link>
             </main>
         );
     }
@@ -36,76 +36,57 @@ const BlogPost = () => {
             <div className="reading-progress" style={{ width: `${readingProgress}%` }} aria-hidden="true" />
             <main className="reader">
                 <nav className="reader-breadcrumbs" aria-label="Breadcrumb">
-                    <Link to="/journal">My notes</Link>
+                    <Link to="/journal">Interview book</Link>
                     <span aria-hidden="true">/</span>
                     <Link to={`/journal/${article.categorySlug}`}>{article.category.title}</Link>
                 </nav>
 
                 <header className="reader-header">
-                    <p className="eyebrow">{article.category.title} · {article.minutes} MIN READ</p>
-                    <h1>{article.title}</h1>
-                    <p className="eyebrow">IN SHORT</p>
-                    <p className="reader-deck">{article.summary}</p>
+                    <p className="eyebrow">{article.category.title} · INTERVIEW QUESTION</p>
+                    <h1>{article.question}</h1>
+                    <p className="eyebrow">A SIMPLE ANSWER</p>
+                    <p className="reader-deck">{article.interviewAnswer || article.summary}</p>
                     <div className="reader-byline">
                         <span className="author-mark">KP</span>
-                        <span>Notes by Kamlesh Patil</span>
+                        <span>My interview preparation</span>
                         <span className="reader-meter">{readingProgress}% read</span>
                     </div>
                 </header>
 
-                {article.interviewAnswer && article.practiceQuestion && (
-                    <section className="reader-interview" aria-label="Interview practice">
-                        <p className="eyebrow">PRACTISE EXPLAINING THIS PROJECT</p>
-                        <h2>A simple answer to learn from</h2>
-                        <p>{article.interviewAnswer}</p>
-                        <details>
-                            <summary>Now try this question yourself</summary>
-                            <p>{article.practiceQuestion}</p>
-                        </details>
-                    </section>
-                )}
-
                 <article className="reader-body">
-                    <details className="reader-details">
-                        <summary>Read the detailed notes <span>for interview preparation</span></summary>
-                        {article.sections.map((section, index) => (
-                            <section className="reader-section" key={section.heading}>
-                                <span className="reader-section-number">{String(index + 1).padStart(2, '0')}</span>
-                                <div>
-                                    <h2>{section.heading}</h2>
-                                    {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-                                    {section.bullets && (
-                                        <ul>
-                                            {section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
-                                        </ul>
-                                    )}
-                                </div>
-                            </section>
-                        ))}
-                        {article.reflection && (
-                            <aside className="reflection-card">
-                                <p className="eyebrow">THINK ABOUT THIS</p>
-                                <p>{article.reflection}</p>
-                            </aside>
-                        )}
-                    </details>
+                    {article.sections.map((section, index) => (
+                        <section className="reader-section" key={section.heading}>
+                            <span className="reader-section-number">{String(index + 1).padStart(2, '0')}</span>
+                            <div>
+                                <p className="eyebrow">QUESTION {String(index + 1).padStart(2, '0')}</p>
+                                <h2>{section.question}</h2>
+                                <p className="answer-label">SIMPLE ANSWER</p>
+                                {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                                {section.bullets && (
+                                    <ul>
+                                        {section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                                    </ul>
+                                )}
+                            </div>
+                        </section>
+                    ))}
                 </article>
 
                 <footer className="reader-navigation">
                     {previous ? (
                         <Link to={`/journal/${previous.categorySlug}/${previous.slug}`} className="reader-nav-card">
-                            <span>← PREVIOUS NOTE</span>
+                            <span>← PREVIOUS CHAPTER</span>
                             <strong>{previous.title}</strong>
                         </Link>
                     ) : <span />}
                     {next ? (
                         <Link to={`/journal/${next.categorySlug}/${next.slug}`} className="reader-nav-card next">
-                            <span>NEXT NOTE →</span>
+                            <span>NEXT CHAPTER →</span>
                             <strong>{next.title}</strong>
                         </Link>
                     ) : <Link className="reader-nav-card next" to="/journal">
-                        <span>BACK TO ALL NOTES →</span>
-                        <strong>Choose another topic</strong>
+                        <span>BACK TO INTERVIEW BOOK →</span>
+                        <strong>Choose another chapter</strong>
                     </Link>}
                 </footer>
             </main>
