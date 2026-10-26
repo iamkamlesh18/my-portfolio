@@ -1,13 +1,13 @@
-# Kamlesh Patil — Quality Engineering Field Guide
+# Kamlesh Patil — QA Engineer Portfolio
 
-An experience-led portfolio and reading space about software testing, quality engineering, and building automation that teams can trust.
+A personal portfolio introducing Kamlesh Patil, his five years in quality assurance, and his project journey through banking, fleet management, and test automation. Project stories include simple interview answers and questions to practise; learning notes offer more detail about testing and tools.
 
 ## Explore the site
 
-- **Start here** — quality principles and featured project lessons
-- **The field guide** — searchable chapters across testing foundations, manual testing, Agile and BDD, automation, engineering practice, and project stories
-- **Project stories** — lessons from banking, fleet management, and cooperative banking work
-- **About Kamlesh** — the engineer’s perspective, working philosophy, and learning journey
+- **Start here** — a personal introduction and a chronological project journey
+- **My projects** — simple interview answers and practice questions for each project
+- **About me** — work experience, approach, skills, and learning journey
+- **Learning notes** — searchable chapters about testing foundations, Agile and BDD, automation, and engineering practice
 
 The journal content lives in `src/components/Blog/data.js`. Add chapters there and group them under a learning path; the reading room and chapter navigation are generated from that data.
 

@@ -449,6 +449,49 @@
     padding-top: 22px;
 }
 
+.reader-interview {
+    margin: 30px 0 12px;
+    padding: 25px 30px;
+    border-left: 3px solid var(--clay);
+    background: #eae6dc;
+}
+
+.reader-interview .eyebrow {
+    margin-bottom: 9px;
+}
+
+.reader-interview h2 {
+    margin: 0 0 12px;
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.reader-interview > p:not(.eyebrow) {
+    margin: 0;
+    color: #4f5c55;
+    line-height: 1.8;
+}
+
+.reader-interview details {
+    margin-top: 17px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+}
+
+.reader-interview summary {
+    color: var(--forest);
+    font-size: 0.9rem;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.reader-interview details p {
+    margin: 10px 0 0;
+    font-family: var(--serif);
+    font-size: 1.15rem;
+}
+
 .reader-details {
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
@@ -722,6 +765,10 @@
     .reader-section {
         grid-template-columns: 26px 1fr;
         gap: 9px;
+    }
+
+    .reader-interview {
+        padding: 22px;
     }
 
     .reader-section h2 {

@@ -78,9 +78,51 @@
     line-height: 1.75;
 }
 
+.story-answer,
+.story-practice {
+    max-width: 760px;
+    margin: 18px 0 0;
+    border: 1px solid var(--line);
+    background: rgba(251, 250, 246, 0.62);
+}
+
+.story-answer summary,
+.story-practice summary {
+    padding: 13px 16px;
+    color: var(--forest);
+    font-size: 0.9rem;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.story-answer[open] summary,
+.story-practice[open] summary {
+    border-bottom: 1px solid var(--line);
+}
+
+.story-answer > p,
+.story-practice > p {
+    margin: 0;
+    padding: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.story-practice > p {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.15rem;
+}
+
+.story-full-link {
+    margin-top: 17px;
+}
+
 .story-arrow {
     padding-top: 7px;
     color: var(--clay);
+    font-family: var(--serif);
+    font-size: 1.1rem;
 }
 
 .work-principle {

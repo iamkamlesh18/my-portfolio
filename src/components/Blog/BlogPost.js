@@ -53,6 +53,18 @@ const BlogPost = () => {
                     </div>
                 </header>
 
+                {article.interviewAnswer && article.practiceQuestion && (
+                    <section className="reader-interview" aria-label="Interview practice">
+                        <p className="eyebrow">PRACTISE EXPLAINING THIS PROJECT</p>
+                        <h2>A simple answer to learn from</h2>
+                        <p>{article.interviewAnswer}</p>
+                        <details>
+                            <summary>Now try this question yourself</summary>
+                            <p>{article.practiceQuestion}</p>
+                        </details>
+                    </section>
+                )}
+
                 <article className="reader-body">
                     <details className="reader-details">
                         <summary>Read the detailed notes <span>for interview preparation</span></summary>

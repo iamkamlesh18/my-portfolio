@@ -197,6 +197,113 @@
     padding-bottom: 112px;
 }
 
+.introduction-section {
+    display: grid;
+    grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.35fr);
+    gap: 70px;
+    padding-top: 105px;
+    padding-bottom: 88px;
+}
+
+.introduction-heading h2,
+.journey-section h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 1.1;
+}
+
+.introduction-answer {
+    padding: 28px 32px;
+    border-left: 3px solid var(--clay);
+    background: rgba(251, 250, 246, 0.7);
+}
+
+.introduction-answer p {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    line-height: 1.7;
+}
+
+.introduction-answer span {
+    display: block;
+    margin-top: 17px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.journey-section {
+    padding-top: 25px;
+    padding-bottom: 100px;
+}
+
+.journey-section .section-heading {
+    align-items: end;
+}
+
+.journey-list {
+    border-top: 1px solid var(--line);
+}
+
+.journey-card {
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    gap: 20px;
+    padding: 28px 12px;
+    border-bottom: 1px solid var(--line);
+}
+
+.journey-number {
+    padding-top: 3px;
+    color: var(--clay);
+    font-family: var(--serif);
+    font-size: 1.5rem;
+}
+
+.journey-card .eyebrow {
+    margin-bottom: 8px;
+    font-size: 0.65rem;
+}
+
+.journey-card h3 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 500;
+}
+
+.journey-card > div > p:not(.eyebrow) {
+    max-width: 700px;
+    margin: 8px 0 14px;
+    color: var(--muted);
+}
+
+.home-more-reading {
+    padding: 72px 24px 84px;
+    text-align: center;
+}
+
+.home-more-reading h2 {
+    max-width: 740px;
+    margin: 0 auto;
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.2;
+}
+
+.home-more-reading > p:not(.eyebrow) {
+    max-width: 620px;
+    margin: 14px auto 20px;
+    color: var(--muted);
+}
+
 .section-intro h2,
 .section-heading h2,
 .featured-copy h2,
@@ -465,7 +572,7 @@
         width: min(38vw, 330px);
     }
 
-    .principles-section {
+    .introduction-section {
         gap: 38px;
     }
 
@@ -500,11 +607,31 @@
         bottom: 15px;
     }
 
-    .principles-section {
+    .introduction-section {
         grid-template-columns: 1fr;
         gap: 34px;
         padding-top: 76px;
-        padding-bottom: 76px;
+        padding-bottom: 58px;
+    }
+
+    .introduction-answer {
+        padding: 23px 22px;
+    }
+
+    .journey-section {
+        padding-bottom: 72px;
+    }
+
+    .journey-section .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .journey-card {
+        grid-template-columns: 35px 1fr;
+        gap: 10px;
+        padding: 23px 0;
     }
 
     .featured-inner {

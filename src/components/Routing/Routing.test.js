@@ -19,7 +19,20 @@ describe('GitHub Pages hash routing', () => {
         expect(screen.getByRole('heading', {
             name: 'How a banking project changed my view of automation'
         })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'A simple answer to learn from' })).toBeInTheDocument();
+        expect(screen.getByText('Now try this question yourself')).toBeInTheDocument();
         expect(screen.getByText('Notes by Kamlesh Patil')).toBeInTheDocument();
+    });
+
+    test('shows the three project stories with answers to practise', () => {
+        window.location.hash = '#/projects';
+        render(<Routing />);
+
+        expect(screen.getByRole('heading', { name: /My project journey/ })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Union Bank' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Elements Fleet Management' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Cooperative Banking' })).toBeInTheDocument();
+        expect(screen.getAllByText('Read a simple interview answer')).toHaveLength(3);
     });
 
     test('opens the personal Peace page from the home-page button', () => {

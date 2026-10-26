@@ -1,4 +1,4 @@
-import { allPosts, blogData } from './data';
+import { allPosts, blogData, projectStories } from './data';
 
 describe('quality engineering reading library', () => {
     test('every learning path and chapter has complete reading content', () => {
@@ -17,5 +17,17 @@ describe('quality engineering reading library', () => {
     test('chapter routes are unique across the library', () => {
         const routes = allPosts.map((article) => `${article.categorySlug}/${article.slug}`);
         expect(new Set(routes).size).toBe(routes.length);
+    });
+
+    test('project stories have interview answers and practice questions in order', () => {
+        expect(projectStories.map((story) => story.projectName)).toEqual([
+            'Union Bank',
+            'Elements Fleet Management',
+            'Cooperative Banking'
+        ]);
+        projectStories.forEach((story) => {
+            expect(story.interviewAnswer).toBeTruthy();
+            expect(story.practiceQuestion).toBeTruthy();
+        });
     });
 });

@@ -28,13 +28,14 @@ const plainLanguageCopy = {
     'cooperative-bank-automation': ['How a banking project changed my view of automation', 'Shared scenarios and reliable tests helped our team spend less time fixing test runs.']
 };
 
-const post = (slug, title, summary, minutes, sections, reflection) => ({
+const post = (slug, title, summary, minutes, sections, reflection, interview = null) => ({
     slug,
     title: plainLanguageCopy[slug]?.[0] || title,
     summary: plainLanguageCopy[slug]?.[1] || summary,
     minutes,
     sections,
-    reflection
+    reflection,
+    ...(interview || {})
 });
 
 export const blogData = [
@@ -210,19 +211,31 @@ export const blogData = [
                 { heading: 'The domain changes the meaning of a defect', paragraphs: ['My first major project was in banking. It made the consequence of software behavior tangible: a defect can affect a customer’s money, a transaction, trust, and operational or compliance obligations. That context changed how I approached test execution.', 'I began to think less about whether a checklist was complete and more about whether the evidence was strong enough to give the team confidence in a critical workflow.'] },
                 { heading: 'Understand the business before the test case', paragraphs: ['A tester can write many cases while still missing the reason a feature exists. Ask what problem is being solved, who uses the workflow, what state changes, and what a failure would mean. Understanding the domain helps reveal missing scenarios that a literal reading of one screen may not suggest.'] },
                 { heading: 'Test the journey and its boundaries', bullets: ['Trace the flow from authentication through the meaningful business outcome.', 'Consider duplicate submissions, timeouts, rejected requests, and recovery.', 'Check consistency between what the customer sees and what the system records.', 'Prioritize high-impact scenarios and communicate residual risk clearly.'] }
-            ], 'What downstream business effect might follow from a defect that looks small in the UI?'),
+            ], 'What downstream business effect might follow from a defect that looks small in the UI?', {
+                projectName: 'Union Bank',
+                interviewAnswer: 'My first major project was in banking. I learned that a software problem can affect a customer’s money and trust, so I first needed to understand the business workflow. I focused on important risks, checked the full journey and its boundaries, and shared clear evidence with the team.',
+                practiceQuestion: 'Tell me about your first banking project. What did it teach you about testing?'
+            }),
             post('elements-fleet-management', 'Fleet management: every domain has complexity', 'A different product domain reinforced the value of learning workflows before choosing tests.', 7, [
                 { heading: 'Do not mistake unfamiliarity for simplicity', paragraphs: ['My next major project was Elements, a fleet management platform. At first it seemed simpler than banking. As I learned the workflows, I saw a different kind of complexity: vehicles, drivers, tracking, reporting, and operational decisions connected across the product.', 'The lesson was clear: every application is a business system. A domain that is new to a tester can hide important rules behind familiar-looking screens.'] },
                 { heading: 'Map the operational workflow', paragraphs: ['Start with the people doing the work and the decisions they need to make. Follow how data enters the system, changes state, appears in reports, and informs the next action. Test realistic variations such as missing data, delayed updates, or role-specific access where they apply.', 'Domain understanding gives test design direction. It helps distinguish a cosmetic discrepancy from a report that could lead to a poor operational decision.'] },
                 { heading: 'Carry fundamentals; relearn context', bullets: ['Reuse risk analysis, exploratory testing, and clear defect reporting.', 'Ask domain experts to explain the words and workflow behind a feature.', 'Validate reports against meaningful source data and business rules.', 'Reassess automation candidates after learning which operations repeat.'] }
-            ], 'What would you need to learn from a domain expert before testing a new workflow?'),
+            ], 'What would you need to learn from a domain expert before testing a new workflow?', {
+                projectName: 'Elements Fleet Management',
+                interviewAnswer: 'My next project was Elements, a fleet management platform. I worked on feature and regression testing. I learned how vehicles, drivers, tracking, and reports connect, so I tested how information moves through the work process instead of looking at one screen on its own.',
+                practiceQuestion: 'How did you approach testing a fleet management product?'
+            }),
             post('cooperative-bank-automation', 'The cooperative bank project that changed my view of automation', 'How shared Gherkin, reusable behavior, and better synchronization made automation feel like engineering.', 10, [
                 { heading: 'One understanding across the team', paragraphs: ['On a cooperative banking project, business analysts wrote requirements directly in Gherkin. Business, development, and QA used the same feature files as a shared source of understanding. Acceptance criteria could also become executable documentation, reducing the need to translate behavior into separate, disconnected documents.', 'The team worked in 14-day Agile sprints. Grooming, planning, execution, demos, and retrospectives were useful when they brought feedback forward and kept business behavior visible—not simply because the calendar required meetings.'] },
                 { heading: 'Automation as software engineering', paragraphs: ['Before this project, I thought of automation as “write a script, run it, report the result.” The work changed that view. A sustainable framework needs design, clear boundaries, maintainable abstractions, reliable data, useful diagnostics, and collaboration with the people who understand the product.', 'The framework combined Java, Selenium, Serenity BDD, and Cucumber with a Page Object Model. Reusable step definitions handled common behavior such as logging in, so new scenarios could focus on what was unique to the business workflow. Dynamic locators were centralized and parameterized where appropriate.'] },
                 { heading: 'Two reliability problems worth solving', paragraphs: ['Database refreshes changed test-user credentials, leading to failed logins, lockouts, interrupted runs, and manual recovery. The recurring pain prompted a better question: why were we repeatedly solving the same setup problem? Improving credential-change handling reduced avoidable disruption. A robust solution must remain bounded and safe: use approved test identities and secret management, avoid repeated blind guesses, and stop before lockout thresholds.', 'A loading spinner created another source of flaky failures because it could disappear quickly or take much longer. Waiting for the spinner to become invisible replaced timing assumptions with a condition tied to the application state.'] },
                 { heading: 'Make the contribution visible', paragraphs: ['The improvements reduced manual intervention and made regression runs more dependable. We demonstrated the changes to teammates, leads, and managers, explained the business value, and received positive project and client feedback. Recognition followed the impact—not simply the amount of code written.', 'The lesson I kept was that useful contributions are often practical and repeatable. Small reliability improvements can restore trust in a suite and return attention to business risks.'] },
                 { heading: 'What I would repeat', bullets: ['Write scenarios with business partners and keep behavior readable.', 'Automate reusable workflows, not every screen interaction.', 'Replace fixed waits with bounded, observable state conditions.', 'Treat test data and credentials as part of system reliability and security.', 'Explain the impact honestly and include the team in the result.'] }
-            ], 'Which recurring manual intervention in your test process could be prevented safely at its source?')
+            ], 'Which recurring manual intervention in your test process could be prevented safely at its source?', {
+                projectName: 'Cooperative Banking',
+                interviewAnswer: 'On a cooperative banking project, our team used Gherkin scenarios with Java, Selenium, Serenity BDD, and Cucumber. I contributed to making regression automation more reliable by reusing common steps and waiting for the application to finish loading instead of relying on a fixed delay. We also improved how we handled test-user credential changes. This reduced manual intervention and made test runs more dependable.',
+                practiceQuestion: 'What was one automation problem you helped improve, and what changed afterward?'
+            })
         ]
     }
 ];
@@ -233,3 +246,7 @@ export const allPosts = blogData.flatMap((category) =>
 
 export const getPost = (categorySlug, postSlug) =>
     allPosts.find((item) => item.categorySlug === categorySlug && item.slug === postSlug);
+
+export const projectStories = allPosts
+    .filter((item) => item.categorySlug === 'project-stories')
+    .map((item, index) => ({ ...item, number: String(index + 1).padStart(2, '0') }));

@@ -17,7 +17,7 @@ const About = () => (
             <p className="eyebrow">ABOUT ME</p>
             <h1>My work<br /><em>in software testing.</em></h1>
             <p className="about-lede">
-                I’m Kamlesh Patil. I have more than 4.5 years of experience testing software.
+                I’m Kamlesh Patil. I have 5 years of experience testing software.
                 This page helps me remember what I have worked on, what I have learned, and what
                 I can talk about in an interview.
             </p>
@@ -99,10 +99,11 @@ const About = () => (
 
             <section className="about-book">
                 <p className="eyebrow">WHY I MADE THIS SITE</p>
-                <h2>A place to remember my work and prepare for interviews.</h2>
+                <h2>                A place to tell my story and practise explaining my work.</h2>
                 <p>
-                    I use this site to keep my project stories, testing notes, and interview
-                    reminders in one place. I will add more as I learn and work on new things.
+                    I built this site to introduce myself, explain my projects in simple language,
+                    and practise talking about what I learned. My project stories come first; the
+                    testing notes give more detail when I want to explore a topic.
                 </p>
                 <Link className="button button-primary" to="/journal">Read my notes <span aria-hidden="true">↗</span></Link>
             </section>
