@@ -7,8 +7,7 @@ import BlogCategory from '../Blog/BlogCategory';
 import BlogPost from '../Blog/BlogPost';
 import NavBar from '../NavBar/NavBar';
 import About from '../About/About';
-import CurrencyConverter from '../Projects/CurrencyConverter';
-import BreathSync from '../Projects/BreathSync';
+import Peace from '../Projects/Peace';
 import { blogData, getPost } from '../Blog/data';
 
 const ScrollToTop = () => {
@@ -26,7 +25,7 @@ const PageMetadata = () => {
 
     React.useEffect(() => {
         const [section, categorySlug, postSlug] = pathname.split('/').filter(Boolean);
-        let pageTitle = 'Kamlesh Patil — Quality Engineering Field Guide';
+        let pageTitle = 'Kamlesh Patil — QA Notes';
 
         if (section === 'journal' || section === 'blog') {
             if (postSlug) {
@@ -34,14 +33,12 @@ const PageMetadata = () => {
             } else if (categorySlug) {
                 pageTitle = blogData.find((category) => category.slug === categorySlug)?.title || 'Learning path not found';
             } else {
-                pageTitle = 'The Field Guide';
+                pageTitle = 'My QA Notes';
             }
         } else if (section === 'projects') {
-            pageTitle = categorySlug === 'currencyconverter'
-                ? 'Currency Converter'
-                : categorySlug === 'BreathSync'
-                    ? 'BreathSync'
-                    : 'Project Stories';
+            pageTitle = 'My Project Notes';
+        } else if (section === 'peace') {
+            pageTitle = 'Peace';
         } else if (section === 'about') {
             pageTitle = 'About Kamlesh';
         } else if (section && section !== 'home') {
@@ -57,8 +54,8 @@ const PageMetadata = () => {
 const NotFound = () => (
     <main className="journal-empty">
         <p className="eyebrow">PAGE NOT FOUND</p>
-        <h1>This page isn’t in the field guide.</h1>
-        <a className="text-link" href="#/">Return to the beginning →</a>
+        <h1>I couldn’t find that page.</h1>
+        <a className="text-link" href="#/">Back to the home page →</a>
     </main>
 );
 
@@ -78,8 +75,7 @@ const Routing = () => (
             <Route path="/blog/:category/:post" element={<BlogPost />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
-            <Route path="/projects/currencyconverter" element={<CurrencyConverter />} />
-            <Route path="/projects/BreathSync" element={<BreathSync />} />
+            <Route path="/peace" element={<Peace />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
     </HashRouter>

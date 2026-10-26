@@ -449,6 +449,28 @@
     padding-top: 22px;
 }
 
+.reader-details {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.reader-details summary {
+    padding: 18px 4px;
+    color: var(--forest);
+    cursor: pointer;
+    font-weight: 750;
+}
+
+.reader-details summary span {
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 400;
+}
+
+.reader-details[open] summary {
+    border-bottom: 1px solid var(--line);
+}
+
 .reader-section {
     display: grid;
     grid-template-columns: 44px 1fr;

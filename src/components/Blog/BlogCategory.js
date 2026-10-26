@@ -10,19 +10,19 @@ const BlogCategory = () => {
     if (!category) {
         return (
             <main className="journal-empty">
-                <p className="eyebrow">PATH NOT FOUND</p>
-                <h1>This chapter took a different turn.</h1>
-                <Link className="text-link" to="/journal">Return to the reading room →</Link>
+                <p className="eyebrow">TOPIC NOT FOUND</p>
+                <h1>I couldn’t find that topic.</h1>
+                <Link className="text-link" to="/journal">Back to my notes →</Link>
             </main>
         );
     }
 
     return (
         <main className="category-page">
-            <Link className="back-link" to="/journal">← All learning paths</Link>
+            <Link className="back-link" to="/journal">← All topics</Link>
             <header className="category-hero">
                 <span className="path-number">{category.number}</span>
-                <p className="eyebrow">LEARNING PATH · {category.posts.length} CHAPTERS</p>
+                <p className="eyebrow">TOPIC · {category.posts.length} NOTES</p>
                 <h1>{category.title}</h1>
                 <p>{category.description}</p>
             </header>

@@ -1,0 +1,150 @@
+.peace-page {
+    min-height: 75vh;
+    padding-bottom: 80px;
+}
+
+.peace-hero {
+    padding: 90px 24px 65px;
+    color: var(--paper-light);
+    background: var(--forest-dark);
+    text-align: center;
+}
+
+.peace-hero .eyebrow {
+    color: #e2bb78;
+}
+
+.peace-hero h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(3.4rem, 8vw, 5.6rem);
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.peace-hero h1 em {
+    color: #e2bb78;
+}
+
+.peace-hero > p:last-child {
+    max-width: 540px;
+    margin: 20px auto 0;
+    color: rgba(251, 250, 246, 0.76);
+}
+
+.breathing-card {
+    width: min(560px, calc(100% - 36px));
+    margin: 55px auto 0;
+    padding: 38px;
+    border: 1px solid var(--line);
+    background: var(--paper-light);
+    text-align: center;
+}
+
+.breathing-card h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 400;
+}
+
+.breathing-hint {
+    max-width: 420px;
+    margin: 12px auto 0;
+    color: var(--muted);
+}
+
+.breathing-orb {
+    display: grid;
+    width: 180px;
+    height: 180px;
+    margin: 30px auto 15px;
+    place-items: center;
+    border: 1px solid rgba(33, 75, 63, 0.15);
+    border-radius: 50%;
+    color: var(--forest-dark);
+    background: #e6eee8;
+    font-size: 1.15rem;
+    transition: background-color 4s ease-in-out;
+}
+
+.breathing-orb.is-active {
+    animation: breathing-cycle 8s ease-in-out infinite;
+    background: #d4e5da;
+}
+
+.breathing-count {
+    margin: 0;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.breathing-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.breathing-actions .button {
+    cursor: pointer;
+}
+
+.breathing-actions .button-quiet {
+    color: var(--forest);
+    border-color: var(--line);
+}
+
+.breathing-actions .button-quiet:hover {
+    color: var(--forest-dark);
+    border-color: var(--forest);
+}
+
+.peace-note {
+    margin: 24px 0 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.peace-footer {
+    display: flex;
+    width: min(560px, calc(100% - 36px));
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 22px auto 0;
+}
+
+.peace-footer p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+@keyframes breathing-cycle {
+    0%, 100% { transform: scale(0.94); }
+    50% { transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .breathing-orb {
+        animation: none;
+        transition: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .peace-hero {
+        padding: 68px 24px 52px;
+    }
+
+    .breathing-card {
+        padding: 30px 20px;
+    }
+
+    .peace-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

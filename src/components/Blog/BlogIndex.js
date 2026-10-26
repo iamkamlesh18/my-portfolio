@@ -19,16 +19,16 @@ const BlogIndex = () => {
     return (
         <div className="journal-page">
             <header className="journal-hero">
-                <p className="eyebrow">THE QUALITY ENGINEERING FIELD GUIDE</p>
-                <h1>A practical book for<br /><em>thinking testers.</em></h1>
+                <p className="eyebrow">MY QA NOTES</p>
+                <h1>What I’ve learned<br /><em>about testing.</em></h1>
                 <p className="journal-hero-copy">
-                    Not another list of tools. A growing, experience-led guide to understanding
-                    risk, building useful automation, and doing the work well with a team.
+                    Notes from my projects and studies. I use them to remember what I’ve learned
+                    and prepare for interviews.
                 </p>
                 <div className="journal-stats" aria-label="Library overview">
-                    <span><strong>{allPosts.length}</strong> chapters</span>
-                    <span><strong>{blogData.length}</strong> learning paths</span>
-                    <span>Built from real project lessons</span>
+                    <span><strong>{allPosts.length}</strong> notes</span>
+                    <span><strong>{blogData.length}</strong> topics</span>
+                    <span>Based on projects and study</span>
                 </div>
             </header>
 
@@ -36,11 +36,11 @@ const BlogIndex = () => {
                 {featuredPost && (
                     <section className="featured-reading" aria-labelledby="featured-heading">
                         <div>
-                            <p className="eyebrow">FEATURED FIELD NOTE · {featuredPost.minutes} MIN READ</p>
+                            <p className="eyebrow">FEATURED PROJECT NOTE · {featuredPost.minutes} MIN READ</p>
                             <h2 id="featured-heading">{featuredPost.title}</h2>
                             <p>{featuredPost.summary}</p>
                             <Link className="text-link" to={`/journal/${featuredPost.categorySlug}/${featuredPost.slug}`}>
-                                Read the project story <span aria-hidden="true">↗</span>
+                                Read what I learned <span aria-hidden="true">↗</span>
                             </Link>
                         </div>
                         <span className="featured-number" aria-hidden="true">06</span>
@@ -50,10 +50,10 @@ const BlogIndex = () => {
                 <section className="learning-paths" aria-labelledby="paths-heading">
                     <div className="section-heading">
                         <div>
-                            <p className="eyebrow">START WITH A PATH</p>
-                            <h2 id="paths-heading">Choose what to explore</h2>
+                            <p className="eyebrow">BROWSE BY TOPIC</p>
+                            <h2 id="paths-heading">What do you want to learn?</h2>
                         </div>
-                        <p>Each chapter builds an idea you can take back to your own team.</p>
+                        <p>Choose a topic to find related notes.</p>
                     </div>
                     <div className="path-grid">
                         {blogData.map((category) => (
@@ -65,7 +65,7 @@ const BlogIndex = () => {
                                 <span className="path-number">{category.number}</span>
                                 <h3>{category.title}</h3>
                                 <p>{category.description}</p>
-                                <span className="path-count">{category.posts.length} chapters <span aria-hidden="true">→</span></span>
+                                <span className="path-count">{category.posts.length} notes <span aria-hidden="true">→</span></span>
                             </Link>
                         ))}
                     </div>
@@ -74,17 +74,17 @@ const BlogIndex = () => {
                 <section className="chapter-library" aria-labelledby="library-heading">
                     <div className="section-heading library-heading">
                         <div>
-                            <p className="eyebrow">THE READING ROOM</p>
-                            <h2 id="library-heading">Browse all chapters</h2>
+                            <p className="eyebrow">ALL MY NOTES</p>
+                            <h2 id="library-heading">Find a topic</h2>
                         </div>
                         <label className="search-field">
-                            <span className="visually-hidden">Search chapters</span>
+                            <span className="visually-hidden">Search notes</span>
                             <span aria-hidden="true">⌕</span>
                             <input
                                 type="search"
                                 value={search}
                                 onChange={(event) => setSearch(event.target.value)}
-                                placeholder="Search ideas, topics, stories…"
+                                placeholder="Search my notes…"
                             />
                         </label>
                     </div>
@@ -107,7 +107,7 @@ const BlogIndex = () => {
                             ))}
                         </div>
                     ) : (
-                        <p className="empty-state">No chapters match “{search}”. Try another topic.</p>
+                        <p className="empty-state">No notes match “{search}”. Try another search.</p>
                     )}
                 </section>
             </main>

@@ -6,10 +6,10 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-content">
                 <a className="footer-brand" href="#/" aria-label="Kamlesh Patil — return to start">KP<span>.</span></a>
-                <p className="footer-thought">Tools change. The habit of asking better questions stays.</p>
+                <p className="footer-thought">My notes on testing, projects, and what I’m learning.</p>
                 <div className="footer-links">
-                    <a href="#/journal">Read the field guide</a>
-                    <a href="#/projects">Project stories</a>
+                    <a href="#/journal">Read my QA notes</a>
+                    <a href="#/projects">My projects</a>
                     <a href="https://www.linkedin.com/in/iamkamlesh18/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
                     <a href="https://github.com/iamkamlesh18" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                     <a href="https://www.youtube.com/channel/UCzSKULVwWDGQ5fOHIvoMJrw" target="_blank" rel="noopener noreferrer">YouTube ↗</a>

@@ -1,7 +1,37 @@
+const plainLanguageCopy = {
+    'testing-is-risk': ['Testing helps reduce risk', 'Testing finds problems and gives the team facts for release decisions.'],
+    'quality-is-everyones-job': ['Everyone helps deliver quality', 'Testers, developers, and product teams all help make software work well.'],
+    'sdlc-stlc-feedback': ['Test throughout development', 'Early and regular testing helps the team find problems sooner.'],
+    'understand-before-test-cases': ['Understand the feature before writing tests', 'Ask what users need and what should happen before writing test steps.'],
+    'test-design-techniques': ['Test values at the edges', 'Check valid groups of values and the limits between them.'],
+    'exploratory-testing': ['Explore the feature with a clear goal', 'Try real user paths, take notes, and make useful problems easy to repeat.'],
+    'risk-based-testing': ['Test the biggest risks first', 'When time is short, focus on the failures that could cause the most harm.'],
+    'defects-that-help-teams': ['Write clear bug reports', 'Show what happened, what you expected, and how to see the problem again.'],
+    'agile-is-fast-feedback': ['Agile is about learning quickly', 'Meetings help only when they give the team useful feedback.'],
+    'gherkin-shared-language': ['Use Gherkin to share examples', 'Clear examples help business, development, and QA agree on how a feature should work.'],
+    'definition-of-done-testing': ['Agree on what “done” means', 'Decide together what checks and information a feature needs before it is complete.'],
+    'automate-for-value': ['Automate checks that save time', 'Automate checks that are repeated, useful, and reliable to run.'],
+    'reusable-frameworks': ['Reuse code without hiding what tests do', 'Shared code can save effort, as long as each test stays easy to understand.'],
+    'flaky-tests-and-waits': ['Wait for the app, not a fixed time', 'Check that the app is ready instead of guessing how long to wait.'],
+    'test-data-and-credentials': ['Keep test accounts and data reliable', 'Plan safe test data and sign-in checks to avoid lockouts and confusing failures.'],
+    'java-for-test-automation': ['Java basics for test automation', 'Use core Java features to write tests that are clear and easier to fix.'],
+    'selenium-locators-and-pages': ['Find page elements reliably', 'Use stable labels and keep page details separate from test steps.'],
+    'cucumber-step-design': ['Write clear Cucumber steps', 'Describe what the user does and sees, not every click behind the scenes.'],
+    'serenity-testng-framework': ['Keep a test suite easy to maintain', 'Organize tests and reports so the team can run them and understand failures.'],
+    'postman-api-automation': ['Automate API checks with Postman', 'Check service responses and errors with repeatable test data.'],
+    'api-testing-pyramid': ['Test APIs and user journeys', 'Use API tests for service rules and screen tests for key user actions.'],
+    'mobile-testing-reality': ['Test apps on different devices', 'Check device sizes, operating systems, connections, and permissions.'],
+    'ci-quality-gates': ['Make build checks useful', 'Fast, clear checks help the team fix problems before release.'],
+    'career-learning-loop': ['Keep growing as a QA engineer', 'Learn through practice, teamwork, and looking back at what worked.'],
+    'union-bank-risk-and-trust': ['What banking taught me about testing', 'A bug in banking can affect money and trust, so careful testing matters.'],
+    'elements-fleet-management': ['What I learned from fleet management', 'Learning how people use a product helps you choose what to test.'],
+    'cooperative-bank-automation': ['How a banking project changed my view of automation', 'Shared scenarios and reliable tests helped our team spend less time fixing test runs.']
+};
+
 const post = (slug, title, summary, minutes, sections, reflection) => ({
     slug,
-    title,
-    summary,
+    title: plainLanguageCopy[slug]?.[0] || title,
+    summary: plainLanguageCopy[slug]?.[1] || summary,
     minutes,
     sections,
     reflection
@@ -11,8 +41,8 @@ export const blogData = [
     {
         slug: 'foundations',
         number: '01',
-        title: 'Testing foundations',
-        description: 'Build a quality mindset before you reach for a test case or tool.',
+        title: 'Testing basics',
+        description: 'Start with the purpose of a feature before choosing what to test.',
         posts: [
             post('testing-is-risk', 'Testing is a way to reduce risk', 'Why the goal is confidence and informed decisions—not a promise that bugs do not exist.', 7, [
                 { heading: 'Quality is bigger than a test result', paragraphs: ['A green test run tells us that a set of checks passed under a particular set of conditions. It does not prove that every customer, device, integration, or unusual sequence will behave correctly. Testing gives a team evidence; the team uses that evidence to make a release decision.', 'I think of testing as reducing uncertainty around the risks that matter. The question is not only “does it work?” It is also “where could this fail, who would be affected, and what evidence would help us decide what to do next?”'] },
@@ -33,8 +63,8 @@ export const blogData = [
     {
         slug: 'manual-testing',
         number: '02',
-        title: 'Manual testing craft',
-        description: 'Turn ambiguous requirements into thoughtful scenarios, evidence, and useful defects.',
+        title: 'Manual testing',
+        description: 'Understand what to test, explore a feature, and report bugs clearly.',
         posts: [
             post('understand-before-test-cases', 'Understand the requirement before writing cases', 'A disciplined question-first approach to test design.', 8, [
                 { heading: 'Pause before opening the spreadsheet', paragraphs: ['A detailed test case cannot rescue a misunderstood requirement. Before writing steps, identify the user problem, the intended outcome, and the rules that distinguish a valid result from an invalid one.', 'In banking work, a sentence about a transaction can hide important questions: what are the limits, when does the balance change, what happens after a timeout, and how is the result reconciled? Asking these questions early often improves both the implementation and the tests.'] },
@@ -64,8 +94,8 @@ export const blogData = [
     {
         slug: 'agile-bdd',
         number: '03',
-        title: 'Agile and BDD',
-        description: 'Use collaboration and concrete examples to create faster, clearer feedback.',
+        title: 'Agile and Gherkin',
+        description: 'Work with the team and use examples everyone can understand.',
         posts: [
             post('agile-is-fast-feedback', 'Agile is fast feedback, not meeting attendance', 'Look beyond ceremonies to the learning loop that gives them purpose.', 6, [
                 { heading: 'The ceremony is not the outcome', paragraphs: ['Daily stand-ups, planning, story points, demos, and retrospectives can help a team coordinate. They are not Agile by themselves. A team can attend every meeting and still discover a misunderstood requirement at the end of a sprint.', 'In a 14-day sprint, the useful question is how quickly the team can learn whether an idea, implementation, or assumption is wrong. Grooming, planning, execution, demo, and retrospective should make that feedback timely and visible.'] },
@@ -86,8 +116,8 @@ export const blogData = [
     {
         slug: 'automation',
         number: '04',
-        title: 'Automation engineering',
-        description: 'Build maintainable feedback systems—not scripts that only work on one machine.',
+        title: 'Test automation',
+        description: 'Build automated checks that are useful, reliable, and easy to update.',
         posts: [
             post('automate-for-value', 'Automate behavior, not every test case', 'Choose automation by value, stability, repeatability, and feedback speed.', 8, [
                 { heading: 'Automation has a cost', paragraphs: ['Every automated check must be designed, reviewed, run, debugged, and maintained. Automating a check that rarely runs or changes constantly can cost more than it saves. Automation is not automatically faster or more reliable than a thoughtful manual check.', 'A useful candidate is repeatable, has a stable expected outcome, and protects behavior that matters. Regression workflows and API contracts are often good candidates, while one-off visual exploration may be better done manually.'] },
@@ -114,8 +144,8 @@ export const blogData = [
     {
         slug: 'frameworks',
         number: '05',
-        title: 'Frameworks and tools',
-        description: 'Practical foundations for Java, Selenium, BDD frameworks, APIs, and delivery.',
+        title: 'Tools I use',
+        description: 'Notes on Java, Selenium, testing frameworks, and APIs.',
         posts: [
             post('java-for-test-automation', 'Java foundations for test automation', 'Use core Java concepts to make test code clear, reusable, and easier to debug.', 9, [
                 { heading: 'Write code that explains the test', paragraphs: ['Automation code is production code for your feedback system. Use meaningful names, small methods, and types that make it clear what data a test expects. Avoid compressing several actions and assertions into a single line that is difficult to diagnose.', 'Object-oriented programming can help model pages, API clients, and domain concepts. Encapsulation keeps implementation details close to the behavior they support; composition often makes dependencies easier to replace than a deep inheritance tree.'] },
@@ -148,8 +178,8 @@ export const blogData = [
     {
         slug: 'engineering-practice',
         number: '06',
-        title: 'Engineering practice',
-        description: 'Extend quality thinking across APIs, mobile, delivery pipelines, and learning.',
+        title: 'Other QA topics',
+        description: 'Learn about API tests, mobile apps, build checks, and growing your skills.',
         posts: [
             post('api-testing-pyramid', 'API testing: validate contracts and behavior', 'Test service behavior directly and use UI checks for the user journeys they uniquely cover.', 7, [
                 { heading: 'What an API check can tell you', paragraphs: ['An API test can verify status codes, response structure, business rules, authorization, and error behavior without driving a browser. It is a focused way to find failures in a service contract and is often faster to diagnose than an end-to-end UI test.', 'A 200 response alone is not proof of success. Validate the meaningful fields, state changes, permissions, and behavior for invalid or missing input.'] },
@@ -173,8 +203,8 @@ export const blogData = [
     {
         slug: 'project-stories',
         number: '07',
-        title: 'Lessons from real projects',
-        description: 'Practical lessons from banking, fleet management, and a cooperative banking automation team.',
+        title: 'My project stories',
+        description: 'What I learned while testing banking and fleet management software.',
         posts: [
             post('union-bank-risk-and-trust', 'Banking taught me to test for confidence', 'Lessons from early banking work, where a defect can affect money, trust, and operations.', 8, [
                 { heading: 'The domain changes the meaning of a defect', paragraphs: ['My first major project was in banking. It made the consequence of software behavior tangible: a defect can affect a customer’s money, a transaction, trust, and operational or compliance obligations. That context changed how I approached test execution.', 'I began to think less about whether a checklist was complete and more about whether the evidence was strong enough to give the team confidence in a critical workflow.'] },
