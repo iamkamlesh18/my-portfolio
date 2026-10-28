@@ -34,6 +34,3 @@ https://iamkamlesh18.github.io/my-portfolio/#/journal/project-stories/rainbow-fr
 ```
 
 The hash keeps chapter and category navigation working when a visitor refreshes or opens a deep link on GitHub Pages.
-
-
-Author - Kamlesh Patil
