@@ -34,7 +34,7 @@ const Projects = () => (
                                 </ul>
                             </>
                         )}
-                        <Link className="text-link story-full-link" to={`/journal/${project.categorySlug}/${project.slug}`}>
+                        <Link className="text-link story-full-link" to={`/guides/${project.categorySlug}/${project.slug}`}>
                             Project details <span aria-hidden="true">↗</span>
                         </Link>
                     </div>

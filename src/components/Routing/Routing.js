@@ -27,13 +27,13 @@ const PageMetadata = () => {
         const [section, categorySlug, postSlug] = pathname.split('/').filter(Boolean);
         let pageTitle = 'QA Engineer';
 
-        if (section === 'journal' || section === 'blog') {
+        if (section === 'guides' || section === 'journal' || section === 'blog') {
             if (postSlug) {
                 pageTitle = getPost(categorySlug, postSlug)?.title || 'Note not found';
             } else if (categorySlug) {
                 pageTitle = blogData.find((category) => category.slug === categorySlug)?.title || 'Topic not found';
             } else {
-                pageTitle = 'QA Notes';
+                pageTitle = 'Testing Guides';
             }
         } else if (section === 'projects') {
             pageTitle = 'Projects';
@@ -67,6 +67,9 @@ const Routing = () => (
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/guides" element={<Blog />} />
+            <Route path="/guides/:category" element={<BlogCategory />} />
+            <Route path="/guides/:category/:post" element={<BlogPost />} />
             <Route path="/journal" element={<Blog />} />
             <Route path="/journal/:category" element={<BlogCategory />} />
             <Route path="/journal/:category/:post" element={<BlogPost />} />

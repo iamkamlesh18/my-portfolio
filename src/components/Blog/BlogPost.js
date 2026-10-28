@@ -15,7 +15,7 @@ const BlogPost = () => {
     useEffect(() => {
         const updateProgress = () => {
             const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-            setReadingProgress(scrollableHeight > 0 ? Math.min(100, Math.round((window.scrollY / scrollableHeight) * 100)) : 100);
+            setReadingProgress(scrollableHeight > 0 ? Math.min(100, Math.round((window.scrollY / scrollableHeight) * 100)) : 0);
         };
         updateProgress();
         window.addEventListener('scroll', updateProgress, { passive: true });
@@ -27,29 +27,37 @@ const BlogPost = () => {
             <main className="journal-empty">
                 <p className="eyebrow">NOTE NOT FOUND</p>
                 <h1>I couldn’t find that note.</h1>
-                <Link className="text-link" to="/journal">Back to QA notes →</Link>
+                <Link className="text-link" to="/guides">Back to guides →</Link>
             </main>
         );
     }
 
     return (
         <div className="reader-page">
-            <div className="reading-progress" style={{ width: `${readingProgress}%` }} aria-hidden="true" />
+            <div
+                className="reading-progress"
+                role="progressbar"
+                aria-label="Article reading progress"
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-valuenow={readingProgress}
+            >
+                <span style={{ width: `${readingProgress}%` }} />
+            </div>
             <main className="reader">
                 <nav className="reader-breadcrumbs" aria-label="Breadcrumb">
-                    <Link to="/journal">QA notes</Link>
+                    <Link to="/guides">Guides</Link>
                     <span aria-hidden="true">/</span>
-                    <Link to={`/journal/${article.categorySlug}`}>{article.category.title}</Link>
+                    <Link to={`/guides/${article.categorySlug}`}>{article.category.title}</Link>
                 </nav>
 
                 <header className="reader-header">
-                    <p className="eyebrow">{article.category.title} · {article.minutes} MIN READ</p>
+                    <p className="eyebrow">{article.category.title}</p>
                     <h1>{article.title}</h1>
                     <p className="reader-deck">{article.summary}</p>
                     <div className="reader-byline">
                         <span className="author-mark">KP</span>
                         <span>Kamlesh Patil · QA Engineer</span>
-                        <span className="reader-meter">{readingProgress}% read</span>
                     </div>
                 </header>
 
@@ -89,27 +97,30 @@ const BlogPost = () => {
                             </div>
                         </section>
                     ))}
-                    {article.reflection && (
-                        <aside className="reflection-card">
-                            <p className="eyebrow">KEY POINT</p>
-                            <p>{article.reflection}</p>
-                        </aside>
-                    )}
+                    <aside className="reflection-card">
+                        <p className="eyebrow">IN ONE SENTENCE</p>
+                        <p>{article.takeaway}</p>
+                    </aside>
+                    <section className="practice-card" aria-labelledby="practice-heading">
+                        <p className="eyebrow">TRY IT YOURSELF</p>
+                        <h2 id="practice-heading">Put the idea to work.</h2>
+                        <p>{article.exercise}</p>
+                    </section>
                 </article>
 
                 <footer className="reader-navigation">
                     {previous ? (
-                        <Link to={`/journal/${article.categorySlug}/${previous.slug}`} className="reader-nav-card">
-                            <span>← PREVIOUS NOTE</span>
+                        <Link to={`/guides/${article.categorySlug}/${previous.slug}`} className="reader-nav-card">
+                            <span>← PREVIOUS GUIDE</span>
                             <strong>{previous.title}</strong>
                         </Link>
                     ) : <span />}
                     {next ? (
-                        <Link to={`/journal/${article.categorySlug}/${next.slug}`} className="reader-nav-card next">
-                            <span>NEXT NOTE →</span>
+                        <Link to={`/guides/${article.categorySlug}/${next.slug}`} className="reader-nav-card next">
+                            <span>NEXT GUIDE →</span>
                             <strong>{next.title}</strong>
                         </Link>
-                    ) : <Link className="reader-nav-card next" to={`/journal/${article.categorySlug}`}>
+                    ) : <Link className="reader-nav-card next" to={`/guides/${article.categorySlug}`}>
                         <span>BACK TO TOPIC →</span>
                         <strong>{article.category.title}</strong>
                     </Link>}

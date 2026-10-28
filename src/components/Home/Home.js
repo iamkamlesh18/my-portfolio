@@ -21,7 +21,7 @@ const Home = () => {
                     </div>
                     <div className="hero-proof">
                         <span className="hero-monogram">KP</span>
-                        <p><strong>5 years in software quality</strong><br />Banking · Insurance · BFSI · Fleet management</p>
+                        <p><strong>5 years in software quality</strong><br />Banking · Insurance · Financial services · Fleet management</p>
                     </div>
                 </div>
                 <div className="hero-art" aria-hidden="true">
@@ -71,7 +71,7 @@ const Home = () => {
                                     <p className="eyebrow">{story.domain}</p>
                                     <h3>{story.projectName}</h3>
                                     <p>{story.summary}</p>
-                                    <Link className="text-link" to={`/journal/${story.categorySlug}/${story.slug}`}>
+                                    <Link className="text-link" to={`/guides/${story.categorySlug}/${story.slug}`}>
                                         Project details <span aria-hidden="true">↗</span>
                                     </Link>
                                 </div>
@@ -89,10 +89,10 @@ const Home = () => {
                 </section>
 
                 <section className="home-more-reading">
-                    <p className="eyebrow">TESTING NOTES</p>
-                    <h2>Short guides to testing and automation.</h2>
-                    <p>Browse clear notes on test design, APIs, automation, and the tools I use.</p>
-                    <Link className="text-link" to="/journal">Browse QA notes <span aria-hidden="true">↗</span></Link>
+                    <p className="eyebrow">PRACTICAL GUIDES</p>
+                    <h2>Clear guides to testing and automation.</h2>
+                    <p>Start with the basics, learn about testing tools, or see how I applied these ideas on projects.</p>
+                    <Link className="text-link" to="/guides">Browse testing guides <span aria-hidden="true">↗</span></Link>
                 </section>
             </main>
         </div>

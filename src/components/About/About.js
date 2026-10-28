@@ -34,8 +34,8 @@ const About = () => (
             <p className="eyebrow">ABOUT</p>
             <h1>Kamlesh Patil<br /><em>QA Engineer</em></h1>
             <p className="about-lede">
-                I’m a Senior Software Engineer and Automation Test Engineer with 5 years of
-                experience building confidence in business software.
+                I’m a Senior Software Engineer, SDET (Software Development Engineer in Test),
+                and Automation Test Engineer with 5 years of experience.
             </p>
         </header>
 
@@ -45,7 +45,7 @@ const About = () => (
                 <h2>Quality engineering at Capgemini</h2>
                 <p>
                     I’ve worked at Capgemini since September 2021, testing enterprise products
-                    across retail banking, insurance, BFSI, financial services, and fleet management.
+                    across retail banking, insurance, other financial services, and fleet management.
                     My work covers functional testing, automation, APIs, regression, and defect
                     management.
                 </p>

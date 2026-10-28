@@ -8,7 +8,7 @@ const Footer = () => {
                 <a className="footer-brand" href="#/" aria-label="Kamlesh Patil — return to start">KP<span>.</span></a>
                 <p className="footer-thought">QA Engineer · Software testing and automation</p>
                 <div className="footer-links">
-                    <a href="#/journal">QA notes</a>
+                    <a href="#/guides">Testing guides</a>
                     <a href="#/projects">Projects</a>
                     <a href="#/about">Skills</a>
                     <a href="https://www.linkedin.com/in/iamkamlesh18/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>

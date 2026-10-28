@@ -56,20 +56,28 @@
 .journal-stats {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 35px;
-    color: rgba(251, 250, 246, 0.64);
-    font-size: 0.78rem;
+    gap: 12px;
+    margin-top: 32px;
 }
 
-.journal-stats span + span {
-    padding-left: 25px;
-    border-left: 1px solid rgba(251, 250, 246, 0.24);
+.journal-stats > span {
+    display: flex;
+    min-width: 130px;
+    flex-direction: column;
+    gap: 3px;
+    padding: 12px 15px;
+    border: 1px solid rgba(251, 250, 246, 0.2);
+    color: rgba(251, 250, 246, 0.7);
+    font-size: 0.72rem;
 }
 
-.journal-stats strong {
+.journal-stats > span > strong {
     color: #e2bb78;
-    font-size: 1.03rem;
+    font-size: 1rem;
+}
+
+.journal-stats > span > span {
+    color: rgba(251, 250, 246, 0.7);
 }
 
 .journal-main {
@@ -113,6 +121,100 @@
     font-family: var(--serif);
     font-size: clamp(5rem, 12vw, 10rem);
     line-height: 0.8;
+}
+
+.guide-start {
+    margin-top: 68px;
+}
+
+.guide-start .section-heading {
+    margin-bottom: 18px;
+}
+
+.guide-start-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.guide-start-grid > a {
+    display: flex;
+    min-height: 190px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 21px;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    background: var(--paper-light);
+    text-decoration: none;
+    transition: border-color 170ms ease, transform 170ms ease;
+}
+
+.guide-start-grid > a:hover {
+    transform: translateY(-2px);
+    border-color: var(--forest);
+}
+
+.guide-start-grid strong {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.guide-start-grid > a > span:nth-child(2) {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+.guide-start-grid .text-link {
+    margin-top: auto;
+    padding-top: 17px;
+    font-size: 0.82rem;
+}
+
+.guide-glossary {
+    margin-top: 66px;
+    padding: 28px;
+    border-left: 3px solid var(--clay);
+    background: #eae6dc;
+}
+
+.guide-glossary .eyebrow {
+    margin-bottom: 8px;
+}
+
+.guide-glossary h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    font-weight: 500;
+}
+
+.guide-glossary dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 25px;
+    margin: 18px 0 0;
+}
+
+.guide-glossary dl > div {
+    padding: 13px 0;
+    border-top: 1px solid rgba(33, 75, 63, 0.16);
+}
+
+.guide-glossary dt {
+    color: var(--forest);
+    font-size: 0.9rem;
+    font-weight: 750;
+}
+
+.guide-glossary dd {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
 .learning-paths,
@@ -235,31 +337,41 @@
 
 .chapter-list,
 .category-chapters {
-    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
 }
 
 .chapter-row {
     display: grid;
-    grid-template-columns: 42px 1fr 85px;
-    gap: 16px;
-    align-items: center;
-    padding: 19px 8px;
-    border-bottom: 1px solid var(--line);
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 10px 13px;
+    align-content: start;
+    padding: 20px;
+    border: 1px solid var(--line);
     color: var(--ink);
+    background: rgba(251, 250, 246, 0.62);
     text-decoration: none;
-    transition: padding 170ms ease, background 170ms ease;
+    transition: transform 170ms ease, border-color 170ms ease, background 170ms ease;
 }
 
 .chapter-row:hover {
-    padding-right: 15px;
-    padding-left: 15px;
-    background: rgba(251, 250, 246, 0.72);
+    transform: translateY(-2px);
+    border-color: var(--forest);
+    background: var(--paper-light);
 }
 
 .chapter-index {
+    grid-row: span 2;
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    border-radius: 50%;
+    background: #e9e5db;
     color: var(--clay);
     font-family: var(--serif);
-    font-size: 1.12rem;
+    font-size: 0.9rem;
 }
 
 .chapter-copy {
@@ -278,7 +390,7 @@
 
 .chapter-copy strong {
     font-family: var(--serif);
-    font-size: 1.22rem;
+    font-size: 1.15rem;
     font-weight: 600;
     line-height: 1.35;
 }
@@ -291,9 +403,11 @@
 }
 
 .chapter-time {
-    justify-self: end;
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 2px;
     color: var(--muted);
-    font-size: 0.73rem;
+    font-size: 0.72rem;
     white-space: nowrap;
 }
 
@@ -310,7 +424,7 @@
 }
 
 .category-page {
-    width: min(900px, calc(100% - 48px));
+    width: min(1020px, calc(100% - 48px));
     min-height: 70vh;
     margin: 0 auto;
     padding: 44px 0 110px;
@@ -318,7 +432,7 @@
 
 .back-link {
     display: inline-block;
-    margin-bottom: 45px;
+    margin-bottom: 32px;
     color: var(--forest);
     font-size: 0.85rem;
     font-weight: 700;
@@ -326,24 +440,23 @@
 }
 
 .category-hero {
-    position: relative;
-    margin-bottom: 47px;
+    margin-bottom: 38px;
 }
 
-.category-hero .path-number {
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    color: #e6e0d3;
-    font-size: clamp(5rem, 14vw, 10rem);
-    line-height: 0.85;
+.category-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
 }
 
-.category-hero .eyebrow,
-.category-hero h1,
-.category-hero > p:last-child {
-    position: relative;
-    z-index: 1;
+.category-meta span {
+    padding: 6px 9px;
+    border: 1px solid var(--line);
+    color: var(--forest);
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
 }
 
 .category-hero h1 {
@@ -356,10 +469,28 @@
 }
 
 .category-hero > p:last-child {
-    max-width: 620px;
-    margin: 17px 0 0;
+    max-width: 660px;
+    margin: 14px 0 0;
     color: var(--muted);
-    font-size: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.category-reading-intro {
+    margin-bottom: 17px;
+}
+
+.category-reading-intro h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.category-reading-intro p {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
 }
 
 .reader-page {
@@ -368,10 +499,19 @@
 
 .reading-progress {
     position: fixed;
-    z-index: 30;
+    z-index: 21;
     top: 78px;
     left: 0;
-    height: 3px;
+    width: 100%;
+    height: 4px;
+    overflow: hidden;
+    background: rgba(33, 75, 63, 0.14);
+    pointer-events: none;
+}
+
+.reading-progress > span {
+    display: block;
+    height: 100%;
     background: var(--clay);
     transition: width 100ms linear;
 }
@@ -398,7 +538,7 @@
 }
 
 .reader-header {
-    padding: 55px 0 35px;
+    padding: 46px 0 32px;
     border-bottom: 1px solid var(--line);
 }
 
@@ -416,8 +556,8 @@
     max-width: 700px;
     margin: 18px 0 24px;
     color: var(--muted);
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1.08rem;
+    line-height: 1.8;
 }
 
 .reader-byline {
@@ -437,12 +577,6 @@
     color: var(--paper-light);
     background: var(--forest);
     font-family: var(--serif);
-}
-
-.reader-meter {
-    margin-left: auto;
-    color: var(--clay);
-    font-weight: 750;
 }
 
 .reader-body {
@@ -614,6 +748,31 @@
     line-height: 1.5;
 }
 
+.practice-card {
+    margin: 30px 0 25px 60px;
+    padding: 24px 28px;
+    border: 1px solid var(--line);
+    background: var(--paper-light);
+}
+
+.practice-card .eyebrow {
+    margin-bottom: 8px;
+    color: var(--clay);
+}
+
+.practice-card h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.practice-card > p:last-child {
+    margin: 8px 0 0;
+    color: var(--muted);
+    line-height: 1.75;
+}
+
 .reader-navigation {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -686,11 +845,7 @@
     }
 
     .journal-stats {
-        gap: 10px 18px;
-    }
-
-    .journal-stats span + span {
-        padding-left: 18px;
+        gap: 8px;
     }
 
     .journal-main {
@@ -707,9 +862,15 @@
         display: none;
     }
 
+    .guide-glossary,
     .learning-paths,
-    .chapter-library {
+    .chapter-library,
+    .guide-start {
         margin-top: 62px;
+    }
+
+    .guide-start-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .path-grid {
@@ -769,18 +930,31 @@
         grid-template-columns: 1fr;
     }
 
+    .guide-start-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-glossary {
+        padding: 21px;
+    }
+
+    .guide-glossary dl {
+        grid-template-columns: 1fr;
+    }
+
     .path-card {
         min-height: 195px;
     }
 
     .chapter-row {
-        grid-template-columns: 27px 1fr;
-        gap: 10px;
-        padding: 17px 0;
+        grid-template-columns: 30px minmax(0, 1fr);
+        gap: 8px 11px;
+        padding: 16px;
     }
 
     .chapter-time {
-        display: none;
+        grid-column: 2;
+        justify-self: start;
     }
 
     .chapter-copy strong {
@@ -821,6 +995,16 @@
     .reflection-card {
         margin-left: 0;
         padding: 22px;
+    }
+
+    .practice-card {
+        margin-left: 0;
+        padding: 22px;
+    }
+
+    .chapter-list,
+    .category-chapters {
+        grid-template-columns: 1fr;
     }
 
     .reader-navigation {

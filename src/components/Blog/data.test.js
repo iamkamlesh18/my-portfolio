@@ -1,6 +1,6 @@
 import { allPosts, blogData, projectStories } from './data';
 
-describe('QA notes and project details', () => {
+describe('testing guides and project details', () => {
     test('every topic and note has readable, complete content', () => {
         expect(blogData.length).toBeGreaterThan(0);
         expect(allPosts.length).toBeGreaterThan(20);
@@ -9,8 +9,10 @@ describe('QA notes and project details', () => {
             expect(article.title).toBeTruthy();
             expect(article.summary).toBeTruthy();
             expect(article.minutes).toBeGreaterThan(0);
-            expect(article.sections.length).toBeGreaterThan(0);
+            expect(article.sections.length).toBeGreaterThanOrEqual(3);
             expect(article.sections.every((section) => section.heading)).toBe(true);
+            expect(article.takeaway).toBeTruthy();
+            expect(article.exercise).toBeTruthy();
         });
     });
 
