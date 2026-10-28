@@ -8,10 +8,10 @@ const Home = () => {
         <div className="home-page">
             <section className="home-hero">
                 <div className="hero-content">
-                    <p className="eyebrow"><span className="status-dot" /> QA ENGINEER · SDET</p>
+                    <p className="eyebrow"><span className="status-dot" /> AUTOMATION TEST ENGINEER · SDET · QA ANALYST</p>
                     <h1>Kamlesh Patil<br /><em>QA Engineer</em></h1>
                     <p className="hero-description">
-                        I have 5 years of experience testing banking, insurance, financial services,
+                         I have 5 years of experience in testing across banking, insurance, financial services,
                         and fleet management products. I work across functional, API, and regression
                         testing, and build automation with Java, Python, and JavaScript.
                     </p>
@@ -21,7 +21,7 @@ const Home = () => {
                     </div>
                     <div className="hero-proof">
                         <span className="hero-monogram">KP</span>
-                        <p><strong>5 years in software quality</strong><br />Banking · Insurance · Financial services · Fleet management</p>
+                        <p><strong>5 years in software quality</strong><br />Banking · Capital markets · Fleet management</p>
                     </div>
                 </div>
                 <div className="hero-art" aria-hidden="true">
@@ -58,7 +58,7 @@ const Home = () => {
                 <section className="journey-section section-wrap">
                     <div className="section-heading">
                         <div>
-                            <p className="eyebrow">PROJECT EXPERIENCE</p>
+                            <p className="eyebrow">PROJECT EXPERIENCE · CAPGEMINI</p>
                             <h2>Products I’ve worked on.</h2>
                         </div>
                         <Link className="text-link" to="/projects">All projects <span aria-hidden="true">↗</span></Link>

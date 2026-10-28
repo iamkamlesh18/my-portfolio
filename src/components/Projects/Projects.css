@@ -151,6 +151,20 @@
     font-size: 0.75rem;
 }
 
+.project-contributions {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.project-contributions li::marker {
+    color: var(--clay);
+}
+
 .project-tool-list {
     margin-top: 0;
 }

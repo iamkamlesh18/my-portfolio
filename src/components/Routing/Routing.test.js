@@ -16,9 +16,11 @@ describe('GitHub Pages hash routing', () => {
     test('renders full project details when opened directly by its hash URL', () => {
         render(<Routing />);
 
-        expect(screen.getByRole('heading', { name: 'Making banking tests more reliable' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'COOP: retail banking and Smile Portal' })).toBeInTheDocument();
         expect(screen.getByText('PROJECT OVERVIEW')).toBeInTheDocument();
-        expect(screen.getByText('Reduced manual intervention and made regression runs more dependable.')).toBeInTheDocument();
+        expect(screen.getByText('Improved test-cycle efficiency by 40% through reusable test components.')).toBeInTheDocument();
+        expect(screen.getByText('What I worked on')).toBeInTheDocument();
+        expect(screen.getByText('January 2025 – Present')).toBeInTheDocument();
         expect(screen.getByText('Kamlesh Patil · QA Engineer')).toBeInTheDocument();
         expect(screen.getByRole('progressbar', { name: 'Article reading progress' })).toHaveAttribute('aria-valuenow', '0');
         expect(screen.queryByText(/% read/)).not.toBeInTheDocument();
@@ -30,10 +32,11 @@ describe('GitHub Pages hash routing', () => {
 
         expect(screen.getByRole('heading', { name: /Products I’ve/ })).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: 'Union Bank' })).toBeInTheDocument();
-        expect(screen.getByRole('heading', { name: 'Elements Fleet Management' })).toBeInTheDocument();
-        expect(screen.getByRole('heading', { name: 'Cooperative Banking' })).toBeInTheDocument();
-        expect(screen.getAllByText('Testing focus')).toHaveLength(3);
-        expect(screen.getByText(/Retail banking · Insurance · BFSI/)).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Elements' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'COOP — Retail COOP and Smile Portal' })).toBeInTheDocument();
+        expect(screen.getByText(/reduced manual effort by 60%/i)).toBeInTheDocument();
+        expect(screen.getAllByText('Testing focus')).toHaveLength(4);
+        expect(screen.getByText(/Capital markets · Investment banking · Insurance · BFSI/)).toBeInTheDocument();
     });
 
     test('shows a clear starting point on a topic page', () => {

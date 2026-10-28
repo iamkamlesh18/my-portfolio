@@ -68,6 +68,74 @@
     margin-top: 5px;
 }
 
+.career-section {
+    margin: 70px 0;
+    padding-top: 42px;
+    border-top: 1px solid var(--line);
+}
+
+.career-heading {
+    margin-bottom: 28px;
+}
+
+.career-heading h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+}
+
+.career-heading > p:last-child {
+    margin: 8px 0 0;
+    color: var(--muted);
+}
+
+.career-projects {
+    border-top: 1px solid var(--line);
+}
+
+.career-project {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.75fr) 1fr;
+    gap: 8px 28px;
+    padding: 23px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.career-period {
+    color: var(--clay);
+    font-size: 0.72rem;
+    font-weight: 750;
+}
+
+.career-project h3 {
+    margin: 5px 0 0;
+    font-family: var(--serif);
+    font-size: 1.35rem;
+}
+
+.career-project > p {
+    margin: 0;
+    color: var(--forest);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.career-project ul {
+    grid-column: 2;
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+.career-project li::marker {
+    color: var(--clay);
+}
+
 .about-manifesto {
     position: relative;
     margin: 85px 0;
@@ -206,6 +274,28 @@
     border-top: 1px solid var(--line);
 }
 
+.about-extras {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    padding: 48px 0;
+    border-top: 1px solid var(--line);
+}
+
+.about-extras h2 {
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
+.about-extras p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.extras-subhead {
+    margin-top: 24px;
+}
+
 .about-learning h2 {
     margin-bottom: 12px;
 }
@@ -263,6 +353,9 @@
 }
 
 .about-book {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 30px 60px;
     margin-top: 45px;
     padding: 45px;
     color: var(--paper-light);
@@ -275,15 +368,30 @@
 
 .about-book h2 {
     max-width: 730px;
+    margin-top: 0;
 }
 
-.about-book > p:not(.eyebrow) {
+.about-book p:not(.eyebrow) {
     max-width: 730px;
     color: rgba(251, 250, 246, 0.75);
+    line-height: 1.7;
 }
 
-.about-book .button {
-    margin-top: 8px;
+.contact-links {
+    display: grid;
+    align-content: center;
+    justify-items: start;
+    gap: 12px;
+}
+
+.contact-links a {
+    color: var(--paper-light);
+    font-size: 0.92rem;
+    text-decoration-color: rgba(226, 187, 120, 0.55);
+}
+
+.contact-links a:hover {
+    color: #e2bb78;
 }
 
 @media (max-width: 850px) {
@@ -294,6 +402,20 @@
     .about-capabilities {
         grid-template-columns: 1fr;
         gap: 25px;
+    }
+
+    .career-project {
+        grid-template-columns: 1fr;
+    }
+
+    .career-project ul {
+        grid-column: 1;
+    }
+
+    .about-extras,
+    .about-book {
+        grid-template-columns: 1fr;
+        gap: 18px;
     }
 }
 
@@ -320,12 +442,21 @@
         padding-bottom: 56px;
     }
 
+    .career-section {
+        margin: 48px 0;
+        padding-top: 32px;
+    }
+
     .practice-grid {
         grid-template-columns: 1fr;
     }
 
     .practice-grid article {
         min-height: auto;
+    }
+
+    .about-book {
+        padding: 28px 22px;
     }
 
     .about-learning {

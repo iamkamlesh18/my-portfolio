@@ -32,7 +32,7 @@ const NavBar = () => {
                     <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
                     <NavLink to="/about" onClick={closeMenu}>Skills</NavLink>
                     <NavLink to="/guides" onClick={closeMenu}>Guides</NavLink>
-                    <a className="nav-contact" href="https://wa.me/917770000347?text=Hi%20Kamlesh%2C%20I%20visited%20your%20portfolio%20and%20would%20love%20to%20connect." target="_blank" rel="noopener noreferrer">
+                    <a className="nav-contact" href="mailto:patilkamlesh1811@gmail.com">
                         Contact <span aria-hidden="true">↗</span>
                     </a>
                 </div>

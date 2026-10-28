@@ -66,7 +66,24 @@ const BlogPost = () => {
                         <p className="eyebrow">PROJECT OVERVIEW</p>
                         <h2 id="project-overview-heading">{article.projectName}</h2>
                         <p className="project-domain">{article.domain}</p>
+                        {article.period && <p><strong>Project period:</strong> {article.period}</p>}
+                        {article.products?.length > 0 && (
+                            <>
+                                <h3>Products and areas</h3>
+                                <ul className="project-focus-list">
+                                    {article.products.map((product) => <li key={product}>{product}</li>)}
+                                </ul>
+                            </>
+                        )}
                         <p>{article.result}</p>
+                        {article.contributions?.length > 0 && (
+                            <>
+                                <h3>What I worked on</h3>
+                                <ul className="project-contributions">
+                                    {article.contributions.map((contribution) => <li key={contribution}>{contribution}</li>)}
+                                </ul>
+                            </>
+                        )}
                         <h3>Testing focus</h3>
                         <ul className="skill-tags">
                             {article.projectFocus.map((item) => <li key={item}>{item}</li>)}

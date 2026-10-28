@@ -1,22 +1,23 @@
 import React from 'react';
 import './About.css';
+import { projectStories } from '../Blog/data';
 
 const skillGroups = [
     {
         title: 'Testing',
-        items: ['Functional testing', 'Regression testing', 'Smoke testing', 'Sanity testing', 'Integration testing', 'End-to-end testing', 'Exploratory testing', 'Risk-based testing', 'Mobile testing', 'Cross-browser testing', 'Mainframe integration', 'Boundary value analysis', 'Equivalence partitioning', 'Decision tables', 'Defect life cycle', 'Defect reporting', 'Test case design', 'Test data']
+        items: ['Manual testing', 'Functional testing', 'Test case design and execution', 'Regression testing', 'Smoke testing', 'Sanity testing', 'UAT', 'Integration testing', 'End-to-end testing', 'Exploratory testing', 'Risk-based testing', 'Mobile testing', 'Cross-browser testing', 'Mainframe integration', 'Boundary value analysis', 'Equivalence partitioning', 'Decision tables', 'Defect life cycle', 'Defect reporting/triage', 'Test case design','Requirements traceability', 'Test data', 'Boundry Value Analysis', 'Equivalence Partitioning']
     },
     {
-        title: 'Automation',
-        items: ['Java', 'Python', 'JavaScript', 'Selenium WebDriver', 'Playwright', 'Cypress', 'Page Object Model (POM)', 'XPath', 'CSS selectors', 'Explicit and fluent waits', 'Serenity BDD', 'Cucumber', 'Gherkin', 'TestNG', 'JUnit', 'Data-driven testing', 'Reusable test steps']
+        title: 'Automation and programming',
+        items: ['Java', 'Python', 'C#', 'JavaScript', 'Selenium WebDriver', 'Playwright', 'Cypress', 'Page Object Model (POM)', 'Serenity BDD', 'Cucumber', 'Gherkin', 'TestNG', 'JUnit', 'Maven', 'YAML', 'Data-driven testing', 'Reusable test components']
     },
     {
-        title: 'API and data',
-        items: ['API testing', 'REST Assured', 'Postman', 'JSON', 'HTTP methods and status codes', 'Request and response checks', 'SQL', 'SQL Server', 'MySQL', 'MongoDB', 'Snowflake']
+        title: 'API and database testing',
+        items: ['API testing', 'REST Assured', 'Postman', 'Swagger', 'JSON and XML validation', 'HTTP methods and status codes', 'Request and response checks', 'SQL', 'Backend data validation']
     },
     {
         title: 'Delivery and tools',
-        items: ['Agile / Scrum', 'Git', 'GitHub', 'GitLab', 'GitLab CI/CD', 'GitHub Actions', 'Jenkins', 'Docker', 'YAML', 'Eclipse', 'IntelliJ IDEA', 'BrowserStack', 'JIRA']
+        items: ['Agile / Scrum', 'BDD', 'TDD', 'Git', 'GitHub', 'GitLab CI/CD', 'GitHub Actions', 'Jenkins', 'Jira', 'ALM', 'Xray', 'Zephyr', 'Confluence', 'IntelliJ IDEA', 'Eclipse', 'VS Code', 'BrowserStack', 'Windows', 'Linux']
     }
 ];
 
@@ -25,7 +26,13 @@ const certifications = [
     'Azure AI Fundamentals (AI-900)',
     'Azure Developer Associate (AZ-204)',
     'Salesforce Certified Agentforce Specialist',
-    'Agile Software Development — Coursera'
+    'Agile Software Development — Coursera',
+    'Retail Banking — Capgemini University',
+    'Investment Banking — Capgemini University',
+    'Ocean Certified — Automation Testing, Capgemini [L1 and L2]',
+    'Ocean Certified — Gen AI Tools Testing, Capgemini',
+    'Retail Banking[L1 and L2]',
+    'Insurance [L1 and L2]'
 ];
 
 const About = () => (
@@ -34,25 +41,51 @@ const About = () => (
             <p className="eyebrow">ABOUT</p>
             <h1>Kamlesh Patil<br /><em>QA Engineer</em></h1>
             <p className="about-lede">
-                I’m a Senior Software Engineer, SDET (Software Development Engineer in Test),
+                 I’m a Senior Software Engineer, SDET (Software Development Engineer in Test),
                 and Automation Test Engineer with 5 years of experience.
             </p>
         </header>
 
         <div className="about-content">
             <section className="about-story">
-                <p className="eyebrow">EXPERIENCE</p>
-                <h2>Quality engineering at Capgemini</h2>
+                <p className="eyebrow">PROFILE</p>
+                <h2>Software quality from requirements to release.</h2>
                 <p>
-                    I’ve worked at Capgemini since September 2021, testing enterprise products
-                    across retail banking, insurance, other financial services, and fleet management.
-                    My work covers functional testing, automation, APIs, regression, and defect
-                    management.
+                    I’m a Senior Software Engineer at Capgemini with 5 years of experience delivering
+                    software testing and automation across retail banking, capital markets, BFSI,
+                    and fleet management. I design and maintain UI and API automation, perform
+                    manual and functional testing, and help teams find and resolve defects early.
                 </p>
                 <p>
-                    I work with developers, business analysts, product owners, and Scrum teams to
-                    understand requirements, check important workflows, and share clear test results.
+                    My main automation tools include Java, Selenium, Serenity BDD, Cucumber, TestNG,
+                    and REST Assured. I also work with Python, C#, JavaScript, Cypress, Playwright,
+                    SQL, Postman, and CI/CD tools. I work closely with developers and business
+                    analysts in Agile teams, from requirement review through release checks.
                 </p>
+            </section>
+
+            <section className="career-section">
+                <div className="career-heading">
+                    <p className="eyebrow">WORK EXPERIENCE</p>
+                    <h2>Capgemini</h2>
+                    <p>Senior Software Engineer · Pune, India · September 2021 – Present</p>
+                </div>
+                <div className="career-projects">
+                    {projectStories.map((project) => (
+                        <article className="career-project" key={project.slug}>
+                            <div>
+                                {project.period && <span className="career-period">{project.period}</span>}
+                                <h3>{project.projectName}</h3>
+                            </div>
+                            <p>{project.domain}</p>
+                            <ul>
+                                {project.contributions.slice(0, 3).map((contribution) => (
+                                    <li key={contribution}>{contribution}</li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
             </section>
 
             <section className="about-practice">
@@ -103,14 +136,33 @@ const About = () => (
                 </div>
             </section>
 
+            <section className="about-extras">
+                <div>
+                    <p className="eyebrow">HOW I WORK</p>
+                    <h2>Problem solving, analysis, teamwork, and clear communication.</h2>
+                </div>
+                <div>
+                    <p className="eyebrow">LANGUAGES</p>
+                    <p>English · Hindi · Marathi</p>
+                    <p className="eyebrow extras-subhead">INTERESTS</p>
+                    <p>Exploring automation frameworks · Teaching QA concepts · Continuous learning · Open-source contributions · Reading about psychology and human resources (HR)</p>
+                </div>
+            </section>
+
             <section className="about-book">
-                <p className="eyebrow">PERSONAL INTERESTS</p>
-                <h2>People, teams, and how they work.</h2>
-                <p>
-                    I also enjoy reading about psychology and human resources. Learning how people
-                    think, communicate, and work in teams helps me keep user needs and teamwork in
-                    mind when I test software.
-                </p>
+                <div>
+                    <p className="eyebrow">CONTACT</p>
+                    <h2>Let’s talk about testing.</h2>
+                    <p>Pune, India · Open to remote, hybrid, or on-site roles and relocation across India.</p>
+                    <p>Availability: 90 days’ notice</p>
+                </div>
+                <div className="contact-links">
+                    <a href="tel:+917770000347">+91 77700 00347</a>
+                    <a href="mailto:patilkamlesh1811@gmail.com">patilkamlesh1811@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/iamkamlesh18" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                    <a href="https://github.com/iamkamlesh18" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    <a href="https://iamkamlesh18.github.io/iamkamlesh18/" target="_blank" rel="noopener noreferrer">Developer profile ↗</a>
+                </div>
             </section>
         </div>
     </main>

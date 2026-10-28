@@ -18,10 +18,22 @@ const Projects = () => (
                 <article className="story-card" key={project.slug}>
                     <span className="story-number">{project.number}</span>
                     <div className="story-copy">
-                        <p className="eyebrow">{project.domain}</p>
+                        <p className="eyebrow">{project.domain}{project.period ? ` · ${project.period}` : ''}</p>
                         <h2>{project.projectName}</h2>
                         <p>{project.summary}</p>
-                        <p className="project-result"><strong>Work:</strong> {project.result}</p>
+                        {project.products?.length > 0 && (
+                            <>
+                                <h3 className="project-detail-heading">Products and areas</h3>
+                                <ul className="project-focus-list">
+                                    {project.products.map((product) => <li key={product}>{product}</li>)}
+                                </ul>
+                            </>
+                        )}
+                        <h3 className="project-detail-heading">What I worked on</h3>
+                        <ul className="project-contributions">
+                            {project.contributions.map((contribution) => <li key={contribution}>{contribution}</li>)}
+                        </ul>
+                        <p className="project-result"><strong>Result:</strong> {project.result}</p>
                         <h3 className="project-detail-heading">Testing focus</h3>
                         <ul className="project-focus-list">
                             {project.projectFocus.map((item) => <li key={item}>{item}</li>)}
@@ -42,7 +54,7 @@ const Projects = () => (
             ))}
             <aside className="domain-summary">
                 <p className="eyebrow">DOMAIN EXPERIENCE</p>
-                <p>Retail banking · Insurance · BFSI · Financial services · Fleet management</p>
+                <p>Retail banking · Capital markets · Investment banking · Insurance · BFSI · Financial services · Fleet management</p>
             </aside>
         </section>
         <section className="work-principle">
