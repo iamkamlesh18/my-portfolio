@@ -449,6 +449,43 @@
     padding-top: 22px;
 }
 
+.project-overview {
+    margin: 28px 0 10px;
+    padding: 24px 28px;
+    border-left: 3px solid var(--clay);
+    background: #eae6dc;
+}
+
+.project-overview .eyebrow {
+    margin-bottom: 8px;
+}
+
+.project-overview h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 1.65rem;
+    font-weight: 500;
+}
+
+.project-overview p:not(.eyebrow) {
+    margin: 8px 0 0;
+    color: #4f5c55;
+    line-height: 1.7;
+}
+
+.project-overview .project-domain {
+    color: var(--clay);
+    font-size: 0.8rem;
+    font-weight: 750;
+}
+
+.project-overview h3 {
+    margin: 16px 0 0;
+    color: var(--forest);
+    font-size: 0.78rem;
+    font-weight: 750;
+}
+
 .reader-interview {
     margin: 30px 0 12px;
     padding: 25px 30px;

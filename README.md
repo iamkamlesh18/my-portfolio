@@ -1,15 +1,15 @@
 # Kamlesh Patil — QA Engineer Portfolio
 
-A personal portfolio introducing Kamlesh Patil, his five years in quality assurance, and his project journey through banking, fleet management, and test automation. Project stories include simple interview answers and questions to practise; learning notes offer more detail about testing and tools.
+A portfolio showing Kamlesh Patil's experience in software testing and test automation, project work, skills, and QA notes.
 
-## Explore the site
+## Pages
 
-- **Start here** — a personal introduction and a chronological project journey
-- **My projects** — simple interview answers and practice questions for each project
-- **About me** — work experience, approach, skills, and learning journey
-- **Learning notes** — searchable chapters about testing foundations, Agile and BDD, automation, and engineering practice
+- **Home** — QA profile, experience, and selected projects
+- **Projects** — banking and fleet management project details
+- **Skills** — testing methods, languages, tools, certifications, and education
+- **QA notes** — short guides to testing, automation, APIs, and project work
 
-The journal content lives in `src/components/Blog/data.js`. Add chapters there and group them under a learning path; the reading room and chapter navigation are generated from that data.
+The QA notes and project content live in `src/components/Blog/data.js`. Topics and chapter pages are generated from that data.
 
 ## Run locally
 
@@ -21,16 +21,17 @@ npm start
 ## Validate and deploy
 
 ```sh
+npm test -- --watchAll=false
 npm run build
 ```
 
 The GitHub Actions workflow publishes the production build to GitHub Pages when changes are pushed to `master`.
 
-The site uses hash-based client-side routes, for example:
+The site uses hash-based routes, for example:
 
 ```text
-https://iamkamlesh18.github.io/my-portfolio/#/journal
+https://iamkamlesh18.github.io/my-portfolio/#/projects
 https://iamkamlesh18.github.io/my-portfolio/#/journal/project-stories/cooperative-bank-automation
 ```
 
-The hash keeps chapter and category navigation working when a visitor refreshes or opens a deep link on GitHub Pages.
+The hash keeps pages working when visitors refresh or open a direct link on GitHub Pages.

@@ -180,6 +180,24 @@
     font-size: 0.88rem;
 }
 
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skill-tags li {
+    padding: 6px 9px;
+    border: 1px solid rgba(33, 75, 63, 0.18);
+    color: var(--forest);
+    background: rgba(251, 250, 246, 0.72);
+    font-size: 0.75rem;
+    line-height: 1.35;
+}
+
 .about-learning {
     display: grid;
     grid-template-columns: 1fr 0.7fr;
@@ -207,6 +225,13 @@
     font-weight: 700;
 }
 
+.education-copy {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
 .learning-note {
     align-self: center;
     margin: 0;
@@ -217,6 +242,24 @@
     font-family: var(--serif);
     font-size: 1.25rem;
     line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+    .practice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-capabilities,
+    .about-learning {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .about-book {

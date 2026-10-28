@@ -12,17 +12,17 @@ const BlogCategory = () => {
             <main className="journal-empty">
                 <p className="eyebrow">TOPIC NOT FOUND</p>
                 <h1>I couldn’t find that topic.</h1>
-                <Link className="text-link" to="/journal">Back to my notes →</Link>
+                <Link className="text-link" to="/journal">Back to QA notes →</Link>
             </main>
         );
     }
 
     return (
         <main className="category-page">
-            <Link className="back-link" to="/journal">← All topics</Link>
+            <Link className="back-link" to="/journal">← All QA notes</Link>
             <header className="category-hero">
                 <span className="path-number">{category.number}</span>
-                <p className="eyebrow">TOPIC · {category.posts.length} NOTES</p>
+                <p className="eyebrow">{category.posts.length} NOTES</p>
                 <h1>{category.title}</h1>
                 <p>{category.description}</p>
             </header>

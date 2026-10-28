@@ -8,28 +8,28 @@ const Home = () => {
         <div className="home-page">
             <section className="home-hero">
                 <div className="hero-content">
-                    <p className="eyebrow"><span className="status-dot" /> MY STORY · MY WORK · WHAT I’VE LEARNED</p>
-                    <h1>I’m Kamlesh Patil.<br /><em>I make software better.</em></h1>
+                    <p className="eyebrow"><span className="status-dot" /> QA ENGINEER · SDET</p>
+                    <h1>Kamlesh Patil<br /><em>QA Engineer</em></h1>
                     <p className="hero-description">
-                        I’m a QA engineer with 5 years of experience. I started in banking, moved into
-                        fleet management, and grew into test automation. This is my story, explained
-                        simply and one project at a time.
+                        I have 5 years of experience testing banking, insurance, financial services,
+                        and fleet management products. I work across functional, API, and regression
+                        testing, and build automation with Java, Python, and JavaScript.
                     </p>
                     <div className="hero-actions">
-                        <Link className="button button-primary" to="/projects">Follow my project journey <span aria-hidden="true">↗</span></Link>
-                        <Link className="button button-quiet" to="/about">More about me <span aria-hidden="true">→</span></Link>
+                        <Link className="button button-primary" to="/projects">View projects <span aria-hidden="true">↗</span></Link>
+                        <Link className="button button-quiet" to="/about">View skills <span aria-hidden="true">→</span></Link>
                     </div>
                     <div className="hero-proof">
                         <span className="hero-monogram">KP</span>
-                        <p><strong>5 years in quality assurance</strong><br />Banking · Financial services · Fleet management</p>
+                        <p><strong>5 years in software quality</strong><br />Banking · Insurance · BFSI · Fleet management</p>
                     </div>
                 </div>
                 <div className="hero-art" aria-hidden="true">
                     <div className="art-orbit orbit-one" />
                     <div className="art-orbit orbit-two" />
                     <div className="art-center">
-                        <span>MY JOURNEY</span>
-                        <strong>learn it.<br /><em>test it.</em></strong>
+                        <span>SOFTWARE QUALITY</span>
+                        <strong>test it.<br /><em>improve it.</em></strong>
                     </div>
                     <span className="art-note note-one">Banking</span>
                     <span className="art-note note-two">Fleet</span>
@@ -41,39 +41,38 @@ const Home = () => {
             <main>
                 <section className="introduction-section section-wrap">
                     <div className="introduction-heading">
-                        <p className="eyebrow">A SIMPLE INTRODUCTION</p>
-                        <h2>“Tell me about yourself.”</h2>
+                        <p className="eyebrow">WHAT I DO</p>
+                        <h2>Testing products from screen to service.</h2>
                     </div>
                     <div className="introduction-answer">
                         <p>
-                            My name is Kamlesh Patil, and I’m a QA engineer with 5 years of experience.
-                            I’ve worked on banking, financial services, and fleet management projects.
-                            I began by learning how products work and testing their important features.
-                            Later, I worked with my team on test automation and making checks more reliable.
-                            I enjoy finding clear ways to help teams deliver software people can trust.
+                            I test features, APIs, and complete user workflows. My work includes
+                            functional, regression, smoke, and UI testing, plus test automation.
+                            I work with product and development teams in Agile/Scrum and use CI tools
+                            to give the team clear feedback.
                         </p>
-                        <span>Read it once. Then try saying it in your own words.</span>
+                        <span>Clear checks. Useful feedback. Reliable releases.</span>
                     </div>
                 </section>
 
                 <section className="journey-section section-wrap">
                     <div className="section-heading">
                         <div>
-                            <p className="eyebrow">MY EXPERIENCE, IN ORDER</p>
-                            <h2>Three projects. Three steps forward.</h2>
+                            <p className="eyebrow">PROJECT EXPERIENCE</p>
+                            <h2>Products I’ve worked on.</h2>
                         </div>
-                        <Link className="text-link" to="/projects">Explore my projects <span aria-hidden="true">↗</span></Link>
+                        <Link className="text-link" to="/projects">All projects <span aria-hidden="true">↗</span></Link>
                     </div>
                     <div className="journey-list">
                         {projectStories.map((story) => (
                             <article className="journey-card" key={story.slug}>
                                 <span className="journey-number">{story.number}</span>
                                 <div>
-                                    <p className="eyebrow">{story.number === '01' ? 'WHERE I STARTED' : story.number === '02' ? 'A NEW INDUSTRY' : 'GROWING INTO AUTOMATION'}</p>
+                                    <p className="eyebrow">{story.domain}</p>
                                     <h3>{story.projectName}</h3>
                                     <p>{story.summary}</p>
                                     <Link className="text-link" to={`/journal/${story.categorySlug}/${story.slug}`}>
-                                        Read the story and practise my answer <span aria-hidden="true">↗</span>
+                                        Project details <span aria-hidden="true">↗</span>
                                     </Link>
                                 </div>
                         </article>
@@ -81,26 +80,19 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className="home-quote home-peace">
+                <section className="home-quote">
                     <span className="quote-mark" aria-hidden="true">“</span>
                     <blockquote>
                         I test to find out what could go wrong and help the team fix it before it affects users.
                     </blockquote>
-                    <p>KAMLESH PATIL <span>· MY QA NOTES</span></p>
-                </section>
-
-                <section className="home-quote">
-                    <span className="quote-mark" aria-hidden="true">✦</span>
-                    <h2>A quiet moment for myself</h2>
-                    <p>My personal space for a little peace and a one-minute breathing timer.</p>
-                    <Link className="button button-primary" to="/peace">Peace <span aria-hidden="true">→</span></Link>
+                    <p>KAMLESH PATIL <span>· QA ENGINEER</span></p>
                 </section>
 
                 <section className="home-more-reading">
-                    <p className="eyebrow">WANT TO LEARN MORE?</p>
-                    <h2>Simple notes on the tools and ideas behind my work.</h2>
-                    <p>My projects come first. Explore the learning notes when you want to understand a testing idea in more detail.</p>
-                    <Link className="text-link" to="/journal">Explore my learning notes <span aria-hidden="true">↗</span></Link>
+                    <p className="eyebrow">TESTING NOTES</p>
+                    <h2>Short guides to testing and automation.</h2>
+                    <p>Browse clear notes on test design, APIs, automation, and the tools I use.</p>
+                    <Link className="text-link" to="/journal">Browse QA notes <span aria-hidden="true">↗</span></Link>
                 </section>
             </main>
         </div>

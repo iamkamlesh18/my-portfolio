@@ -25,22 +25,22 @@ const PageMetadata = () => {
 
     React.useEffect(() => {
         const [section, categorySlug, postSlug] = pathname.split('/').filter(Boolean);
-        let pageTitle = 'Kamlesh Patil — QA Notes';
+        let pageTitle = 'QA Engineer';
 
         if (section === 'journal' || section === 'blog') {
             if (postSlug) {
-                pageTitle = getPost(categorySlug, postSlug)?.title || 'Chapter not found';
+                pageTitle = getPost(categorySlug, postSlug)?.title || 'Note not found';
             } else if (categorySlug) {
-                pageTitle = blogData.find((category) => category.slug === categorySlug)?.title || 'Learning path not found';
+                pageTitle = blogData.find((category) => category.slug === categorySlug)?.title || 'Topic not found';
             } else {
-                pageTitle = 'My QA Notes';
+                pageTitle = 'QA Notes';
             }
         } else if (section === 'projects') {
-            pageTitle = 'My Project Notes';
+            pageTitle = 'Projects';
         } else if (section === 'peace') {
             pageTitle = 'Peace';
         } else if (section === 'about') {
-            pageTitle = 'About Kamlesh';
+            pageTitle = 'Skills and Experience';
         } else if (section && section !== 'home') {
             pageTitle = 'Page not found';
         }

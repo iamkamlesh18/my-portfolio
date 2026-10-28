@@ -42,7 +42,7 @@
 
 .story-card {
     display: grid;
-    grid-template-columns: 58px 1fr 25px;
+    grid-template-columns: 58px minmax(0, 1fr);
     gap: 22px;
     padding: 32px 0;
     border-bottom: 1px solid var(--line);
@@ -118,6 +118,61 @@
     margin-top: 17px;
 }
 
+.project-detail-heading {
+    margin: 20px 0 8px;
+    color: var(--forest);
+    font-size: 0.83rem;
+    font-weight: 750;
+}
+
+.project-result {
+    padding-left: 13px;
+    border-left: 2px solid var(--clay);
+}
+
+.project-result strong {
+    color: var(--forest);
+}
+
+.project-focus-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-focus-list li {
+    padding: 6px 9px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    background: rgba(251, 250, 246, 0.72);
+    font-size: 0.75rem;
+}
+
+.project-tool-list {
+    margin-top: 0;
+}
+
+.domain-summary {
+    margin-top: 34px;
+    padding: 23px 26px;
+    border-left: 3px solid var(--clay);
+    background: #e9e5db;
+}
+
+.domain-summary .eyebrow {
+    margin-bottom: 8px;
+    color: var(--forest);
+}
+
+.domain-summary p:last-child {
+    margin: 0;
+    color: var(--ink);
+    line-height: 1.7;
+}
+
 .story-arrow {
     padding-top: 7px;
     color: var(--clay);
@@ -157,7 +212,7 @@
     }
 
     .story-card {
-        grid-template-columns: 32px 1fr 18px;
+        grid-template-columns: 32px minmax(0, 1fr);
         gap: 12px;
         padding: 24px 0;
     }

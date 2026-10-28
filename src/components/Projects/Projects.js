@@ -6,41 +6,51 @@ import { projectStories } from '../Blog/data';
 const Projects = () => (
     <main className="stories-page">
         <header className="stories-hero">
-            <p className="eyebrow">MY PROJECT NOTES</p>
-            <h1>My project journey,<br /><em>one story at a time.</em></h1>
+            <p className="eyebrow">PROJECTS</p>
+            <h1>Products I’ve<br /><em>helped test.</em></h1>
             <p>
-                Start with my first banking project, follow me into fleet management, and see how I
-                grew into automation. Each story has a simple interview answer and a question to practise.
+                Banking and fleet management projects, with a look at the product, the testing work,
+                and the tools used.
             </p>
         </header>
-        <section className="story-list" aria-label="Project stories">
-            {projectStories.map((story) => (
-                <article className="story-card" key={story.slug}>
-                    <span className="story-number">{story.number}</span>
+        <section className="story-list" aria-label="Project experience">
+            {projectStories.map((project) => (
+                <article className="story-card" key={project.slug}>
+                    <span className="story-number">{project.number}</span>
                     <div className="story-copy">
-                        <p className="eyebrow">{story.category.title} · {story.minutes} MIN READ</p>
-                        <h2>{story.projectName}</h2>
-                        <p>{story.summary}</p>
-                        <details className="story-answer">
-                            <summary>Read a simple interview answer</summary>
-                            <p>{story.interviewAnswer}</p>
-                        </details>
-                        <details className="story-practice">
-                            <summary>Now try this question yourself</summary>
-                            <p>{story.practiceQuestion}</p>
-                        </details>
-                        <Link className="text-link story-full-link" to={`/journal/${story.categorySlug}/${story.slug}`}>
-                            Read the full project story <span aria-hidden="true">↗</span>
+                        <p className="eyebrow">{project.domain}</p>
+                        <h2>{project.projectName}</h2>
+                        <p>{project.summary}</p>
+                        <p className="project-result"><strong>Work:</strong> {project.result}</p>
+                        <h3 className="project-detail-heading">Testing focus</h3>
+                        <ul className="project-focus-list">
+                            {project.projectFocus.map((item) => <li key={item}>{item}</li>)}
+                        </ul>
+                        {project.tools?.length > 0 && (
+                            <>
+                                <h3 className="project-detail-heading">Tools</h3>
+                                <ul className="skill-tags project-tool-list">
+                                    {project.tools.map((tool) => <li key={tool}>{tool}</li>)}
+                                </ul>
+                            </>
+                        )}
+                        <Link className="text-link story-full-link" to={`/journal/${project.categorySlug}/${project.slug}`}>
+                            Project details <span aria-hidden="true">↗</span>
                         </Link>
                     </div>
-                    <span className="story-arrow" aria-hidden="true">{story.number}</span>
                 </article>
             ))}
+            <aside className="domain-summary">
+                <p className="eyebrow">DOMAIN EXPERIENCE</p>
+                <p>Retail banking · Insurance · BFSI · Financial services · Fleet management</p>
+            </aside>
         </section>
         <section className="work-principle">
-            <p className="eyebrow">KEEP LEARNING</p>
-            <h2>Know the story.<br /><em>Say it in your own words.</em></h2>
-            <Link className="button button-primary" to="/about">Get to know me <span aria-hidden="true">↗</span></Link>
+            <p className="eyebrow">CONTACT</p>
+            <h2>Want to talk about QA or automation?</h2>
+            <a className="button button-primary" href="https://www.linkedin.com/in/iamkamlesh18/" target="_blank" rel="noopener noreferrer">
+                Connect on LinkedIn <span aria-hidden="true">↗</span>
+            </a>
         </section>
     </main>
 );

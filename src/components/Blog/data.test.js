@@ -1,7 +1,7 @@
 import { allPosts, blogData, projectStories } from './data';
 
-describe('quality engineering reading library', () => {
-    test('every learning path and chapter has complete reading content', () => {
+describe('QA notes and project details', () => {
+    test('every topic and note has readable, complete content', () => {
         expect(blogData.length).toBeGreaterThan(0);
         expect(allPosts.length).toBeGreaterThan(20);
 
@@ -19,15 +19,18 @@ describe('quality engineering reading library', () => {
         expect(new Set(routes).size).toBe(routes.length);
     });
 
-    test('project stories have interview answers and practice questions in order', () => {
+    test('project notes explain the domain, testing focus, and outcome', () => {
         expect(projectStories.map((story) => story.projectName)).toEqual([
             'Union Bank',
             'Elements Fleet Management',
             'Cooperative Banking'
         ]);
         projectStories.forEach((story) => {
-            expect(story.interviewAnswer).toBeTruthy();
-            expect(story.practiceQuestion).toBeTruthy();
+            expect(story.domain).toBeTruthy();
+            expect(story.projectFocus.length).toBeGreaterThan(0);
+            expect(story.result).toBeTruthy();
+            expect(story.sections.length).toBeGreaterThan(1);
         });
+        expect(projectStories[2].tools).toContain('Serenity BDD');
     });
 });

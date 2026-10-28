@@ -19,16 +19,15 @@ const BlogIndex = () => {
     return (
         <div className="journal-page">
             <header className="journal-hero">
-                <p className="eyebrow">MY QA NOTES</p>
-                <h1>What I’ve learned<br /><em>about testing.</em></h1>
+                <p className="eyebrow">QA NOTES</p>
+                <h1>Testing and automation<br /><em>made clear.</em></h1>
                 <p className="journal-hero-copy">
-                    Notes from my projects and studies. I use them to remember what I’ve learned
-                    and prepare for interviews.
+                    Simple guides to testing, automation, APIs, and real project work.
                 </p>
                 <div className="journal-stats" aria-label="Library overview">
                     <span><strong>{allPosts.length}</strong> notes</span>
                     <span><strong>{blogData.length}</strong> topics</span>
-                    <span>Based on projects and study</span>
+                    <span>Practical examples</span>
                 </div>
             </header>
 
@@ -36,11 +35,11 @@ const BlogIndex = () => {
                 {featuredPost && (
                     <section className="featured-reading" aria-labelledby="featured-heading">
                         <div>
-                            <p className="eyebrow">FEATURED PROJECT NOTE · {featuredPost.minutes} MIN READ</p>
+                            <p className="eyebrow">FEATURED PROJECT · {featuredPost.minutes} MIN READ</p>
                             <h2 id="featured-heading">{featuredPost.title}</h2>
                             <p>{featuredPost.summary}</p>
                             <Link className="text-link" to={`/journal/${featuredPost.categorySlug}/${featuredPost.slug}`}>
-                                Read what I learned <span aria-hidden="true">↗</span>
+                                View project details <span aria-hidden="true">↗</span>
                             </Link>
                         </div>
                         <span className="featured-number" aria-hidden="true">06</span>
@@ -50,10 +49,10 @@ const BlogIndex = () => {
                 <section className="learning-paths" aria-labelledby="paths-heading">
                     <div className="section-heading">
                         <div>
-                            <p className="eyebrow">BROWSE BY TOPIC</p>
-                            <h2 id="paths-heading">What do you want to learn?</h2>
+                            <p className="eyebrow">TOPICS</p>
+                            <h2 id="paths-heading">Browse QA topics.</h2>
                         </div>
-                        <p>Choose a topic to find related notes.</p>
+                        <p>Pick a topic to see related notes.</p>
                     </div>
                     <div className="path-grid">
                         {blogData.map((category) => (
@@ -74,17 +73,17 @@ const BlogIndex = () => {
                 <section className="chapter-library" aria-labelledby="library-heading">
                     <div className="section-heading library-heading">
                         <div>
-                            <p className="eyebrow">ALL MY NOTES</p>
-                            <h2 id="library-heading">Find a topic</h2>
+                            <p className="eyebrow">ALL NOTES</p>
+                            <h2 id="library-heading">Search the notes.</h2>
                         </div>
                         <label className="search-field">
-                            <span className="visually-hidden">Search notes</span>
+                            <span className="visually-hidden">Search QA notes</span>
                             <span aria-hidden="true">⌕</span>
                             <input
                                 type="search"
                                 value={search}
                                 onChange={(event) => setSearch(event.target.value)}
-                                placeholder="Search my notes…"
+                                placeholder="Search testing, tools, projects…"
                             />
                         </label>
                     </div>
@@ -107,7 +106,7 @@ const BlogIndex = () => {
                             ))}
                         </div>
                     ) : (
-                        <p className="empty-state">No notes match “{search}”. Try another search.</p>
+                        <p className="empty-state">No notes match “{search}”. Try another word.</p>
                     )}
                 </section>
             </main>
