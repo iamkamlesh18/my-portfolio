@@ -1,12 +1,12 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Routing from './Routing';
 
 describe('GitHub Pages hash routing', () => {
     beforeEach(() => {
         window.scrollTo = jest.fn();
         window.history.replaceState({}, '', '/my-portfolio/');
-        window.location.hash = '#/journal/project-stories/rainbow-framework';
+        window.location.hash = '#/journal/project-stories/cooperative-bank-automation';
     });
 
     afterEach(() => {
@@ -17,30 +17,32 @@ describe('GitHub Pages hash routing', () => {
         render(<Routing />);
 
         expect(screen.getByRole('heading', {
-            name: 'How do I explain the Rainbow automation framework?'
+            name: 'How a banking project changed my view of automation'
         })).toBeInTheDocument();
-        expect(screen.getByText('A SIMPLE ANSWER')).toBeInTheDocument();
-        expect(screen.getByText('QUESTION 01')).toBeInTheDocument();
-        expect(screen.getByText('My interview preparation')).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'A simple answer to learn from' })).toBeInTheDocument();
+        expect(screen.getByText('Now try this question yourself')).toBeInTheDocument();
+        expect(screen.getByText('Notes by Kamlesh Patil')).toBeInTheDocument();
     });
 
-    test('shows the Rainbow project interview answer', () => {
+    test('shows the three project stories with answers to practise', () => {
         window.location.hash = '#/projects';
         render(<Routing />);
 
-        expect(screen.getByRole('heading', { name: /Rainbow framework/ })).toBeInTheDocument();
-        expect(screen.getByRole('heading', { name: 'Rainbow custom automation framework' })).toBeInTheDocument();
-        expect(screen.getByText(/scripts locally and through Jenkins/i)).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: /Open the chapter Q&A/ })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /My project journey/ })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Union Bank' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Elements Fleet Management' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Cooperative Banking' })).toBeInTheDocument();
+        expect(screen.getAllByText('Read a simple interview answer')).toHaveLength(3);
     });
 
-    test('introduces the personal interview book on the home page', () => {
+    test('opens the personal Peace page from the home-page button', () => {
         window.location.hash = '#/';
         render(<Routing />);
 
-        expect(screen.getByRole('heading', { name: /This is my prep book/ })).toBeInTheDocument();
-        expect(screen.getByRole('heading', { name: '“Tell me about yourself.”' })).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: /Open my interview book/ })).toBeInTheDocument();
+        fireEvent.click(screen.getByRole('link', { name: /Peace/ }));
+
+        expect(screen.getByRole('heading', { name: 'A little peace.' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Breathe at your own pace' })).toBeInTheDocument();
     });
 
     test('does not list the removed currency converter', () => {

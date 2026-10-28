@@ -537,14 +537,6 @@
     line-height: 1.25;
 }
 
-.reader-section .answer-label {
-    margin: 12px 0 5px;
-    color: var(--clay);
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-}
-
 .reader-section p,
 .reader-section li {
     color: #4f5c55;

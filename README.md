@@ -1,15 +1,15 @@
-# Kamlesh Patil — QA Interview Book
+# Kamlesh Patil — QA Engineer Portfolio
 
-A personal, chapter-wise interview-preparation book for Kamlesh Patil, who has five years of software testing experience. Chapters use interview questions and simple answers, from testing foundations through Java, Selenium, Serenity, and the Rainbow custom automation framework. Rainbow scripts were run locally and through Jenkins.
+A personal portfolio introducing Kamlesh Patil, his five years in quality assurance, and his project journey through banking, fleet management, and test automation. Project stories include simple interview answers and questions to practise; learning notes offer more detail about testing and tools.
 
 ## Explore the site
 
-- **Introduction** — a concise answer to “Tell me about yourself”
-- **Project Q&A** — interview answers about the Rainbow custom framework
-- **My journey** — context for the personal preparation book
-- **Interview book** — searchable, question-and-answer chapters from basic to advanced topics
+- **Start here** — a personal introduction and a chronological project journey
+- **My projects** — simple interview answers and practice questions for each project
+- **About me** — work experience, approach, skills, and learning journey
+- **Learning notes** — searchable chapters about testing foundations, Agile and BDD, automation, and engineering practice
 
-Interview content lives in `src/components/Blog/data.js`. Add chapters there and group them under a learning stage; chapter pages render each topic as an interview question with its answer.
+The journal content lives in `src/components/Blog/data.js`. Add chapters there and group them under a learning path; the reading room and chapter navigation are generated from that data.
 
 ## Run locally
 
@@ -30,7 +30,7 @@ The site uses hash-based client-side routes, for example:
 
 ```text
 https://iamkamlesh18.github.io/my-portfolio/#/journal
-https://iamkamlesh18.github.io/my-portfolio/#/journal/project-stories/rainbow-framework
+https://iamkamlesh18.github.io/my-portfolio/#/journal/project-stories/cooperative-bank-automation
 ```
 
 The hash keeps chapter and category navigation working when a visitor refreshes or opens a deep link on GitHub Pages.

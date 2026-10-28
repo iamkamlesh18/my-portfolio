@@ -33,10 +33,10 @@ const PageMetadata = () => {
             } else if (categorySlug) {
                 pageTitle = blogData.find((category) => category.slug === categorySlug)?.title || 'Learning path not found';
             } else {
-                pageTitle = 'My QA Interview Book';
+                pageTitle = 'My QA Notes';
             }
         } else if (section === 'projects') {
-            pageTitle = 'Rainbow Framework Interview Q&A';
+            pageTitle = 'My Project Notes';
         } else if (section === 'peace') {
             pageTitle = 'Peace';
         } else if (section === 'about') {
