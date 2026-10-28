@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './About.css';
 import { projectStories } from '../Blog/data';
+import { getExperienceYearsMonths } from '../../utils/experience';
 
 const skillGroups = [
     {
@@ -35,14 +37,30 @@ const certifications = [
     'Insurance [L1 and L2]'
 ];
 
-const About = () => (
-    <main className="about-page">
+export { skillGroups, certifications };
+
+const About = () => {
+    const navigate = useNavigate();
+    const [referenceClicks, setReferenceClicks] = useState(0);
+    const experience = getExperienceYearsMonths();
+
+    const openSiteReference = () => {
+        if (referenceClicks === 4) {
+            navigate('/site-notes', { state: { siteReferenceUnlocked: true } });
+            return;
+        }
+
+        setReferenceClicks((clicks) => clicks + 1);
+    };
+
+    return (
+      <main className="about-page">
         <header className="about-hero">
             <p className="eyebrow">ABOUT</p>
             <h1>Kamlesh Patil<br /><em>QA Engineer</em></h1>
             <p className="about-lede">
                  I’m a Senior Software Engineer, SDET (Software Development Engineer in Test),
-                and Automation Test Engineer with 5 years of experience.
+                and Automation Test Engineer with {experience} years of experience.
             </p>
         </header>
 
@@ -51,7 +69,7 @@ const About = () => (
                 <p className="eyebrow">PROFILE</p>
                 <h2>Software quality from requirements to release.</h2>
                 <p>
-                    I’m a Senior Software Engineer at Capgemini with 5 years of experience delivering
+                    I’m a Senior Software Engineer at Capgemini with {experience} years of experience delivering
                     software testing and automation across retail banking, capital markets, BFSI,
                     and fleet management. I design and maintain UI and API automation, perform
                     manual and functional testing, and help teams find and resolve defects early.
@@ -74,7 +92,6 @@ const About = () => (
                     {projectStories.map((project) => (
                         <article className="career-project" key={project.slug}>
                             <div>
-                                {project.period && <span className="career-period">{project.period}</span>}
                                 <h3>{project.projectName}</h3>
                             </div>
                             <p>{project.domain}</p>
@@ -164,8 +181,25 @@ const About = () => (
                     <a href="https://iamkamlesh18.github.io/iamkamlesh18/" target="_blank" rel="noopener noreferrer">Developer profile ↗</a>
                 </div>
             </section>
+            <div className="about-reference-gate">
+                <p>A small note for keeping my work consistent across sites.</p>
+                <button
+                    className="about-reference-button"
+                    type="button"
+                    onClick={openSiteReference}
+                    aria-describedby="about-reference-hint"
+                >
+                    Site reference <span aria-hidden="true">↗</span>
+                </button>
+                <span id="about-reference-hint" className="visually-hidden" aria-live="polite">
+                    {referenceClicks === 0
+                        ? 'Click this button five times to open the site reference.'
+                        : `${5 - referenceClicks} ${5 - referenceClicks === 1 ? 'click' : 'clicks'} remaining.`}
+                </span>
+            </div>
         </div>
-    </main>
-);
+      </main>
+    );
+};
 
 export default About;

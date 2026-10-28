@@ -18,7 +18,7 @@ const Projects = () => (
                 <article className="story-card" key={project.slug}>
                     <span className="story-number">{project.number}</span>
                     <div className="story-copy">
-                        <p className="eyebrow">{project.domain}{project.period ? ` · ${project.period}` : ''}</p>
+                        <p className="eyebrow">{project.domain}</p>
                         <h2>{project.projectName}</h2>
                         <p>{project.summary}</p>
                         {project.products?.length > 0 && (

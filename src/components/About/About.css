@@ -394,6 +394,34 @@
     color: #e2bb78;
 }
 
+.about-reference-gate {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.about-reference-gate p {
+    margin: 0;
+}
+
+.about-reference-button {
+    padding: 5px 8px;
+    border: 1px solid rgba(33, 75, 63, 0.18);
+    color: var(--muted);
+    background: transparent;
+    font-size: 0.72rem;
+    cursor: pointer;
+}
+
+.about-reference-button:hover {
+    color: var(--forest);
+    border-color: var(--forest);
+}
+
 @media (max-width: 850px) {
     .practice-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -416,6 +444,10 @@
     .about-book {
         grid-template-columns: 1fr;
         gap: 18px;
+    }
+
+    .about-reference-gate {
+        flex-wrap: wrap;
     }
 }
 

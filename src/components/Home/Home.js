@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import { projectStories } from '../Blog/data';
+import { getExperienceYearsMonths } from '../../utils/experience';
 
 const Home = () => {
+    const experience = getExperienceYearsMonths();
+
     return (
         <div className="home-page">
             <section className="home-hero">
@@ -11,7 +14,7 @@ const Home = () => {
                     <p className="eyebrow"><span className="status-dot" /> AUTOMATION TEST ENGINEER · SDET · QA ANALYST</p>
                     <h1>Kamlesh Patil<br /><em>QA Engineer</em></h1>
                     <p className="hero-description">
-                         I have 5 years of experience in testing across banking, insurance, financial services,
+                         I have {experience} years of experience in testing across banking, insurance, financial services,
                         and fleet management products. I work across functional, API, and regression
                         testing, and build automation with Java, Python, and JavaScript.
                     </p>
@@ -21,7 +24,7 @@ const Home = () => {
                     </div>
                     <div className="hero-proof">
                         <span className="hero-monogram">KP</span>
-                        <p><strong>5 years in software quality</strong><br />Banking · Capital markets · Fleet management</p>
+                        <p><strong>{experience} years in software quality</strong><br />Banking · Capital markets · Fleet management</p>
                     </div>
                 </div>
                 <div className="hero-art" aria-hidden="true">

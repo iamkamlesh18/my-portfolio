@@ -8,6 +8,7 @@ import BlogPost from '../Blog/BlogPost';
 import NavBar from '../NavBar/NavBar';
 import About from '../About/About';
 import Peace from '../Projects/Peace';
+import SiteReference from '../SiteReference/SiteReference';
 import { blogData, getPost } from '../Blog/data';
 
 const ScrollToTop = () => {
@@ -39,6 +40,8 @@ const PageMetadata = () => {
             pageTitle = 'Projects';
         } else if (section === 'peace') {
             pageTitle = 'Peace';
+        } else if (section === 'site-notes') {
+            pageTitle = 'Personal Site Reference';
         } else if (section === 'about') {
             pageTitle = 'Skills and Experience';
         } else if (section && section !== 'home') {
@@ -79,6 +82,7 @@ const Routing = () => (
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/peace" element={<Peace />} />
+            <Route path="/site-notes" element={<SiteReference />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
     </HashRouter>

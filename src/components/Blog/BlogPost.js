@@ -66,7 +66,6 @@ const BlogPost = () => {
                         <p className="eyebrow">PROJECT OVERVIEW</p>
                         <h2 id="project-overview-heading">{article.projectName}</h2>
                         <p className="project-domain">{article.domain}</p>
-                        {article.period && <p><strong>Project period:</strong> {article.period}</p>}
                         {article.products?.length > 0 && (
                             <>
                                 <h3>Products and areas</h3>
